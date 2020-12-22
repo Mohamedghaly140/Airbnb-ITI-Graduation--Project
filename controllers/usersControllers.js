@@ -49,8 +49,7 @@ exports.signup = async (req, res, next) => {
 		name,
 		email,
 		password,
-		image:
-			'https://egyptholiday-travel.com/wp-content/plugins/all-in-one-seo-pack/images/default-user-image.png',
+		image: req.file.path,
 		phone,
 		isHost,
 		places: [],
