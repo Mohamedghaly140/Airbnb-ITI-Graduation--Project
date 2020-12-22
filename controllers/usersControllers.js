@@ -28,7 +28,7 @@ exports.signup = async (req, res, next) => {
 		// return res.status(400).json({ errors: errors.array() });
 	}
 
-	const { name, email, password } = req.body;
+	const { name, email, password, phone, isHost } = req.body;
 
 	let exsitingUser;
 	try {
@@ -51,6 +51,8 @@ exports.signup = async (req, res, next) => {
 		password,
 		image:
 			'https://egyptholiday-travel.com/wp-content/plugins/all-in-one-seo-pack/images/default-user-image.png',
+		phone,
+		isHost,
 		places: [],
 	});
 
