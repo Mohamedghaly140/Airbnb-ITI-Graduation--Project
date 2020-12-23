@@ -1,0 +1,98 @@
+.about {
+    margin-left: 15px;
+    /* max-width: 100%; */
+}
+
+.about a {
+    text-decoration: underline;
+    color: black;
+    font-weight: 600;
+}
+
+.descraption {
+    display: flex;
+    flex-direction: row;
+    margin: 30px 0 0 25px;
+}
+
+.name {
+    display: flex;
+    flex-direction: column;
+    margin-left: 10px;
+    margin-top: 5px;
+}
+
+.name>:nth-child(1) {
+    color: black;
+    font-size: 20px;
+    margin-left: 10px;
+    font-weight: 800;
+}
+
+.name>:nth-child(2) {
+    color: gray;
+    font-size: 14px;
+    margin-left: 10px;
+    font-weight: 600;
+}
+
+.person__all {
+    margin-top: 44em;
+}
+
+.person {
+
+    margin-left: 30px;
+    width: 370px;
+    border-radius: 4%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+}
+
+.person img {
+    width: 50px;
+}
+
+.person label {
+    margin-left: 10px;
+}
+
+.person p {
+    font-weight: 400 !important;
+    font-size: 18px !important;
+    line-height: 24px !important;
+    word-break: break-word !important;
+
+}
+
+.contact_btn {
+    width: 150px;
+    margin-left: 15px;
+    text-align: center;
+    margin-left: 0 !important;
+    border-radius: 5%;
+    padding: 15px;
+    font-size: 0.9rem;
+    transform: scale(0.96) !important;
+    border-color: rgb(0, 0, 0) !important;
+    background-color: white;
+    color: rgb(34, 34, 34) !important;
+}
+
+.review .rate>:nth-child(1) {
+    margin-top: 25px;
+}
+
+.info {
+    margin-left: 40px;
+}
+
+.info div {
+    margin-top: 15px;
+    margin-bottom: 15px;
+}

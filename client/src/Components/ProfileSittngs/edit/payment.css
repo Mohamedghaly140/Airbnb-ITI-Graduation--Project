@@ -1,0 +1,10 @@
+.myTabs{
+   /* background-color: tomato; */
+}
+
+.myTab:active{
+    text-decoration: underline royalblue 0.5rem;
+}
+
+
+

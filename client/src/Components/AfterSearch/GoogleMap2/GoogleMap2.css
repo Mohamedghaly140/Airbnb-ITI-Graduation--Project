@@ -1,0 +1,5 @@
+@media screen and (max-width:669px) {
+    .map {
+        display: none
+    }
+}

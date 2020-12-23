@@ -1,0 +1,77 @@
+.Banner {
+	background-image: url('../../../assets/home_images/bg-image/aibnb-bg-desktop.webp');
+	background-position: center center;
+	background-repeat: no-repeat;
+	background-size: cover;
+	height: 90vh;
+	position: relative;
+}
+
+.Caption {
+	position: absolute;
+	top: 60%;
+	left: 5%;
+	transform: translateY(-50%);
+}
+
+.Caption__Title {
+	text-transform: capitalize;
+	font-size: 7rem;
+	color: #fff;
+	font-weight: bold;
+	word-break: break-word;
+	letter-spacing: -0.2rem;
+	line-height: 90px;
+	margin-bottom: 1.5rem;
+}
+
+/* // Extra small devices (portrait phones, less than 576px) */
+@media (max-width: 575.98px) {
+	.Banner {
+		background-image: url('../../../assets/home_images/bg-image/aibnb-bg-mobile.webp');
+	}
+	.Caption {
+		top: 22%;
+		left: 5%;
+	}
+	.Caption__Title {
+		font-size: 4rem;
+		line-height: 66px;
+	}
+}
+
+/* // Small devices (landscape phones, 576px and up) */
+@media (min-width: 576px) and (max-width: 767.98px) {
+	.Banner {
+		background-image: url('../../../assets/home_images/bg-image/aibnb-bg-md.webp');
+	}
+	.Caption__Title {
+		font-size: 4.5rem;
+		line-height: 66px;
+	}
+}
+
+/* // Medium devices (tablets, 768px and up) */
+@media (min-width: 768px) and (max-width: 991.98px) {
+	.Banner {
+		background-image: url('../../../assets/home_images/bg-image/aibnb-bg-md.webp');
+	}
+	.Caption__Title {
+		font-size: 5rem;
+		line-height: 66px;
+	}
+}
+
+/* // Large devices (desktops, 992px and up) */
+@media (min-width: 992px) and (max-width: 1199.98px) {
+	.Banner {
+		background-image: url('../../../assets/home_images/bg-image/aibnb-bg-desktop.webp');
+	}
+}
+
+/* // Extra large devices (large desktops, 1200px and up) */
+@media (min-width: 1200px) {
+	.Banner {
+		background-image: url('../../../assets/home_images/bg-image/aibnb-bg-desktop.webp');
+	}
+}

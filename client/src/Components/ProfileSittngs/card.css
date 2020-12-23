@@ -1,0 +1,22 @@
+#cards {
+  margin-top: 10rem;
+  margin-bottom: 10rem;
+}
+
+#cards h1 {
+  font-weight: bold;
+}
+#cards p {
+  margin-bottom: 1rem;
+}
+#cards .card {
+  /* max-width: 30% !important; */
+  cursor: pointer;
+}
+.card-img-top{padding:  0.25rem 14px 0rem 1rem;}
+.card-body{padding:1.25rem 0.5rem 1.5rem 1.25rem}
+.btn{
+  background-color: #008489;
+  font-weight: bold;
+  color: #ffffff;
+}

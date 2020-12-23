@@ -1,0 +1,14 @@
+#paymentForm input {
+  height: 3.5rem;
+}
+#paymentForm #confirm-btn {
+  margin-top: 5px;
+  margin-left: -19px;
+}
+
+#paymentForm .policy {
+  border-left: 9px solid #ffaf0f;
+}
+#paymentForm .end-p {
+  font-size: 0.7rem;
+}

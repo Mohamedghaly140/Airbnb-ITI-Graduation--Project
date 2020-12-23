@@ -1,0 +1,50 @@
+.Covid {
+	padding-top: 0.5rem;
+	padding-bottom: 0.5rem;
+	background-color: #000;
+}
+
+.Covid__Anchor {
+	display: block;
+	color: #ddd;
+	cursor: pointer;
+	opacity: 0.95;
+	text-align: center;
+	text-decoration: underline;
+	transition: opacity 0.2s ease;
+}
+
+.Covid__Anchor:hover {
+	opacity: 0.65;
+	color: #ddd;
+}
+
+/* // Extra small devices (portrait phones, less than 576px) */
+@media (max-width: 575.98px) {
+	.Covid {
+		background-color: #f7f7f7;
+	}
+	.Covid__Anchor {
+		font-weight: 500;
+		color: #000;
+	}
+	.Covid__Anchor:hover {
+		opacity: 0.9;
+		color: #000;
+	}
+}
+
+/* // Small devices (landscape phones, 576px and up) */
+@media (min-width: 576px) and (max-width: 767.98px) {
+	.Covid {
+		background-color: #f7f7f7;
+	}
+	.Covid__Anchor {
+		font-weight: 500;
+		color: #000;
+	}
+	.Covid__Anchor:hover {
+		opacity: 0.9;
+		color: #000;
+	}
+}

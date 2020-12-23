@@ -1,0 +1,76 @@
+.acco-container {
+  width: 30rem;
+  margin: 58px 93.5px 100px 100px;
+}
+.host-place,
+.host-guest {
+  width: 50%;
+}
+.place-guest {
+  padding-top: 1rem;
+  display: flex;
+}
+.steps {
+  padding-top: 1rem;
+}
+.place-guest {
+  padding-bottom: 1rem;
+}
+.place-guest input,
+.price-input input {
+  padding: 1rem;
+  border-radius: 8px;
+  border: rgb(102, 102, 102) solid 2px;
+  outline-style: none;
+  width: 98%;
+}
+.price-input {
+  width: 98%;
+}
+.price-input input {
+  width: 100%;
+}
+.city-state {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.city-state .address-input {
+  width: 50%;
+}
+.city-state .address-input input {
+  width: 95%;
+  padding: 1rem;
+  border-radius: 8px;
+  outline-style: none;
+  border: 2px solid rgb(102, 102, 102);
+}
+/*********** MediaQuary **********/
+@media only screen and (max-width: 991px) {
+  .flower-img {
+    display: none;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .flower-img {
+    display: none;
+  }
+  .acco-container {
+    margin: auto;
+    width: 100%;
+    align-items: center;
+    padding: 2rem;
+  }
+}
+@media only screen and (max-width: 600px) {
+  .acco-container {
+    margin: 0;
+    padding: 2rem;
+    height: 100vh;
+    width: 100%;
+  }
+  .acco-container .acco-header {
+    width: 100%;
+  }
+}

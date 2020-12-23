@@ -1,0 +1,288 @@
+/* logo  */
+.black-logo-svg:hover {
+  background: rgb(231, 233, 235);
+  cursor: pointer;
+  width: 5rem;
+  border-radius: 50%;
+}
+.bloring {
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 6px 20px;
+  background: rgb(255, 255, 255);
+}
+.black-logo {
+  height: 5rem;
+}
+
+/* hostin seciton  */
+.host-container {
+  padding-top: 8rem;
+  padding-left: 4.2rem;
+}
+.host-header,
+.help-header {
+  font-size: 3rem;
+  font-weight: bold;
+  line-height: 50px;
+}
+.host-details {
+  padding-top: 1.5rem;
+}
+.getstarted-btn,
+.agree-btn {
+  background-image: linear-gradient(
+    to right,
+    #ff385c 0%,
+    #e61e4d 27.5%,
+    #e31c5f 40%,
+    #d70466 57.5%,
+    #bd1e59 75%,
+    #bd1e59 100%
+  );
+}
+.getstarted-btn,
+.agree-btn {
+  padding: 16px 32px;
+  border-radius: 8px;
+  border: none;
+  font-size: 1.1rem;
+  font-weight: bold;
+  text-align: center;
+  transition: 0.5s;
+  background-size: 200% auto;
+  color: white;
+  box-shadow: 0 0 20px #eee;
+}
+
+.getstarted-btn:hover,
+.agree-btn:hover {
+  background-position: right center;
+  color: #fff;
+  text-decoration: none;
+}
+.btn-trans {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  padding-right: 2rem;
+}
+.getstarted-trans {
+  margin-left: auto;
+  padding: 10px 10px;
+}
+.host-btn {
+  padding-top: 1.5rem;
+}
+.host-parg {
+  font-size: 1.2rem;
+  line-height: 23px;
+}
+.host-img {
+  height: 27rem;
+  width: 20rem;
+  border-radius: 5px;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+.host-link {
+  text-decoration: none;
+  margin-top: 1rem !important;
+  color: rgb(74, 75, 75);
+}
+.host-link:hover,
+.safty-container a:hover {
+  color: rgb(12, 12, 12);
+}
+
+/* exploreing seciton  */
+.explore-img {
+  height: 15rem;
+  width: 100%;
+  border-radius: 5px;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+.explore-container {
+  border-top: solid 2px rgb(226, 226, 226);
+  padding-top: 5rem;
+  padding-left: 3rem;
+  padding-right: 3rem;
+  padding-bottom: 3rem;
+}
+.explore-header {
+  padding-bottom: 3rem;
+}
+.explore-header h1 {
+  font-size: 2.5rem;
+  font-weight: bold;
+}
+.castle-img {
+  height: 8rem;
+}
+/* safty_section  */
+.safty-logo,
+.help-logo {
+  height: 3rem;
+}
+.safty-header {
+  padding: 3.5rem;
+}
+.safty-header h1 {
+  font-weight: bold;
+}
+.safty-container {
+  border-top: solid 2px rgb(226, 226, 226);
+  padding: 2rem;
+}
+.safty-container a {
+  color: black;
+  text-decoration: none;
+}
+/* form container  */
+.form-container {
+  box-shadow: 0px 6px 16px rgba(0, 0, 0, 0.12);
+  background-color: white;
+  border-radius: 16px;
+  padding-bottom: 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  justify-items: center;
+}
+.form-container h3 {
+  color: #222222;
+  font-size: 18px;
+  line-height: 24px;
+  margin-top: 32px;
+  margin-bottom: 24px;
+}
+.btn-form-container {
+  width: 90%;
+}
+.form-details {
+  width: 90%;
+}
+.earn-form {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  justify-items: center;
+  align-items: center;
+}
+.form-money h1 {
+  padding: 2rem 0rem;
+}
+.address-form-conatiner,
+.place-form-container,
+.guest-form-container {
+  width: 100%;
+}
+.MuiSelect-select.MuiSelect-select {
+  padding: 1rem;
+}
+.host-form-container {
+  padding: 3rem 5rem;
+  background: rgb(240, 228, 228);
+}
+
+.form-btn {
+  padding: 0.8rem 1.5rem;
+  background: black;
+  color: white;
+  width: 60%;
+  font-size: 1.5rem;
+  border-radius: 10px;
+  border: none;
+  width: 100%;
+}
+/* help_section  */
+.host-help {
+  margin-top: 8rem;
+}
+
+/* get_started  */
+.ready-host {
+  border-top: solid 2px rgb(226, 226, 226);
+  padding-top: 5rem;
+  padding-bottom: 4rem;
+}
+.ready-host h1 {
+  font-size: 3rem;
+  font-weight: bold;
+}
+.ready-host span {
+  font-size: 1.5rem;
+}
+.ready-host button {
+  margin-top: 2rem;
+}
+
+/* media Quaries  */
+@media only screen and (max-width: 768px) {
+  .ready-host {
+    padding-bottom: 22rem;
+  }
+  .host-img {
+    width: 100%;
+  }
+  .host-help-sec,
+  .host-help-sec span {
+    display: flex;
+    justify-content: center;
+    align-content: center;
+  }
+  .host-container {
+    padding-top: 3.5rem;
+    padding-left: 27px;
+  }
+  .carousol-container {
+    width: 95%;
+  }
+  .host-btn {
+    margin-bottom: 2rem;
+  }
+  .explore-img {
+    height: 16rem;
+  }
+  .safty-header {
+    padding-top: 1rem;
+    padding-left: 0;
+  }
+  .host-form-container {
+    padding: 1rem;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .host-container {
+    padding-left: 1rem;
+    padding-top: 0;
+  }
+  .host-container .host-header {
+    font-size: 2rem;
+  }
+  .explore-container h1,
+  .safty-container h1,
+  .help-header,
+  .ready-host h1 {
+    font-size: 2rem;
+  }
+  .getstarted-btn {
+    padding: 8px 16px;
+  }
+  .ready-host span {
+    font-size: 18px;
+  }
+  .ready-host {
+    padding: 2.5rem;
+  }
+  .host-help {
+    margin: 0;
+  }
+  .safty-header {
+    padding-bottom: 1rem;
+  }
+}

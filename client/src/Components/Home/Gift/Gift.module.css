@@ -1,0 +1,48 @@
+.Card {
+	background-image: url('../../../assets/home_images/gift-card-image.webp');
+	background-position: center center;
+	background-repeat: no-repeat;
+	background-size: cover;
+	height: 65vh;
+	border-radius: 20px;
+	position: relative;
+}
+
+.Caption {
+	position: absolute;
+	top: 50%;
+	left: 5%;
+	transform: translateY(-50%);
+}
+
+.Caption__Title {
+	color: #fff;
+	margin-bottom: 2rem;
+}
+
+/* // Extra small devices (portrait phones, less than 576px) */
+@media (max-width: 575.98px) {
+	.Card {
+		background-image: url('../../../assets/home_images/gift-card-image.webp');
+		height: 75vh;
+		margin-left: 1rem;
+		margin-right: 1rem;
+	}
+	.Caption {
+		top: 25%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+		text-align: center;
+		width: 100%;
+	}
+	.Caption__Title h1 {
+		font-size: 1.75rem;
+	}
+	.Caption__Title p {
+		padding-left: 1.5rem;
+		padding-right: 1.5rem;
+	}
+	.Caption div:last-child {
+		justify-content: center !important;
+	}
+}

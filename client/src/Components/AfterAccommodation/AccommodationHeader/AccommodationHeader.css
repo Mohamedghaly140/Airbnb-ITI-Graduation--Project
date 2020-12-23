@@ -1,0 +1,33 @@
+.accHeader {
+    /* margin-top: 13em; */
+}
+
+.accHeader__location {
+    font-size: 14px;
+    line-height: 20px;
+    color: rgb(113, 113, 113, ) !important;
+    text-decoration: none;
+
+}
+
+.accHeader a {
+    text-decoration: none;
+    color: black;
+}
+
+.accHeader a:hover {
+    text-decoration: underline;
+    color: black;
+}
+
+.accHeader__image {
+    margin-top: 3em;
+    /* height: 30%; */
+    margin-bottom: 3em;
+    object-fit: cover;
+    vertical-align: bottom;
+}
+
+hr {
+    border: 1px solid lightgray;
+}

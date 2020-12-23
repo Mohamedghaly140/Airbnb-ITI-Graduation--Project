@@ -1,0 +1,13 @@
+/* .float-left{
+  margin-right: auto;
+} */
+
+.card {
+  max-width: 100% !important;
+}
+
+
+.edit{
+  color: #008489;
+  font-weight: bold;
+}

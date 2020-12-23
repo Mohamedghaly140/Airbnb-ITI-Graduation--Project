@@ -1,0 +1,21 @@
+.ExperienceItem {
+	overflow: hidden;
+	border-radius: 15px;
+	position: relative;
+	margin-bottom: 1rem;
+	cursor: pointer;
+	height: 100%;
+}
+
+.ExperienceItem__Title {
+	padding: 1rem;
+	position: absolute;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	background-color: rgb(34, 34, 34);
+	color: #fff;
+    font-weight: 500;
+    /* border-bottom-left-radius: 15px;
+    border-bottom-right-radius: 15px; */
+}

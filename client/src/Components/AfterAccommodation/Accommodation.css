@@ -1,0 +1,49 @@
+.datePicker-card {
+    position: absolute;
+    top: 9;
+    right: 0;
+    z-index: 3;
+    margin-right: 17em;
+    margin-top: 17rem;
+}
+
+
+
+.mainHost__Details2>p {
+    color: rgb(113, 113, 113) !important;
+    font-family: Circular, -apple-system, BlinkMacSystemFont, Roboto, "Helvetica Neue", sans-serif !important;
+    font-weight: 400 !important;
+    font-size: 14px !important;
+    line-height: 20px !important;
+}
+
+.mainHost__Details3>a {
+
+    color: rgb(34, 34, 34) !important;
+    text-decoration: underline !important;
+    border-radius: 4px !important;
+    font-weight: 600 !important;
+    outline: none !important;
+
+    text-decoration: underline !important;
+}
+
+.reviews>p {
+    color: rgb(34, 34, 34) !important;
+    font-family: Circular, -apple-system, BlinkMacSystemFont, Roboto, "Helvetica Neue", sans-serif !important;
+    font-weight: 400 !important;
+    font-size: 16px !important;
+    line-height: 24px !important;
+    word-break: break-word !important;
+}
+
+@media screen and (max-width:900px) {
+    .datePicker-card {
+        position: absolute;
+
+        margin-top: 58rem;
+        left: 3rem;
+    }
+
+
+}
