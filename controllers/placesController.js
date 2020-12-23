@@ -105,7 +105,8 @@ exports.createPlace = async (req, res, next) => {
 		title,
 		description,
 		address,
-		postalCode,
+		placeType,
+		price,
 		numberOfRooms,
 		numberOfbeds,
 		creator,
@@ -118,7 +119,8 @@ exports.createPlace = async (req, res, next) => {
 		description,
 		location: coordinates,
 		address,
-		postalCode,
+		placeType,
+		price,
 		numberOfRooms,
 		numberOfbeds,
 		image: req.file.path,
@@ -147,7 +149,7 @@ exports.createPlace = async (req, res, next) => {
 		await user.save({ session: session });
 		await session.commitTransaction();
 	} catch (err) {
-		const error = new HttpError('Creating place faild, please try again', 500);
+		const error = new HttpError('Creating place faild, please try again later', 500);
 		return next(error);
 	}
 
@@ -197,7 +199,7 @@ exports.deletePlaceById = async (req, res, next) => {
 	let place;
 
 	try {
-		place = await Place.findById(placeId).populate('creator');
+		place = await Place.findById(placeId);
 
 		// console.log(place);
 

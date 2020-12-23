@@ -40,6 +40,10 @@ const UserSchema = new Schema({
 			ref: 'Place',
 		},
 	],
+	isAdmin: {
+		type: Boolean,
+		default: false,
+	},
 });
 
 UserSchema.plugin(uniqueValidator);

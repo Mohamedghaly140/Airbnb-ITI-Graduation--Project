@@ -1,4 +1,4 @@
-const mongoose = require("mongoose");
+const mongoose = require('mongoose');
 
 const Schema = mongoose.Schema;
 
@@ -50,12 +50,16 @@ const PlaceSchema = new Schema({
 		ref: 'User',
 	},
 	reserved: [
-    {
-      type: mongoose.Types.ObjectId,
-      required: true,
-      ref: "Booking",
-    },
-  ],
+		{
+			type: mongoose.Types.ObjectId,
+			required: true,
+			ref: 'Booking',
+		},
+	],
+	approved: {
+		type: Boolean,
+		default: false,
+	},
 });
 
-module.exports = mongoose.model("Place", PlaceSchema);
+module.exports = mongoose.model('Place', PlaceSchema);
