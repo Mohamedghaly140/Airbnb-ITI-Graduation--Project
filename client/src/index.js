@@ -3,10 +3,11 @@ import ReactDOM from 'react-dom';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './index.css';
 import App from './App';
+import AuthState from './Context/Auth/authState';
 
 ReactDOM.render(
-	<React.StrictMode>
+	<AuthState>
 		<App />
-	</React.StrictMode>,
+	</AuthState>,
 	document.getElementById('root')
 );
