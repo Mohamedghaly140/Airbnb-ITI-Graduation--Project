@@ -1,3 +1,5 @@
+const fs = require('fs');
+
 const mongoose = require('mongoose');
 const { validationResult } = require('express-validator');
 
@@ -119,8 +121,7 @@ exports.createPlace = async (req, res, next) => {
 		postalCode,
 		numberOfRooms,
 		numberOfbeds,
-		image:
-			'https://upload.wikimedia.org/wikipedia/commons/thumb/1/10/Empire_State_Building_%28aerial_view%29.jpg/400px-Empire_State_Building_%28aerial_view%29.jpg',
+		image: req.file.path,
 		creator,
 	});
 
@@ -198,7 +199,7 @@ exports.deletePlaceById = async (req, res, next) => {
 	try {
 		place = await Place.findById(placeId).populate('creator');
 
-		console.log(place);
+		// console.log(place);
 
 		if (!place) {
 			return next(
@@ -214,6 +215,8 @@ exports.deletePlaceById = async (req, res, next) => {
 		);
 	}
 
+	const imagePath = place.image;
+
 	try {
 		const session = await mongoose.startSession();
 		session.startTransaction();
@@ -226,6 +229,8 @@ exports.deletePlaceById = async (req, res, next) => {
 			new HttpError('Someting went wrong, could not delete place', 500)
 		);
 	}
+
+	fs.unlink(imagePath, err => console.log(err));
 
 	res.status(200).json({
 		message: 'place deleted successfuly',

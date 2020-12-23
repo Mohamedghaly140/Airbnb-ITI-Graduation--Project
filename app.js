@@ -1,9 +1,21 @@
+<<<<<<< HEAD
 const express = require("express");
 const morgan = require("morgan");
 const dotenv = require("dotenv");
 const colors = require("colors");
 const connectDB = require("./db/db");
 const HttpError = require("./models/HttpError");
+=======
+const fs = require('fs');
+const path = require('path');
+
+const express = require('express');
+const morgan = require('morgan');
+const dotenv = require('dotenv');
+const colors = require('colors');
+const connectDB = require('./db/db');
+const HttpError = require('./models/HttpError');
+>>>>>>> master
 
 // Load env vars
 dotenv.config({ path: "./config/config.env" });
@@ -16,6 +28,9 @@ const app = express();
 // body parser middleware
 app.use(express.json({ extended: false }));
 
+// Serving statics images
+app.use('/uploads/images', express.static(path.join('uploads', 'images')));
+
 // Dev Logging Middleware
 if (process.env.NODE_ENV === "development") {
   app.use(morgan("dev"));
@@ -27,10 +42,17 @@ const usersRoutes = require("./routes/usersRoutes");
 const bookingRoutes = require("./routes/BookingRoutes");
 
 app.use((req, res, next) => {
+<<<<<<< HEAD
   res.setHeader("Access-Control-Allow-Origin", "*");
   res.setHeader("Access-Control-Allow-Methods", "GET, POST, PUT, DELETE");
   res.setHeader("Access-Control-Allow-Headers", "Content-Type, Authorization");
   next();
+=======
+	res.setHeader('Access-Control-Allow-Origin', '*');
+	res.setHeader('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE');
+	res.setHeader('Access-Control-Allow-Headers', 'Content-Type, Authorization');
+	next();
+>>>>>>> master
 });
 
 // excute routes
@@ -44,12 +66,26 @@ app.use((req, res, next) => {
 });
 
 app.use((error, req, res, next) => {
+<<<<<<< HEAD
   if (res.headerSent) {
     return next(error);
   }
   res.status(error.code || 500).json({
     message: error.message || "An unknown error occured! Server Error",
   });
+=======
+	if (req.file) {
+		fs.unlink(req.file.path, err => {
+			console.log(err);
+		});
+	}
+	if (res.headerSent) {
+		return next(error);
+	}
+	res.status(error.code || 500).json({
+		message: error.message || 'An unknown error occured! Server Error',
+	});
+>>>>>>> master
 });
 
 const PORT = process.env.PORT || 5000;
