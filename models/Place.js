@@ -24,7 +24,11 @@ const PlaceSchema = new Schema({
 		lat: { type: Number, required: true },
 		lng: { type: Number, required: true },
 	},
-	postalCode: {
+	placeType: {
+		type: String,
+		required: true,
+	},
+	price: {
 		type: Number,
 		required: true,
 	},
@@ -35,6 +39,10 @@ const PlaceSchema = new Schema({
 	numberOfbeds: {
 		type: Number,
 		required: true,
+	},
+	countery: {
+		type: String,
+		default: 'Egypt',
 	},
 	creator: {
 		type: mongoose.Types.ObjectId,

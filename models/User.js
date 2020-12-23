@@ -19,7 +19,8 @@ const UserSchema = new Schema({
 	},
 	image: {
 		type: String,
-		required: true,
+		default:
+			'https://www.dovercourt.org/wp-content/uploads/2019/11/610-6104451_image-placeholder-png-user-profile-placeholder-image-png.jpg',
 	},
 	phone: {
 		type: Number,

@@ -19,6 +19,9 @@ const app = express();
 // body parser middleware
 app.use(express.json({ extended: false }));
 
+// Serving statics images
+app.use('/uploads/images', express.static(path.join('uploads', 'images')));
+
 // Dev Logging Middleware
 if (process.env.NODE_ENV === 'development') {
 	app.use(morgan('dev'));
