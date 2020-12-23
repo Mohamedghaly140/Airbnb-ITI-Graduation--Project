@@ -30,7 +30,15 @@ exports.signup = async (req, res, next) => {
 		// return res.status(400).json({ errors: errors.array() });
 	}
 
-	const { name, email, password, phone, isHost } = req.body;
+	const {
+		firstName,
+		lastName,
+		email,
+		password,
+		date,
+		phone,
+		isHost,
+	} = req.body;
 
 	let exsitingUser;
 	try {
@@ -57,10 +65,11 @@ exports.signup = async (req, res, next) => {
 	}
 
 	const createdUser = new User({
-		name,
+		firstName,
+		lastName,
 		email,
 		password: hashedPassword,
-		image: req.file.path,
+		birthDay: date,
 		phone,
 		isHost,
 		places: [],
@@ -91,6 +100,7 @@ exports.signup = async (req, res, next) => {
 		message: 'Signed up successfuly',
 		userId: createdUser.id,
 		email: createdUser.email,
+		isHost: createdUser.isHost,
 		token: token,
 	});
 };
@@ -153,3 +163,5 @@ exports.login = async (req, res, next) => {
 		token: token,
 	});
 };
+
+exports.becomeHost = (req, res, next) => {};

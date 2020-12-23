@@ -11,18 +11,15 @@ router.get('/', getUsers);
 
 router.post(
 	'/signup',
-	fileUpload.single('image'),
+	// fileUpload.single('image'),
 	[
-		body('name', 'name is required').not().isEmpty(),
+		body('firstName', 'name is required').not().isEmpty(),
+		body('lastName', 'name is required').not().isEmpty(),
 		body('email', 'Please enter valid email').normalizeEmail().isEmail(),
 		body('password', 'Password min length is 6')
 			.not()
 			.isEmpty()
 			.isLength({ min: 6 }),
-		body(
-			'phone',
-			'Please enter valid phone number ex: 010-111-222-333'
-		).isMobilePhone('ar-EG'),
 	],
 	signup
 );

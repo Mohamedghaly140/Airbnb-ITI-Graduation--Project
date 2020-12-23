@@ -14,7 +14,7 @@ const PlaceSchema = new Schema({
 	},
 	image: {
 		type: String,
-		required: true,
+		// required: true,
 	},
 	address: {
 		type: String,
@@ -37,6 +37,10 @@ const PlaceSchema = new Schema({
 		required: true,
 	},
 	numberOfbeds: {
+		type: Number,
+		required: true,
+	},
+	numberOfGuests: {
 		type: Number,
 		required: true,
 	},

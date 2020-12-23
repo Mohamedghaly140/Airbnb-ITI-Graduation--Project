@@ -20,10 +20,10 @@ import AddonTwo from './Components/addons/AddonTwo';
 import AddonThree from './Components/addons/AddonThree';
 import AddonFour from './Components/addons/AddonFour';
 import AddonFive from './Components/addons/AddonFive';
-const Sitings = lazy(() => import('./Components/ProfileSittngs/EditApp'));
 
-import setAuthToken from "./Utils/setAuthToken";
-import PrivateRoute from "./Components/Routing/PrivateRoute";
+import setAuthToken from './Utils/setAuthToken';
+import PrivateRoute from './Components/Routing/PrivateRoute';
+const Sitings = lazy(() => import('./Components/ProfileSittngs/EditApp'));
 
 if (localStorage.token) {
 	setAuthToken(localStorage.token);

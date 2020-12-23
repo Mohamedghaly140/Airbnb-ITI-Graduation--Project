@@ -109,6 +109,7 @@ exports.createPlace = async (req, res, next) => {
 		price,
 		numberOfRooms,
 		numberOfbeds,
+		numberOfGuests,
 		creator,
 	} = req.body;
 
@@ -123,7 +124,8 @@ exports.createPlace = async (req, res, next) => {
 		price,
 		numberOfRooms,
 		numberOfbeds,
-		image: req.file.path,
+		numberOfGuests,
+		// image: req.file.path,
 		creator,
 	});
 
@@ -149,7 +151,10 @@ exports.createPlace = async (req, res, next) => {
 		await user.save({ session: session });
 		await session.commitTransaction();
 	} catch (err) {
-		const error = new HttpError('Creating place faild, please try again later', 500);
+		const error = new HttpError(
+			'Creating place faild, please try again later',
+			500
+		);
 		return next(error);
 	}
 

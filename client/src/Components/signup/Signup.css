@@ -28,7 +28,7 @@
 .input-container input {
   width: 100%;
   border: none;
-  outline-style: none;
+  outline: none;
 }
 .last-name {
   border-top: 2px solid rgb(110, 108, 108);

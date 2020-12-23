@@ -7,6 +7,7 @@ const dotenv = require('dotenv');
 const colors = require('colors');
 const connectDB = require('./db/db');
 const HttpError = require('./models/HttpError');
+// const cors = require('cors');
 
 // Load env vars
 dotenv.config({ path: './config/config.env' });
@@ -26,6 +27,8 @@ app.use('/uploads/images', express.static(path.join('uploads', 'images')));
 if (process.env.NODE_ENV === 'development') {
 	app.use(morgan('dev'));
 }
+
+// app.use(cors());
 
 // import routes files
 const placesRoutes = require('./routes/placesRoutes');

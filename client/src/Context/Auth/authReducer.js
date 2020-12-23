@@ -7,7 +7,7 @@ import {
 	LOGIN_FAIL,
 	LOGOUT,
 	CLEAR_ERRORS,
-} from "../types";
+} from '../types';
 
 export default (state, action) => {
 	switch (action.type) {
@@ -20,17 +20,20 @@ export default (state, action) => {
 			};
 		case REGISTER_SUCCESS:
 		case LOGIN_SUCCESS:
-			localStorage.setItem("token", action.payload.token);
+			localStorage.setItem('token', action.payload.token);
+			localStorage.setItem('userId', action.payload.userId);
 			return {
 				...state,
-				...action.payload,
+				userId: action.payload.userId,
+				token: action.payload.token,
+				isHost: action.payload.isHost,
 				isAuth: true,
 				loading: false,
 			};
 		case REGISTER_FAIL:
 		case AUTH_ERROR:
 		case LOGIN_FAIL:
-			localStorage.removeItem("token");
+			localStorage.removeItem('token');
 			return {
 				...state,
 				token: null,
@@ -45,7 +48,7 @@ export default (state, action) => {
 				error: null,
 			};
 		case LOGOUT:
-			localStorage.removeItem("token");
+			localStorage.removeItem('token');
 			return {
 				...state,
 				token: null,
