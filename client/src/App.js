@@ -59,15 +59,15 @@ function App() {
 						path="/search_results"
 						exact
 					/>
-					{isAuth ? (
-						<Route
-							render={props => <Accommodation {...props} />}
-							path={`/accommodation/:id`}
-							exact
-						/>
-					) : (
+					{/* {isAuth ? ( */}
+					<Route
+						render={props => <Accommodation {...props} />}
+						path={`/accommodation/:id`}
+						exact
+					/>
+					{/* ) : (
 						<div>please sign up</div>
-					)}
+					)} */}
 					<Route component={() => <HostPage />} path="/become_host" exact />
 					<Route component={() => <SignUpModale />} path="/signup" exact />
 					<Route component={() => <Accom_host />} path="/collect_data" exact />
