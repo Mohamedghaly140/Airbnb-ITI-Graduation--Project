@@ -1,4 +1,4 @@
-import { useState, useEffect, lazy, Suspense } from 'react';
+import { useState, useContext, lazy, Suspense } from 'react';
 import './App.css';
 import Home from './Pages/Home';
 import AfterSearch from './Components/AfterSearch/AfterSearch';
@@ -20,6 +20,7 @@ import AddonTwo from './Components/addons/AddonTwo';
 import AddonThree from './Components/addons/AddonThree';
 import AddonFour from './Components/addons/AddonFour';
 import AddonFive from './Components/addons/AddonFive';
+import AuthContext from './Context/Auth/authContext';
 
 import setAuthToken from './Utils/setAuthToken';
 import PrivateRoute from './Components/Routing/PrivateRoute';
@@ -30,6 +31,9 @@ if (localStorage.token) {
 }
 
 function App() {
+	const authContext = useContext(AuthContext);
+	const { isAuth } = authContext;
+
 	const [search, setSearch] = useState({});
 	const onSearch = (location, guests, start, end) => {
 		setSearch({
@@ -55,11 +59,15 @@ function App() {
 						path="/search_results"
 						exact
 					/>
-					<Route
-						render={props => <Accommodation {...props} />}
-						path={`/accommodation/:id`}
-						exact
-					/>
+					{isAuth ? (
+						<Route
+							render={props => <Accommodation {...props} />}
+							path={`/accommodation/:id`}
+							exact
+						/>
+					) : (
+						<div>please sign up</div>
+					)}
 					<Route component={() => <HostPage />} path="/become_host" exact />
 					<Route component={() => <SignUpModale />} path="/signup" exact />
 					<Route component={() => <Accom_host />} path="/collect_data" exact />
@@ -69,7 +77,9 @@ function App() {
 					<Route path="/AddonThree" component={AddonThree} />
 					<Route path="/AddonFour" component={AddonFour} />
 					<Route path="/AddonFive" component={AddonFive} />
-					<Route component={() => <Sitings />} path="/edit_profile" />
+					{isAuth && (
+						<Route component={() => <Sitings />} path="/edit_profile" />
+					)}
 				</Suspense>
 			</Router>
 		</div>

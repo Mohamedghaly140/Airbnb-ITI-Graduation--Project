@@ -120,6 +120,7 @@ exports.signup = async (req, res, next) => {
 		userId: createdUser.id,
 		email: createdUser.email,
 		isHost: createdUser.isHost,
+		isAdmin: createdUser.isAdmin,
 		token: token,
 	});
 };
@@ -179,6 +180,8 @@ exports.login = async (req, res, next) => {
 		message: 'Loggedin successfuly',
 		userId: exsitingUser.id,
 		email: exsitingUser.email,
+		isHost: exsitingUser.isHost,
+		isAdmin: exsitingUser.isAdmin,
 		token: token,
 	});
 };

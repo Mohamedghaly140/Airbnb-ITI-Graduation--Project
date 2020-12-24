@@ -1,0 +1,109 @@
+
+.Login-card {
+  border-radius: 12px;
+  background-color: white;
+  position: relative !important;
+  width: 75% !important;
+  height: 100%;
+  max-width: 700px !important;
+}
+.header {
+  width: 100%;
+  height: 50px;
+}
+.header i {
+  float: left;
+  width: 50px;
+  height: 50px;
+}
+.header span {
+  font-size: 1.5rem;
+  font-weight: 800;
+  text-align: center;
+  text-transform: capitalize;
+}
+hr {
+  color: black;
+}
+.region {
+  margin-top: 50px;
+  padding: 2px;
+  border: 1px solid black;
+  border-radius: 15px;
+}
+.region .countryslect {
+  border-top-right-radius: 10px;
+  border-top-left-radius: 10px;
+  width: 100%;
+  margin: auto;
+  height: 70px;
+  padding: 5px;
+}
+.region .phoneNumber {
+  width: 100% !important;
+  border: none !important;
+  outline: none !important;
+  padding: 0px !important;
+  margin: 26px 12px 10px !important;
+  min-height: 1px !important;
+  color: inherit !important;
+  background-color: transparent !important;
+}
+.username-input{
+border-bottom: 2px solid lightgray;}
+.continue-btn{
+  width: 100%;
+}
+.Login-card p {
+  margin-top: 10px;
+}
+.Login-card .continue {
+  text-align: center !important;
+  text-decoration: none !important;
+  touch-action: manipulation !important;
+  font-size: 16px !important;
+  line-height: 20px !important;
+  font-weight: 600 !important;
+  border-radius: 8px !important;
+  outline: none !important;
+  padding: 14px 24px !important;
+  transition: box-shadow 0.2s ease 0s, -ms-transform 0.1s ease 0s,
+    -webkit-transform 0.1s ease 0s, transform 0.1s ease 0s !important;
+  border: none !important;
+  background: linear-gradient(
+    to right,
+    rgb(230, 30, 77) 0%,
+    rgb(227, 28, 95) 50%,
+    rgb(215, 4, 102) 100%
+  ) !important;
+  color: rgb(255, 255, 255) !important;
+  width: 100% !important;
+}
+.Login-card p {
+  color: grey;
+  font-size: 14px;
+}
+.social-login__btn {
+  cursor: pointer !important;
+  margin-top: 15px;
+  text-align: center !important;
+  text-decoration: none !important;
+  font-size: 16px !important;
+  color: rgb(72, 72, 72) !important;
+  padding: 10px 12px !important;
+  font-weight: 800 !important;
+  border: 2px solid rgb(176, 176, 176);
+  border-radius: 8px !important;
+  background: transparent !important;
+  box-shadow: none !important;
+  min-width: 71.1935px !important;
+  width: 100% !important;
+}
+
+.social-login button:hover {
+  border: 2px solid black;
+}
+.new-account a {
+  text-decoration: underline;
+  color: rgb(34, 34, 34);
+}
