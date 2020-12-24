@@ -23,6 +23,25 @@ exports.getUsers = async (req, res, next) => {
 	});
 };
 
+exports.getUserById = async (req, res, next) => {
+	userId = req.params.id;
+
+	let user;
+
+	try {
+		user = await User.findById(userId, '-password').populate('places');
+	} catch (err) {
+		return next(
+			new HttpError('Fetching user failed, please try again later', 500)
+		);
+	}
+
+	res.status(200).json({
+		message: `find user successfuly`,
+		user: user,
+	});
+};
+
 exports.signup = async (req, res, next) => {
 	const errors = validationResult(req);
 	if (!errors.isEmpty()) {

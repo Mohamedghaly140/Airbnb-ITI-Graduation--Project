@@ -45,9 +45,9 @@ function HeaderRight() {
                 show={modalShow}
                 onHide={() => setModalShow(false)}
               />
-              <a href="/">
+              <Link to="/edit_profile/edit">
                 <li>Sitings</li>
-              </a>
+              </Link>
               <a href="/">
                 {" "}
                 <li>Help</li>

@@ -19,7 +19,7 @@ router.get('/', getPlaces);
 
 router.get('/:pid', getPlaceById);
 
-router.get('/user/:uid', getPlacesByUserId);
+router.get('/user/:uid', auth, getPlacesByUserId);
 
 router.post(
 	'/',

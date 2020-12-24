@@ -140,7 +140,9 @@ exports.createPlace = async (req, res, next) => {
 			);
 		}
 	} catch (err) {
-		return next(new HttpError('Creating place failed, try again later', 500));
+		return next(
+			new HttpError('Creating place failed, try again later faild user', 500)
+		);
 	}
 
 	try {
@@ -152,7 +154,7 @@ exports.createPlace = async (req, res, next) => {
 		await session.commitTransaction();
 	} catch (err) {
 		const error = new HttpError(
-			'Creating place faild, please try again later',
+			'Creating place faild, please try again later relation',
 			500
 		);
 		return next(error);
@@ -204,7 +206,7 @@ exports.deletePlaceById = async (req, res, next) => {
 	let place;
 
 	try {
-		place = await Place.findById(placeId);
+		place = await Place.findById(placeId).populate('creator');
 
 		// console.log(place);
 
@@ -232,8 +234,9 @@ exports.deletePlaceById = async (req, res, next) => {
 		await place.creator.save({ session: session });
 		await session.commitTransaction();
 	} catch (err) {
+		// console.log(err);
 		return next(
-			new HttpError('Someting went wrong, could not delete place', 500)
+			new HttpError('Someting went wrong, could not delete place relation', 500)
 		);
 	}
 
