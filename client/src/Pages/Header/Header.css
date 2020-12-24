@@ -1,275 +1,240 @@
 .header2 {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    /* z-index: 3; */
-    width: 100%;
-    /* position: fixed; */
-    top: 0;
-    background-color: white;
-    border-bottom: 1px solid lightgray;
-    box-shadow: 0 2px 3px rgba(0, 0, 0, 0.11);
-    /* max-width: 10vw */
-    /* overflow-x: hidden; */
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	/* z-index: 3; */
+	width: 100%;
+	/* position: fixed; */
+	top: 0;
+	background-color: white;
+	border-bottom: 1px solid lightgray;
+	box-shadow: 0 2px 3px rgba(0, 0, 0, 0.11);
+	/* max-width: 10vw */
+	/* overflow-x: hidden; */
 }
 
-.header2__icon>img {
-    object-fit: contain;
-    height: 87px;
-    margin-left: 3em;
+.header2__icon > img {
+	object-fit: contain;
+	height: 87px;
+	margin-left: 3em;
 
-    /* position: relative;
+	/* position: relative;
     z-index: 1; */
-
-
 }
 
-.header2__icon>img:hover {
-    cursor: pointer;
+.header2__icon > img:hover {
+	cursor: pointer;
 }
-
 
 /*The center elements of the header2*/
 
-
 .header2__center {
-    display: flex;
-    flex-direction: column;
-    text-align: center;
-    justify-content: space-between;
-    margin-top: 1em;
-    margin-bottom: 1em;
-    /* overflow: hidden; */
-
-
+	display: flex;
+	flex-direction: column;
+	text-align: center;
+	justify-content: space-between;
+	margin-top: 1em;
+	margin-bottom: 1em;
+	/* overflow: hidden; */
 }
 
-.header2__center>p {
-    color: black;
-    font-size: 1em;
-    font-weight: 600;
+.header2__center > p {
+	color: black;
+	font-size: 1em;
+	font-weight: 600;
 }
 
-.header2__center>hr {
-
-    border-top: 2px solid black;
-    width: 3em;
-    /* margin-left: 18em; */
-    color: black;
-    margin: 0 auto;
+.header2__center > hr {
+	border-top: 2px solid black;
+	width: 3em;
+	/* margin-left: 18em; */
+	color: black;
+	margin: 0 auto;
 }
 
 .header2__center__search {
-    display: flex;
-    flex-grow: 1;
-    flex-basis: auto;
-    align-items: center;
-    max-width: fit-content;
-    padding: 1em;
-    height: 3.5em;
-    border: 1px solid lightgray;
-    border-radius: 2em;
-    box-shadow: 0 5px 4px rgba(0, 0, 0, 0.15);
-    transition: box-shadow 0.2s ease-in-out;
-    margin-top: 1em;
-    position: relative;
-    background-color: white;
-    /* 
+	display: flex;
+	flex-grow: 1;
+	flex-basis: auto;
+	align-items: center;
+	max-width: fit-content;
+	padding: 1em;
+	height: 3.5em;
+	border: 1px solid lightgray;
+	border-radius: 2em;
+	box-shadow: 0 5px 4px rgba(0, 0, 0, 0.15);
+	transition: box-shadow 0.2s ease-in-out;
+	margin-top: 1em;
+	position: relative;
+	background-color: white;
+	/* 
     max-width: 100vw */
 }
 
 .header2__center__search:hover {
-    box-shadow: 0 2px 5px -1px rgba(0, 0, 0, 0.3);
-    cursor: pointer;
+	box-shadow: 0 2px 5px -1px rgba(0, 0, 0, 0.3);
+	cursor: pointer;
 }
 
+.header2__center__search > input {
+	border: none;
+	padding: 1.2em;
+	outline-style: none;
+	outline-width: 0;
+	border-right: 1px solid lightgray;
+	height: 40%;
 
-.header2__center__search>input {
-
-    border: none;
-    padding: 1.2em;
-    outline-style: none;
-    outline-width: 0;
-    border-right: 1px solid lightgray;
-    height: 40%;
-
-
-    width: 10vw;
-
+	width: 10vw;
 }
 
-.header2__center__search>input:last-of-type {
-    border: 0;
+.header2__center__search > input:last-of-type {
+	border: 0;
 }
 
-.header2__center__search>input:hover {
-    cursor: pointer;
-
-
+.header2__center__search > input:hover {
+	cursor: pointer;
 }
 
 .header2__center__search__searchIcon {
-
-    background-color: #FF385C;
-    border-radius: 50%;
-    padding: 2px;
-    color: white;
-
+	background-color: #ff385c;
+	border-radius: 50%;
+	padding: 2px;
+	color: white;
 }
 
 /*the right elements of the header2*/
 .header2__right {
-
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-right: 4em;
-margin-top: 20px;
-
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	margin-right: 4em;
+	margin-top: 20px;
 }
 
 .header2__right__icons {
-    display: column;
-    flex-direction: row;
-    align-items: center;
-
-
+	display: column;
+	flex-direction: row;
+	align-items: center;
 }
 
 .header2__right__profileIcons {
-    display: flex;
-    justify-content: space-between;
-    border-radius: 2em;
-    width: 4em;
-    border: 1px solid lightgray;
-    border-radius: 2em;
-    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.15);
-    transition: box-shadow 0.2s ease-in-out;
-    padding: 0.6em;
-    background-color: white;
-    /* margin-top: 7em; */
-
-
+	display: flex;
+	justify-content: space-between;
+	border-radius: 2em;
+	width: 4em;
+	border: 1px solid lightgray;
+	border-radius: 2em;
+	box-shadow: 0 1px 2px rgba(0, 0, 0, 0.15);
+	transition: box-shadow 0.2s ease-in-out;
+	padding: 0.6em;
+	background-color: white;
+	/* margin-top: 7em; */
 }
 
 .header2__right__profileIcons:hover {
-    box-shadow: 0 2px 5px -1px rgba(0, 0, 0, 0.3);
-    cursor: pointer;
+	box-shadow: 0 2px 5px -1px rgba(0, 0, 0, 0.3);
+	cursor: pointer;
 }
 
 .header2__right__currency {
-    display: flex;
-    align-items: center;
-    padding: 1em;
-    margin: 0 1em;
-    border-radius: 2em;
-    color: black;
-
-
+	display: flex;
+	align-items: center;
+	padding: 1em;
+	margin: 0 1em;
+	border-radius: 2em;
+	color: black;
 }
 
 .header2__right__currency:hover {
-    background-color: #A0A0A0;
-    cursor: pointer;
+	background-color: #a0a0a0;
+	cursor: pointer;
 }
 
-
-
 .header2__right a {
-    color: black;
-    margin-top: 1rem;
-    border-radius: 2em;
-    font-size: 1em;
-    font-weight: 600;
-    text-decoration: none;
+	color: black;
+	margin-top: 1rem;
+	border-radius: 2em;
+	font-size: 1em;
+	font-weight: 600;
+	text-decoration: none;
 }
 
 .header2__right a:hover {
-    text-decoration: underline;
-    color: black;
+	text-decoration: underline;
+	color: black;
 }
 
 .header2__right ul {
-    background-color: white;
-    text-align: left;
-    margin-top: 1em;
-    list-style: none;
-    /* padding: 1em; */
-    /* margin: 1em 4em 0 0; */
-    padding: 0 4em 3em 1em;
-    position: absolute;
-    border-radius: 1em;
-    right: 1em;
-    z-index: 3;
-    border: 1px solid rgb(221, 221, 221);
-    border-radius: 12px;
-    /* padding: 24px; */
-    box-shadow: rgba(0, 0, 0, 0.12) 0px 6px 16px;
+	background-color: white;
+	text-align: left;
+	margin-top: 1em;
+	list-style: none;
+	/* padding: 1em; */
+	/* margin: 1em 4em 0 0; */
+	padding: 0 1em 1em 1em;
+	position: absolute;
+	border-radius: 1em;
+	right: 1em;
+	z-index: 3;
+	border: 1px solid rgb(221, 221, 221);
+	border-radius: 12px;
+	/* padding: 24px; */
+	box-shadow: rgba(0, 0, 0, 0.12) 0px 6px 16px;
 }
 
 .header2__right li {
-    font-size: 14px;
-    line-height: 18px;
-
+	font-size: 14px;
+	line-height: 18px;
 }
 
-.header2__right>p:hover {
-    background-color: #A0A0A0;
+.header2__right > p:hover {
+	background-color: #a0a0a0;
 
-    cursor: pointer;
+	cursor: pointer;
 }
-
 
 .header2__right__icons {
-    margin-right: 2em;
-
+	margin-right: 2em;
 }
 
 .header2__right__icons hr {
-    border-top: 0.05em solid lightgray;
-    color: lightgray;
+	border-top: 0.05em solid lightgray;
+	color: lightgray;
 }
 
-.header2__right__icons hr {}
+.header2__right__icons hr {
+}
 
 .datePicker {
-    position: absolute;
-    z-index: 3;
-    margin-left: 20em;
-    margin-top: 37em;
+	position: absolute;
+	z-index: 3;
+	margin-left: 20em;
+	margin-top: 37em;
 }
 
+@media screen and (max-width: 900px) {
+	.header2__right .header_host_text {
+		font-size: 15px;
+	}
+	.header2__icon,
+	.header2__right {
+		display: none;
+	}
 
-@media screen and (max-width:900px) {
- .header2__right .header_host_text{
-     font-size: 15px;
-    
-}
-    .header2__icon,
-    .header2__right {
-        display: none;
-    }
+	.header2__center {
+		margin: 1em auto;
+		/* max-width: none; */
+		justify-content: space-between;
+	}
 
-    .header2__center {
-        margin: 1em auto;
-        /* max-width: none; */
-        justify-content: space-between;
-    }
+	.header2__center__search > input {
+		width: 15vw;
+	}
 
-    .header2__center__search>input {
+	.datePicker {
+		position: absolute;
 
-        width: 15vw;
-
-    }
-
-    .datePicker {
-
-        position: absolute;
-
-        /* margin-top: 58rem; */
-        right: 6em;
-
-
-
-    }
+		/* margin-top: 58rem; */
+		right: 6em;
+	}
 }

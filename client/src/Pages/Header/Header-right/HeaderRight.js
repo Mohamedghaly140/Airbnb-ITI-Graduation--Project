@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useContext } from 'react';
 import LanguageIcon from '@material-ui/icons/Language';
 import DehazeIcon from '@material-ui/icons/Dehaze';
 import { Link } from 'react-router-dom';
@@ -7,10 +7,15 @@ import SignUpModale from '../../../Components/signup/SignUpModale';
 import Login from '../../../Components/Login/Login';
 // import { Dropdown } from "reactstrap";
 
+import AuthContext from '../../../Context/Auth/authContext';
+
 function HeaderRight() {
 	const [dropdownOpen, setDropdownOpen] = useState(false);
 	const [modalShow, setModalShow] = useState(false);
 	const [modalShow_2, setModalShow_2] = useState(false);
+
+	const authContext = useContext(AuthContext);
+	const { logout, isAuth } = authContext;
 
 	//signup popup
 	const [show, setShow] = useState(false);
@@ -35,12 +40,20 @@ function HeaderRight() {
 						<AccountCircleIcon />
 					</div>
 					{dropdownOpen && (
-						<ul>
-							<a variant="primary" onClick={() => setModalShow_2(true)}>
+						<ul className="links">
+							<a
+								className="py-1"
+								variant="primary"
+								onClick={() => setModalShow_2(true)}
+							>
 								<li role="button">Login</li>
 							</a>
 							<Login show={modalShow_2} onHide={() => setModalShow_2(false)} />
-							<a variant="primary" onClick={() => setModalShow(true)}>
+							<a
+								className="py-1"
+								variant="primary"
+								onClick={() => setModalShow(true)}
+							>
 								<li>Signup</li>
 							</a>
 							<SignUpModale
@@ -48,12 +61,12 @@ function HeaderRight() {
 								show={modalShow}
 								onHide={() => setModalShow(false)}
 							/>
-							<Link to="/edit_profile/edit">
+							<Link className="py-1" to="/edit_profile/edit">
 								<li>Sitings</li>
 							</Link>
-							<a href="/">
+							<a className="py-1" onClick={logout}>
 								{' '}
-								<li>Help</li>
+								<li>Log out</li>
 							</a>
 						</ul>
 					)}

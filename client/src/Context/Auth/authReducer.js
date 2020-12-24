@@ -49,6 +49,7 @@ export default (state, action) => {
 			};
 		case LOGOUT:
 			localStorage.removeItem('token');
+			localStorage.removeItem('userId');
 			return {
 				...state,
 				token: null,
