@@ -15,31 +15,18 @@ import AuthContext from '../../Context/Auth/authContext';
 
 function SignUpModale(props) {
 	const authContext = useContext(AuthContext);
-	const { signUp, isAuth } = authContext;
+	const { signUp, isAuth, loading } = authContext;
 
 	const { register, handleSubmit, errors } = useForm();
 	const [signUpInfo, setSignUpInfo] = useState({});
 	const history = useHistory();
 
-	const postData = async dataForm => {
-		// const data = await api by post with dataForm
-		// console.log('dataForm', dataForm);
-		signUp(dataForm);
-	};
-
 	const onSubmitHandler = dataForm => {
-		// setSignUpInfo(dataForm)
-		postData(dataForm);
-		// signUp(JSON.stringify(dataForm));
 		console.log(dataForm);
-		// if (history.location.pathname === '/become_host') {
-		// 	//send the  form value data to api as  a Host user //dont forget to send a flag
-		// 	signUp(dataForm);
-		// 	return history.push('/host_form');
-		// } else {
-		// 	//send data to api as  a reguler user
-		// 	// return window.location.reload();
-		// }
+		signUp(dataForm);
+		setTimeout(() => {
+			history.push('/host_form');
+		}, 2000);
 	};
 
 	return (

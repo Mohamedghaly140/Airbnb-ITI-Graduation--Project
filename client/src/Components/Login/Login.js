@@ -1,4 +1,5 @@
 import React, { useState, useContext } from 'react';
+import { useHistory } from 'react-router-dom';
 import { Modal } from 'react-bootstrap';
 import '../Login/login.css';
 
@@ -18,8 +19,11 @@ const Login = props => {
 		});
 	};
 
+	const history = useHistory();
+
 	const handleSubmit = () => {
 		login(user);
+		history.push('/');
 		console.log(user);
 	};
 

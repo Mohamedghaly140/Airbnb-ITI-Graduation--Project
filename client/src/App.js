@@ -77,9 +77,9 @@ function App() {
 					<Route path="/AddonThree" component={AddonThree} />
 					<Route path="/AddonFour" component={AddonFour} />
 					<Route path="/AddonFive" component={AddonFive} />
-					{isAuth && (
-						<Route component={() => <Sitings />} path="/edit_profile" />
-					)}
+					{/* {isAuth && ( */}
+					<Route component={() => <Sitings />} path="/edit_profile" />
+					{/* )} */}
 				</Suspense>
 			</Router>
 		</div>

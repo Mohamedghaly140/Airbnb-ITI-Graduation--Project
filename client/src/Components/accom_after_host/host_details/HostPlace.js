@@ -14,7 +14,7 @@ function HostPlace({ register }) {
 			>
 				<option aria-label="None" value="" />
 				<option value="Entire place">Entire place</option>
-				<option value="Privite room">Privite room</option>
+				<option value="Private room">Private room</option>
 				<option value="Shared room">Shared room</option>
 			</Select>
 		</>

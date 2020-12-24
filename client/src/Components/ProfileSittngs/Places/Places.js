@@ -19,7 +19,7 @@ const Places = ({ userId }) => {
 			.get(`http://localhost:5000/api/places/user/${userId}`, {
 				headers: {
 					'Content-Type': 'application/json',
-					'Authorization': `Bearer ${token}`,
+					Authorization: `Bearer ${token}`,
 				},
 			})
 			.then(res => {
@@ -33,7 +33,7 @@ const Places = ({ userId }) => {
 				setLoading(false);
 				setError(true);
 			});
-	}, [places]);
+	}, []);
 
 	const deletePlaceHandler = placeId => {
 		setLoading(true);
@@ -46,6 +46,7 @@ const Places = ({ userId }) => {
 			})
 			.then(res => {
 				console.log(res.data);
+				setPlaces(places.filter(p => p._id !== placeId));
 				setLoading(false);
 			})
 			.catch(err => {

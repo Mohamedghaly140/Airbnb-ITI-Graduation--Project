@@ -24,7 +24,7 @@ function Host({ navbar }, props) {
 	];
 
 	const getStardedHandler = () => {
-		console.log(token);
+		// console.log(token);
 		if (token) {
 			history.replace('/host_form');
 		} else {

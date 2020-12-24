@@ -17,7 +17,7 @@ const AuthState = props => {
 		userId: localStorage.getItem('userId'),
 		isAuth: null,
 		isHost: false,
-		loading: true,
+		loading: false,
 		error: null,
 	};
 
