@@ -2,6 +2,9 @@
   width: 30rem;
   margin: 58px 93.5px 100px 100px;
 }
+.acco-details {
+  padding-top: 3rem;
+}
 .host-place,
 .host-guest {
   width: 50%;
@@ -44,6 +47,12 @@
   border-radius: 8px;
   outline-style: none;
   border: 2px solid rgb(102, 102, 102);
+}
+.flower-img {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 /*********** MediaQuary **********/
 @media only screen and (max-width: 991px) {
