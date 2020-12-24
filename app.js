@@ -7,7 +7,7 @@ const dotenv = require('dotenv');
 const colors = require('colors');
 const connectDB = require('./db/db');
 const HttpError = require('./models/HttpError');
-// const cors = require('cors');
+const cors = require('cors');
 
 // Load env vars
 dotenv.config({ path: './config/config.env' });
@@ -28,7 +28,7 @@ if (process.env.NODE_ENV === 'development') {
 	app.use(morgan('dev'));
 }
 
-// app.use(cors());
+app.use(cors());
 
 // import routes files
 const placesRoutes = require('./routes/placesRoutes');

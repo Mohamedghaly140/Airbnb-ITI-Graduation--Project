@@ -125,7 +125,7 @@ exports.createPlace = async (req, res, next) => {
 		numberOfRooms,
 		numberOfbeds,
 		numberOfGuests,
-		// image: req.file.path,
+		image: req.file.path,
 		creator,
 	});
 

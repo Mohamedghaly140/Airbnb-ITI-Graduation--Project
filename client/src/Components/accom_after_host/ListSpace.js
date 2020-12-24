@@ -22,37 +22,47 @@ function ListSpace() {
 	const { register, handleSubmit } = useForm();
 	const history = useHistory();
 	const [img, setImg] = useState();
-	// const image = img => {
-	// 	setImg(img.name);
-	// };
+	const image = img => {
+		setImg(img);
+	};
 	const counter = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15];
 
 	const postData = async dataForm => {
-		// const data = await api by post with dataForm
-		// console.log('dataForm', dataForm);
+		const formData = new FormData();
+		formData.append('title', dataForm.title);
+		formData.append('description', dataForm.description);
+		formData.append('numberOfGuests', dataForm.numberOfGuests);
+		formData.append('numberOfRooms', dataForm.numberOfRooms);
+		formData.append('numberOfbeds', dataForm.numberOfbeds);
+		formData.append('placeType', dataForm.placeType);
+		formData.append('price', dataForm.price);
+		formData.append('address', dataForm.address);
+		formData.append('image', dataForm.image);
+		formData.append('creator', userId);
 
-		const sendData = {
-			creator: userId,
-		};
-
-		console.log(sendData);
+		// console.log(formData);
 
 		try {
 			const res = await axios.post(
 				'http://localhost:5000/api/places',
-				sendData
+				formData,
+				{
+					header: {
+						'Content-Type': 'application/json',
+					},
+				}
 			);
 
 			console.log(res);
+			history.push('/');
 		} catch (err) {
 			console.log(err.message);
 		}
 	};
 	//*****print data in console*******
 	const onSubmitHandler = data => {
-		// data.image = img;
+		data.image = img;
 		postData(data);
-		// history.push('/');
 	};
 	return (
 		<div className="container-fluid">
@@ -138,9 +148,9 @@ function ListSpace() {
 									ref={register({ required: true })}
 								/>
 								{/* <button className="btn btn-primary ml-1">
-                  Upload You Place Image
-                </button> */}
-								{/* <Upload image={image} /> */}
+									Upload You Place Image
+								</button> */}
+								<Upload image={image} />
 							</div>
 
 							{/* Continue btn  */}

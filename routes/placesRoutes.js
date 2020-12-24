@@ -24,7 +24,7 @@ router.get('/user/:uid', getPlacesByUserId);
 router.post(
 	'/',
 	// auth,
-	// fileUpload.single('image'),
+	fileUpload.single('image'),
 	[
 		body('title', 'Title is required').not().isEmpty(),
 		body('description', 'Please enter description min length is 5').isLength({
