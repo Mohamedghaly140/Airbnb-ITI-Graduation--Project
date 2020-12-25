@@ -14,7 +14,7 @@ import Password from './edit/Password';
 import ConfirmPayment from '../confirmPayment/ConfirmPayment';
 import Places from './Places/Places';
 
-import AuthContext from '../../Context/Auth/authContext';
+import { AuthContext } from '../../Context/AuthContext';
 
 let date = new Moment('1993-08-03', 'YYYY-MM-DD').props;
 
@@ -39,15 +39,7 @@ function EditApp() {
 			.then(res => {
 				console.log(res.data.user);
 				const user = res.data.user;
-				const {
-					firstName,
-					lastName,
-					email,
-					phone,
-					birthDay,
-					gender,
-					places,
-				} = user;
+				const { firstName, lastName, email, phone, birthDay, gender } = user;
 				firstnameSet(firstName);
 				lastnameSet(lastName);
 				setEmail(email);
@@ -103,7 +95,9 @@ function EditApp() {
 				<Route path={`${path}/edit/login/password`} component={Password} />
 				<Route path={`${path}/ConfirmPayment`} component={ConfirmPayment} />
 				<div className="container">
-					<div className="pb-5 pt-2">{!isLoading && <Places userId={userId} />}</div>
+					<div className="pb-5 pt-2">
+						{!isLoading && <Places userId={userId} />}
+					</div>
 				</div>
 			</Router>
 		</>

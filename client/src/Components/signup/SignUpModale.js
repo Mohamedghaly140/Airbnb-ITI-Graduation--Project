@@ -1,7 +1,8 @@
 import React, { useState, useContext } from 'react';
+import { Spinner } from 'react-bootstrap';
 import axios from 'axios';
 import { useForm } from 'react-hook-form';
-import { useHistory } from 'react-router-dom';
+import { useHistory, useRouteMatch } from 'react-router-dom';
 
 import Footer from '../../Pages/Footer/Footer';
 import AgreeAndContinue from './AgreeAndContinue';
@@ -11,22 +12,54 @@ import LastName from './LastName';
 import PasswordInput from './PasswordInput';
 import './Signup.css';
 import { Modal } from 'react-bootstrap';
-import AuthContext from '../../Context/Auth/authContext';
+import { AuthContext } from '../../Context/AuthContext';
 
 function SignUpModale(props) {
 	const authContext = useContext(AuthContext);
-	const { signUp, isAuth, loading } = authContext;
+	const { login } = authContext;
+
+	const [loading, setLoading] = useState(false);
+	const [error, setError] = useState(null);
 
 	const { register, handleSubmit, errors } = useForm();
-	const [signUpInfo, setSignUpInfo] = useState({});
 	const history = useHistory();
+	const route = useRouteMatch();
 
 	const onSubmitHandler = dataForm => {
-		console.log(dataForm);
-		signUp(dataForm);
-		setTimeout(() => {
-			history.push('/host_form');
-		}, 2000);
+		const config = {
+			header: {
+				'Content-Type': 'application/json',
+			},
+		};
+
+		setLoading(true);
+
+		axios
+			.post('http://localhost:5000/api/users/signup', dataForm, config)
+			.then(res => {
+				// if (res.status !== 201) {
+				// 	 console.log(res.data.message);
+				// 	setError(res.data.message);
+				// }
+
+				console.log(res);
+				const user = res.data;
+				const { token, userId, isHost, isAdmin } = user;
+
+				if (route.path === '/become_host') {
+					login(userId, token);
+					history.push('/host_form');
+				} else {
+					login(userId, token);
+				}
+
+				setLoading(false);
+				setError(null);
+			})
+			.catch(err => {
+				setError(err.message);
+				setLoading(false);
+			});
 	};
 
 	return (
@@ -83,7 +116,15 @@ function SignUpModale(props) {
 							<div className="input-container">
 								<PasswordInput errors={errors} register={register} />
 							</div>
-							<AgreeAndContinue />
+							{loading ? (
+								<React.Fragment>
+									<div className="text-center py-2">
+										<Spinner animation="border" variant="danger" />
+									</div>
+								</React.Fragment>
+							) : (
+								<AgreeAndContinue />
+							)}
 						</form>
 					</div>
 				</Modal.Body>

@@ -8,7 +8,7 @@ import CardFour from '../hostCards/CardFour';
 import CardFive from '../hostCards/CardFive';
 import SignUpModel from '../../signup/SignUpModale';
 
-import AuthContext from '../../../Context/Auth/authContext';
+import { AuthContext } from '../../../Context/AuthContext';
 
 function Host({ navbar }, props) {
 	const authContext = useContext(AuthContext);

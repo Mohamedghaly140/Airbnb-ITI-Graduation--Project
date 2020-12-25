@@ -175,10 +175,7 @@ exports.updatePlaceById = async (req, res, next) => {
 	let updatedPlace;
 
 	try {
-		updatedPlace = await Place.findByIdAndUpdate(placeId, req.body, {
-			new: true,
-			runValidators: true,
-		});
+		updatedPlace = await Place.findById(placeId);
 
 		if (!updatedPlace) {
 			return next(
@@ -188,6 +185,26 @@ exports.updatePlaceById = async (req, res, next) => {
 				)
 			);
 		}
+	} catch (err) {
+		return next(
+			new HttpError('Someting went wrong, could not update place', 500)
+		);
+	}
+
+	if (updatedPlace.creator.toString() !== req.userData.userId) {
+		return next(
+			new HttpError(
+				'You are not allowed to update this place No valid token, authorization is denied',
+				403
+			)
+		);
+	}
+
+	updatedPlace.title = req.body.title;
+	updatedPlace.description = req.body.description;
+
+	try {
+		updatedPlace.save();
 	} catch (err) {
 		return next(
 			new HttpError('Someting went wrong, could not update place', 500)
@@ -221,6 +238,15 @@ exports.deletePlaceById = async (req, res, next) => {
 	} catch (err) {
 		return next(
 			new HttpError('Someting went wrong, could not delete place', 500)
+		);
+	}
+
+	if (place.creator.id !== req.userData.userId) {
+		return next(
+			new HttpError(
+				'You are not allowed to delete this place No valid token, authorization is denied',
+				403
+			)
 		);
 	}
 

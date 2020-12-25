@@ -7,7 +7,7 @@ import SignUpModale from '../../../Components/signup/SignUpModale';
 import Login from '../../../Components/Login/Login';
 // import { Dropdown } from "reactstrap";
 
-import AuthContext from '../../../Context/Auth/authContext';
+import { AuthContext } from '../../../Context/AuthContext';
 
 function HeaderRight() {
 	const [dropdownOpen, setDropdownOpen] = useState(false);
@@ -15,7 +15,7 @@ function HeaderRight() {
 	const [modalShow_2, setModalShow_2] = useState(false);
 
 	const authContext = useContext(AuthContext);
-	const { logout, isAuth } = authContext;
+	const { logout } = authContext;
 
 	//signup popup
 	const [show, setShow] = useState(false);

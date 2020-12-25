@@ -1,4 +1,4 @@
-import { useState, useContext, lazy, Suspense } from 'react';
+import { useState, useCallback, lazy, Suspense, useEffect } from 'react';
 import './App.css';
 import Home from './Pages/Home';
 import AfterSearch from './Components/AfterSearch/AfterSearch';
@@ -20,19 +20,61 @@ import AddonTwo from './Components/addons/AddonTwo';
 import AddonThree from './Components/addons/AddonThree';
 import AddonFour from './Components/addons/AddonFour';
 import AddonFive from './Components/addons/AddonFive';
-import AuthContext from './Context/Auth/authContext';
+import { AuthContext } from './Context/AuthContext';
 
-import setAuthToken from './Utils/setAuthToken';
-import PrivateRoute from './Components/Routing/PrivateRoute';
 const Sitings = lazy(() => import('./Components/ProfileSittngs/EditApp'));
 
-if (localStorage.token) {
-	setAuthToken(localStorage.token);
-}
+let logoutTimer;
 
 function App() {
-	const authContext = useContext(AuthContext);
-	const { isAuth } = authContext;
+	const [token, setToken] = useState(false);
+	const [userId, setUserId] = useState(null);
+	const [tokenExpirationDate, setTokenExpirationDate] = useState(null);
+
+	const login = useCallback((uid, token, expirationDate) => {
+		setToken(token);
+		setUserId(uid);
+		const tokenExpirationDate =
+			expirationDate || new Date(new Date().getTime() + 1000 * 60 * 60);
+		setTokenExpirationDate(tokenExpirationDate);
+		localStorage.setItem(
+			'userData',
+			JSON.stringify({
+				userId: uid,
+				token: token,
+				expiration: tokenExpirationDate.toISOString(),
+			})
+		);
+	}, []);
+
+	const logout = useCallback(() => {
+		setToken(null);
+		setUserId(null);
+		setTokenExpirationDate(null);
+		localStorage.removeItem('userData');
+	}, []);
+
+	useEffect(() => {
+		if (token && tokenExpirationDate) {
+			const remainingTime =
+				tokenExpirationDate.getTime() - new Date().getTime();
+			logoutTimer = setTimeout(logout, remainingTime);
+		} else {
+			clearTimeout(logoutTimer);
+		}
+	}, [token, tokenExpirationDate, logout]);
+
+	useEffect(() => {
+		const storedData = JSON.parse(localStorage.getItem('userData'));
+		if (
+			storedData &&
+			storedData.token &&
+			new Date(storedData.expiration) > new Date()
+		) {
+			const { userId, token, expiration } = storedData;
+			login(userId, token, new Date(expiration));
+		}
+	}, [login]);
 
 	const [search, setSearch] = useState({});
 	const onSearch = (location, guests, start, end) => {
@@ -43,10 +85,17 @@ function App() {
 			end,
 		});
 	};
-	// let { id } = useParams();
 
 	return (
-		<div>
+		<AuthContext.Provider
+			value={{
+				isLoggedIn: !!token,
+				token: token,
+				userId: userId,
+				login: login,
+				logout: logout,
+			}}
+		>
 			<Router>
 				<Suspense fallback={<SuspenseFallback />}>
 					<Route
@@ -59,15 +108,11 @@ function App() {
 						path="/search_results"
 						exact
 					/>
-					{/* {isAuth ? ( */}
 					<Route
 						render={props => <Accommodation {...props} />}
 						path={`/accommodation/:id`}
 						exact
 					/>
-					{/* ) : (
-						<div>please sign up</div>
-					)} */}
 					<Route component={() => <HostPage />} path="/become_host" exact />
 					<Route component={() => <SignUpModale />} path="/signup" exact />
 					<Route component={() => <Accom_host />} path="/collect_data" exact />
@@ -77,12 +122,10 @@ function App() {
 					<Route path="/AddonThree" component={AddonThree} />
 					<Route path="/AddonFour" component={AddonFour} />
 					<Route path="/AddonFive" component={AddonFive} />
-					{/* {isAuth && ( */}
 					<Route component={() => <Sitings />} path="/edit_profile" />
-					{/* )} */}
 				</Suspense>
 			</Router>
-		</div>
+		</AuthContext.Provider>
 	);
 }
 

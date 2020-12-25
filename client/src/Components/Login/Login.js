@@ -1,11 +1,16 @@
 import React, { useState, useContext } from 'react';
+import { Spinner } from 'react-bootstrap';
+import axios from 'axios';
 import { useHistory } from 'react-router-dom';
 import { Modal } from 'react-bootstrap';
 import '../Login/login.css';
 
-import AuthContext from '../../Context/Auth/authContext';
+import { AuthContext } from '../../Context/AuthContext';
 
 const Login = props => {
+	const [loading, setLoading] = useState(false);
+	const [error, setError] = useState(null);
+
 	const authContext = useContext(AuthContext);
 	const { login } = authContext;
 
@@ -22,10 +27,34 @@ const Login = props => {
 	const history = useHistory();
 
 	const handleSubmit = () => {
-		login(user);
-		history.push('/');
-		console.log(user);
+		const config = {
+			header: {
+				'Content-Type': 'application/json',
+			},
+		};
+
+		setLoading(true);
+
+		axios
+			.post('http://localhost:5000/api/users/login', user, config)
+			.then(res => {
+				console.log(res);
+				const user = res.data;
+				const { token, userId, isHost, isAdmin } = user;
+
+				login(userId, token);
+
+				setLoading(false);
+				history.push('/');
+				setError(null);
+			})
+			.catch(err => {
+				setError(err.message);
+				setLoading(false);
+			});
 	};
+
+	const onSubmitHandler = dataForm => {};
 
 	return (
 		<div className="Login-card ">
@@ -68,13 +97,22 @@ const Login = props => {
 						We’ll call or text you to confirm your number. Standard message and
 						data rates apply.
 					</p>
-					<input
-						className="continue agree-btn continue-btn"
-						type="submit"
-						value="Continue"
-						onClick={handleSubmit}
-					/>
-
+					{loading ? (
+						<React.Fragment>
+							<div className="text-center py-2">
+								<Spinner animation="border" variant="danger" />
+							</div>
+						</React.Fragment>
+					) : (
+						<React.Fragment>
+							<input
+								className="continue agree-btn continue-btn"
+								type="submit"
+								value="Continue"
+								onClick={handleSubmit}
+							/>
+						</React.Fragment>
+					)}
 					<div>
 						<div
 							className="row"
