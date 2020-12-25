@@ -108,9 +108,9 @@ let CardList = props => {
 					</div>
 				</div>
 			</div>
-			<div className="user__places container">
-				<h3> Your Places</h3>
-			<div className="container mt-5">
+			<div className="user__places container mt-5">
+				<h3 className="ml-3 pt-5"> Your Places</h3>
+			<div className="palces container mt-5">
 				<div className="pb-5 pt-2">
 					{!props.isLoading && <Places userId={userId} />}
 				</div>

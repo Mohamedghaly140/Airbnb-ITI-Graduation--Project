@@ -10,28 +10,28 @@ const Footer = () => {
         <div className="footer__links__about">
           <h4>ABOUT</h4>
           <ul>
-            <Link to="/AddonOne">
+            <Link to="/about">
               <li>How Airbnb works</li>
             </Link>
-            <Link to="/AddonTwo">
+            <Link to="/become_host">
               <li>News Room</li>
             </Link>
-            <Link to="/AddonThree">
+            <Link to="/about">
               <li>Airbnb Plus</li>
             </Link>
-            <Link to="/AddonFour">
+            <Link to="/associates">
               <li>Airbnb Luxe</li>
             </Link>
-            <Link to="/AddonFive">
+            <Link to="/terms">
               <li>HotelTonight</li>
             </Link>
-            <Link to="/AddonTwo">
+            <Link to="/about">
               <li>Airbnb for Work</li>
             </Link>
-            <Link to="/AddonThree">
+            <Link to="/safty">
               <li>Olympics</li>
             </Link>
-            <Link to="/AddonOne">
+            <Link to="/terms">
               <li>Careers</li>
             </Link>
           </ul>
@@ -39,25 +39,25 @@ const Footer = () => {
         <div className="footer__links__community">
           <h4>COMMUNITY</h4>
           <ul>
-            <Link to="/AddonOne">
+            <Link to="/fighting_racism">
               <li>Diversity&Belonging</li>
             </Link>
-            <Link to="/AddonTwo">
+            <Link to="/about">
               <li>Against Discrimination</li>
             </Link>
-            <Link to="/AddonThree">
+            <Link to="/terms">
               <li>Accessibility</li>
             </Link>
-            <Link to="/AddonFour">
+            <Link to="/associates">
               <li>Airbnb Associates</li>
             </Link>
-            <Link to="/AddonFive">
+            <Link to="/safty">
               <li>Frontline Stays</li>
             </Link>
-            <Link to="/AddonOne">
+            <Link to="/fighting_racism">
               <li>Invite Friends</li>
             </Link>
-            <Link to="/AddonTwo">
+            <Link to="/terms">
               <li>Gift Cards</li>
             </Link>
           </ul>
@@ -65,25 +65,25 @@ const Footer = () => {
         <div className="footer__links__host">
           <h4>HOST</h4>
           <ul>
-            <Link to="/AddonThree">
+            <Link to="/become_host">
               <li>Host your home</li>
             </Link>
-            <Link to="/AddonFour">
+            <Link to="/associates">
               <li>Host an online Exprience</li>
             </Link>
-            <Link to="/AddonFive">
+            <Link to="/terms">
               <li>Host an Exprience</li>
             </Link>
-            <Link to="/AddonOne">
+            <Link to="/fighting_racism">
               <li>Responsible Hosting</li>
             </Link>
-            <Link to="/AddonTwo">
+            <Link to="/about">
               <li>Open Homes</li>
             </Link>
-            <Link to="/AddonThree">
+            <Link to="/terms">
               <li>Resource Center</li>
             </Link>
-            <Link to="/AddonFour">
+            <Link to="/associates">
               <li>Community Center</li>
             </Link>
           </ul>
@@ -91,19 +91,19 @@ const Footer = () => {
         <div className="footer__links__support">
           <h4>SUPPORT</h4>
           <ul>
-            <Link to="/AddonFive">
+            <Link to="/safty">
               <li>Our COVID-19 Response</li>
             </Link>
-            <Link to="/AddonOne">
+            <Link to="/about">
               <li>Help Center</li>
             </Link>
-            <Link to="/AddonTwo">
+            <Link to="/about">
               <li>Cancellation Option</li>
             </Link>
-            <Link to="/AddonThree">
+            <Link to="/terms">
               <li>Neighbourhood Support</li>
             </Link>
-            <Link to="/AddonFour">
+            <Link to="/terms">
               <li>Trust & Safety</li>
             </Link>
           </ul>
@@ -112,13 +112,13 @@ const Footer = () => {
       <div className="footer__end">
         <div className="footer__end__links">
           <ul>
-            <Link to="/AddonFive">
+            <Link to="/terms">
               <li>Privacy</li>
             </Link>
-            <Link to="/AddonOne">
+            <Link to="/fighting_racism">
               <li>Terms</li>
             </Link>
-            <Link to="/AddonTwo">
+            <Link to="/about">
               <li>Sitemap</li>
             </Link>
           </ul>

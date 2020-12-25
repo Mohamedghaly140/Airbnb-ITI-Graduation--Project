@@ -19,47 +19,31 @@ const PlaceItem = props => {
 	} = props;
 
 	return (
-		<div className="container card hostsCard shadow mb-3">
+		<div className="container hostsCard shadow mb-3">
 			<div className="row">
-				<div className="col-4">
+				<div className="col-4 d-flex justify-content-center align-items-center">
 					<img
 						className="img-thumbnail"
 						src={`http://localhost:5000/${imageUrl}`}
 						alt={title}
 					/>
 				</div>
-				<div className="col-8">
-					<div className="row">
-						<div className="col-6">
-							<h3> Name: {title}</h3>
-							<p>
-								<strong>Description:</strong> {description}
-							</p>
-							<p>
-								<strong>Address:</strong> {address}
-							</p>
-							<p>
-								<strong>price:</strong> {price} EGP{' '}
-							</p>
+				<div className="desc col-7">
+					<div className="desc__header">
+						<p>{placeType} in Dahab</p>
+						<h5>{title}</h5>
+					</div>
+					<hr style={{ width: '8%', marginLeft: 0 }} />
+					<div className="desc__info">
+						<div className="row ml-1">
+							<p>{numOfGuests} guests.</p>
+							<p>{numOfRooms} bedroom.</p>
+							<p>{numOfBeds} bed.</p>
 						</div>
-						<div className="col-6">
-							<p>
-								<strong>Rooms: </strong>
-								{numOfRooms}
-							</p>
-							<p>
-								{' '}
-								<strong>Guests: </strong>
-								{numOfGuests}
-							</p>
-							<p>
-								<strong>Beds: </strong>
-								{numOfBeds}
-							</p>
-							<p>
-								<strong>Type:</strong>
-								{placeType}
-							</p>
+						<div className="ml-1 mt-0">
+							<div>Description: {description}</div>
+							<p>address: {address}</p>
+							<p className="text-muted">{price} EGP/day</p>
 						</div>
 					</div>
 				</div>

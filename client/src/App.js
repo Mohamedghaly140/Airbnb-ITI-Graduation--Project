@@ -113,11 +113,11 @@ function App() {
 					<Route component={() => <SignUpModale />} path="/signup" exact />
 					<Route component={() => <Accom_host />} path="/collect_data" exact />
 					<Route component={() => <ListSpace />} path="/host_form" />
-					<Route path="/AddonOne" component={AddonOne} />
-					<Route path="/AddonTwo" component={AddonTwo} />
-					<Route path="/AddonThree" component={AddonThree} />
-					<Route path="/AddonFour" component={AddonFour} />
-					<Route path="/AddonFive" component={AddonFive} />
+					<Route path="/terms" component={AddonOne} />
+					<Route path="/about" component={AddonTwo} />
+					<Route path="/safty" component={AddonThree} />
+					<Route path="/associates" component={AddonFour} />
+					<Route path="/fighting_racism" component={AddonFive} />
 					{token && (
 						<Route
 							render={() => (

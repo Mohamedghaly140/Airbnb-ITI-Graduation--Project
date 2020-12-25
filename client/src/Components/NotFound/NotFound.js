@@ -17,32 +17,29 @@ const NotFound = () => {
 							<ul class="list-unstyled">
 								<li>Here are some helpful links instead:</li>
 								<li>
-									<Link href="/" class="link-404">
+									<Link to="/" class="link-404">
 										Home
 									</Link>
 								</li>
 								<li>
-									<Link href="/help" class="link-404">
+									<Link to="/about" class="link-404">
 										Help
 									</Link>
 								</li>
 								<li>
-									<a
-										href="/help/getting-started/how-to-travel"
-										class="link-404"
-									>
+									<Link to="/terms" class="link-404">
 										Traveling on Airbnb
-									</a>
+									</Link>
 								</li>
 								<li>
-									<a href="/info/why_host" class="link-404">
+									<Link to="/become_host" class="link-404">
 										Hosting on Airbnb
-									</a>
+									</Link>
 								</li>
 								<li>
-									<a href="/trust" class="link-404">
+									<Link to="/safty" class="link-404">
 										Trust &amp; Safety
-									</a>
+									</Link>
 								</li>
 							</ul>
 						</div>

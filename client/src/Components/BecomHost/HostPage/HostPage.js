@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import HostHeader from "../HostHeader/HostHeader";
 import Footer from "../../../Pages/Footer/Footer";
 import Castle from "../HostMainComponents/Castle";
@@ -11,7 +11,9 @@ import { withRouter } from "react-router-dom";
 
 function HostPage() {
   const [navbar, setNavbar] = useState(false);
-
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
   return (
     <>
       <HostHeader navbar={navbar} setNavbar={setNavbar} />

@@ -82,9 +82,9 @@ const AddonFive = () => {
                   beginning with research to understand when and where racial
                   discrimination happens on our platform and the effectiveness
                   of policies that fight it.
-                  <a href="#" className="bodyLinks">
+                  <span className="bodyLinks">
                     Learn more
-                  </a>
+                  </span>
                 </p>
               </section>
             </div>
@@ -107,9 +107,9 @@ const AddonFive = () => {
                   for privacy protection so we can make sure your information
                   stays safe. We analyze trends in bulk, and Airbnb won't
                   associate perceived race information with specific accounts.
-                  <a href="#" className="bodyLinks">
+                  <span className="bodyLinks">
                     Learn more
-                  </a>
+                  </span>
                 </p>
               </section>
             </div>
@@ -143,18 +143,18 @@ const AddonFive = () => {
                 <h3 className="paragrafHeader">Non-discrimination Policy</h3>
                 <p className="paragraf">
                   Everyone who uses Airbnb must agree to our
-                  <a href="#" className="bodyLinks">
+                  <span className="bodyLinks">
                     Community Commitment
-                  </a>{" "}
+                  </span>{" "}
                   and
-                  <a href="#" className="bodyLinks">
+                  <span className="bodyLinks">
                     Non-discrimination Policy
-                  </a>
+                  </span>
                   . If you’ve experienced discrimination, we’ll investigate the
                   issue, take action, and if needed,
-                  <a href="#" className="bodyLinks">
+                  <span className="bodyLinks">
                     help you
-                  </a>{" "}
+                  </span>{" "}
                   find another place to stay.
                 </p>
               </section>
@@ -254,13 +254,13 @@ const AddonFive = () => {
               <h4 className="footerHeader">Donate to the movement</h4>
               <p className="paragrafFooter">
                 If you can, consider financially supporting the
-                <a href="#" className="footerLinks">
+                <span className="footerLinks">
                   NAACP
-                </a>{" "}
+                </span>{" "}
                 and the
-                <a href="#" className="footerLinks">
+                <span className="footerLinks">
                   Black Lives Matter Global Network Foundation
-                </a>
+                </span>
                 .
               </p>
             </div>
@@ -268,9 +268,9 @@ const AddonFive = () => {
               <h4 className="footerHeader">Support Color Of Change</h4>
               <p className="paragrafFooter">
                 Visit{" "}
-                <a href="#" className="footerLinks">
+                <span className="footerLinks">
                   ColorOfChange.org
-                </a>{" "}
+                </span>{" "}
                 to join and donate to the movement.
               </p>
             </div>
@@ -283,9 +283,9 @@ const AddonFive = () => {
             <div className="mt-3 col-6">
               <h4 className="footerHeader">And more...</h4>
               <p className="paragrafFooter">
-                <a href="#" className="footerLinks">
+                <span className="footerLinks">
                   Read the antiracism resources
-                </a>{" "}
+                </span>{" "}
                 from our Black employee resource group, Black@Airbnb.
               </p>
             </div>
