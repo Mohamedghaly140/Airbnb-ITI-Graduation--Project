@@ -7,15 +7,24 @@ import SignUpModale from "../../../Components/signup/SignUpModale";
 import Login from "../../../Components/Login/Login";
 // import { Dropdown } from "reactstrap";
 
+<<<<<<< HEAD
+import { AuthContext } from '../../../Context/AuthContext';
+=======
 import AuthContext from "../../../Context/Auth/authContext";
+>>>>>>> 05171a919b3ddc900045b736a2da57ee6bb6bfd3
 
 function HeaderRight() {
   const [dropdownOpen, setDropdownOpen] = useState(false);
   const [modalShow, setModalShow] = useState(false);
   const [modalShow_2, setModalShow_2] = useState(false);
 
+<<<<<<< HEAD
+	const authContext = useContext(AuthContext);
+	const { logout } = authContext;
+=======
   const authContext = useContext(AuthContext);
   const { logout } = authContext;
+>>>>>>> 05171a919b3ddc900045b736a2da57ee6bb6bfd3
 
   const toggle = () => setDropdownOpen(prevState => !prevState);
   return (

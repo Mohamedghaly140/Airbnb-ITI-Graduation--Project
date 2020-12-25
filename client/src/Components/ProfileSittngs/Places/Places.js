@@ -3,7 +3,7 @@ import { Spinner } from 'react-bootstrap';
 import axios from 'axios';
 import PlaceItem from './PlaceItem/PlaceItem';
 
-import AuthContext from '../../../Context/Auth/authContext';
+import { AuthContext } from '../../../Context/AuthContext';
 
 const Places = ({ userId }) => {
 	const authContext = useContext(AuthContext);
