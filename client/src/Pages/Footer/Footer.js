@@ -11,7 +11,6 @@ const Footer = () => {
           <h4>ABOUT</h4>
           <ul>
             <Link to="/AddonOne">
-            
               <li>How Airbnb works</li>
             </Link>
             <Link to="/AddonTwo">

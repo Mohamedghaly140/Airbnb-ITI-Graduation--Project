@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import HostHeader from "../HostHeader/HostHeader";
 import Footer from "../../../Pages/Footer/Footer";
-import HostForm from "../hostForm/HostForm";
 import Castle from "../HostMainComponents/Castle";
 import Explore from "../HostMainComponents/Explore";
 import Host from "../HostMainComponents/Host";
@@ -20,7 +19,6 @@ function HostPage() {
       <Explore />
       <Castle />
       <Safty />
-      <HostForm />
       <Host_help />
       <Footer />
     </>

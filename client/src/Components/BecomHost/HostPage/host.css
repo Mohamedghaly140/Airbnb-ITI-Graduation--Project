@@ -10,7 +10,16 @@
   background: rgb(255, 255, 255);
 }
 .black-logo {
+  display: flex;
+  flex-direction: row;
   height: 5rem;
+}
+.airbnbTitle{
+  margin-top: auto;
+  margin-bottom: auto;
+  font-weight: bold;
+  font-size: 1.2rem;
+  color: #FF5A5F;
 }
 
 /* hostin seciton  */
@@ -200,7 +209,9 @@
 }
 /* help_section  */
 .host-help {
-  margin-top: 8rem;
+  padding-top: 1.5rem;
+   margin-top: 8rem;
+   border-top: solid 2px rgb(226, 226, 226);
 }
 
 /* get_started  */
