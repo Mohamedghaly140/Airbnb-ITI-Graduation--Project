@@ -1,8 +1,12 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import Footer from "../../Pages/Footer/Footer";
 import HostHeader from "../BecomHost/HostHeader/HostHeader";
 
 const AddonFour = () => {
+  //Navigate to the top
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
   const [navbar, setNavbar] = useState(false);
   return (
     <>
