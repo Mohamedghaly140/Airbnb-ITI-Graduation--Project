@@ -1,94 +1,87 @@
 footer {
-    background-color: #F7F7F7;
-    border-top: 1px solid #DDDDDD;
-    margin-top: 41em;
-    /*for the map*/
-    position: relative;
-
-
+  background-color: #f7f7f7;
+  border-top: 1px solid #dddddd;
+  /* margin-top: 41em; */
+  /*for the map*/
+  position: relative;
 }
 
 .footer__links {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
 }
 
 .footer__links ul,
 .footer__end ul {
-    list-style: none;
+  list-style: none;
 }
 
 .footer__links li,
 .footer__end li {
-    font-size: 14px;
-    line-height: 18px;
-    margin-top: 2em;
+  font-size: 14px;
+  line-height: 18px;
+  margin-top: 2em;
 }
 
 .footer__links h4 {
-    font-size: 12px
+  font-size: 12px;
 }
 
 .footer__links a,
 .footer__end a {
-    text-decoration: none;
-    color: black;
+  text-decoration: none;
+  color: black;
 }
 
 .footer__links a:hover,
 .footer__end a:hover {
-    text-decoration: underline;
-    color: black;
+  text-decoration: underline;
+  color: black;
 }
 
 .footer__links__about,
 .footer__links__community,
 .footer__links__host,
 .footer__links__support {
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    align-items: center;
-    margin-top: 3em;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  margin-top: 3em;
 }
 
 .footer__end {
-    display: flex;
-    flex-direction: row;
-    border-top: 1px solid #DDDDDD;
-    align-items: center;
-    justify-content: space-around;
+  display: flex;
+  flex-direction: row;
+  border-top: 1px solid #dddddd;
+  align-items: center;
+  justify-content: space-around;
 }
 
 .footer__end ul {
-    display: inline-flex;
-
+  display: inline-flex;
 }
 
 .footer__end li {
-    margin-left: 1em;
+  margin-left: 1em;
 }
 
 .footer__end__last {
-    display: flex;
-    align-items: center;
+  display: flex;
+  align-items: center;
 }
 
 .footer__end__last__language {
-    display: flex;
-    align-items: center;
-    /* margin-top: 1em; */
-
+  display: flex;
+  align-items: center;
+  /* margin-top: 1em; */
 }
 
-
-@media screen and (max-width : 669px) {
-
-    .footer,
-    .footer__links,
-    .footer__end {
-        flex-direction: column;
-    }
+@media screen and (max-width: 669px) {
+  .footer,
+  .footer__links,
+  .footer__end {
+    flex-direction: column;
+  }
 }

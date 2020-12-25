@@ -1,27 +1,25 @@
-import React, { useState, useEffect ,useCallback } from "react";
+import React, { useState, useEffect, useCallback } from "react";
 import StarOutlinedIcon from "@material-ui/icons/StarOutlined";
 import AttachMoneyOutlinedIcon from "@material-ui/icons/AttachMoneyOutlined";
 import { useHistory } from "react-router-dom";
 import "../SearchResults/SearchResults.css";
 
-const SearchResults = ({ SearchResultsList}) => {
- const history =useHistory()
-
-
+const SearchResults = ({ SearchResultsList }) => {
+  const history = useHistory();
 
   const openTheAccommodationDetails = () => {
     //mPassedId
-    const id = "6" // it should be equal id passed 
-  
+    const id = "6"; // it should be equal id passed
+
     //pass the id to accomendation details screen befora navigate to it
 
     history.push(`/accommodation/${id}`);
   };
 
   return (
-  //map on searchResultsList
-  //we naly onClick beypass el id beta3 el acc
-    <div className="col-lg-6 col-12" onClick={openTheAccommodationDetails}>
+    //map on searchResultsList
+    //we naly onClick beypass el id beta3 el acc
+    <div className="col-md-6 col-12" onClick={openTheAccommodationDetails}>
       <div className="container adv-search mt-5">
         <div>
           <p>300+ stayes</p>
@@ -88,7 +86,8 @@ const SearchResults = ({ SearchResultsList}) => {
             <a
               className="carousel-control-next"
               href="#carouselExampleControls"
-i9vc              role="button"
+              i9vc
+              role="button"
               data-slide="next"
             >
               <span className="carousel-control-next-icon" aria-hidden="true" />
@@ -130,7 +129,6 @@ i9vc              role="button"
         </div>
       </div>
       <hr />
-     
     </div>
   );
 };
