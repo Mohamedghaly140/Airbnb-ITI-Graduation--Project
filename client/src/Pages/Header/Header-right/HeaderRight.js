@@ -15,14 +15,7 @@ function HeaderRight() {
   const [modalShow_2, setModalShow_2] = useState(false);
 
   const authContext = useContext(AuthContext);
-  const { logout, isAuth } = authContext;
-
-  //signup popup
-  const [show, setShow] = useState(false);
-
-  const handleClose = () => setShow(false);
-  const handleShow = () => setShow(true);
-  // model bootstrap
+  const { logout } = authContext;
 
   const toggle = () => setDropdownOpen(prevState => !prevState);
   return (
@@ -41,21 +34,23 @@ function HeaderRight() {
           </div>
           {dropdownOpen && (
             <ul className="links">
-              <a
+              <li
+                role="button"
                 className="py-1"
                 variant="primary"
                 onClick={() => setModalShow_2(true)}
               >
-                <li role="button">Login</li>
-              </a>
+                Login
+              </li>
               <Login show={modalShow_2} onHide={() => setModalShow_2(false)} />
-              <a
+              <li
+                role="button"
                 className="py-1"
                 variant="primary"
                 onClick={() => setModalShow(true)}
               >
-                <li>Signup</li>
-              </a>
+                Signup
+              </li>
               <SignUpModale
                 role="button"
                 show={modalShow}
@@ -64,10 +59,10 @@ function HeaderRight() {
               <Link className="py-1" to="/edit_profile/edit">
                 <li>Sitings</li>
               </Link>
-              <a className="py-1" onClick={logout}>
+              <li className="py-1" onClick={logout} role="button">
                 {" "}
-                <li>Log out</li>
-              </a>
+                Log out
+              </li>
             </ul>
           )}
         </div>

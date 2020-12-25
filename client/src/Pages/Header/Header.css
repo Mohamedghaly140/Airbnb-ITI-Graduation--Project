@@ -12,7 +12,13 @@
   /* max-width: 10vw */
   /* overflow-x: hidden; */
 }
-
+.links li {
+  font-weight: bold;
+}
+.links li:hover {
+  cursor: pointer;
+  text-decoration: underline;
+}
 .header2__icon > img {
   object-fit: contain;
   height: 87px;
