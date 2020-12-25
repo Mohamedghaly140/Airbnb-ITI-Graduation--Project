@@ -32,7 +32,7 @@ const UserSchema = new Schema({
 	},
 	phone: {
 		type: Number,
-		default: 111-222-3333,
+		default: 111222333,
 	},
 	birthDay: {
 		type: String,

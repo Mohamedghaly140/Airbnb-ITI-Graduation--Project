@@ -20,6 +20,10 @@ const PlaceSchema = new Schema({
 		type: String,
 		required: true,
 	},
+	city: {
+		type: String,
+		required: true,
+	},
 	location: {
 		lat: { type: Number, required: true },
 		lng: { type: Number, required: true },

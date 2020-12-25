@@ -28,6 +28,7 @@ function ListSpace() {
 	const counter = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15];
 
 	const postData = async dataForm => {
+		// console.log(dataForm);
 		const formData = new FormData();
 		formData.append('title', dataForm.title);
 		formData.append('description', dataForm.description);
@@ -37,6 +38,7 @@ function ListSpace() {
 		formData.append('placeType', dataForm.placeType);
 		formData.append('price', dataForm.price);
 		formData.append('address', dataForm.address);
+		formData.append('city', dataForm.city);
 		formData.append('image', dataForm.image);
 		formData.append('creator', userId);
 
@@ -47,8 +49,9 @@ function ListSpace() {
 				'http://localhost:5000/api/places',
 				formData,
 				{
-					header: {
+					headers: {
 						'Content-Type': 'application/json',
+						Authorization: `Bearer ${token}`,
 					},
 				}
 			);
@@ -124,6 +127,15 @@ function ListSpace() {
 									name="address"
 									placeholder="Address"
 									id="Adress"
+									ref={register({ required: true })}
+								/>
+							</div>
+							<div className="place-guest">
+								<input
+									type="text"
+									name="city"
+									placeholder="City"
+									id="City"
 									ref={register({ required: true })}
 								/>
 							</div>

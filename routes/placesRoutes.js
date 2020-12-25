@@ -23,7 +23,7 @@ router.get('/user/:uid', auth, getPlacesByUserId);
 
 router.post(
 	'/',
-	// auth,
+	auth,
 	fileUpload.single('image'),
 	[
 		body('title', 'Title is required').not().isEmpty(),
@@ -31,6 +31,7 @@ router.post(
 			min: 5,
 		}),
 		body('address', 'Address is required').not().isEmpty(),
+		body('city', 'City is required').not().isEmpty(),
 		body('placeType', 'placeType is required').not().isEmpty(),
 		body('price', 'price is required').not().isEmpty(),
 		body('numberOfRooms', 'numberOfRooms is required').not().isEmpty(),

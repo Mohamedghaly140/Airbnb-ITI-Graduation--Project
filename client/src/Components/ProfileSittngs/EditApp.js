@@ -12,7 +12,6 @@ import Login from './edit/Login';
 import Payments from './edit/Payments ';
 import Password from './edit/Password';
 import ConfirmPayment from '../confirmPayment/ConfirmPayment';
-import Places from './Places/Places';
 
 import { AuthContext } from '../../Context/AuthContext';
 
@@ -64,6 +63,7 @@ function EditApp() {
 							firstNameState={firstNameState}
 							lastNameState={lastNameState}
 							email={emailtState}
+							isLoading={isLoading}
 						/>
 					)}
 				/>
@@ -94,11 +94,6 @@ function EditApp() {
 				<Route path={`${path}/edit/login`} component={Login} />
 				<Route path={`${path}/edit/login/password`} component={Password} />
 				<Route path={`${path}/ConfirmPayment`} component={ConfirmPayment} />
-				<div className="container">
-					<div className="pb-5 pt-2">
-						{!isLoading && <Places userId={userId} />}
-					</div>
-				</div>
 			</Router>
 		</>
 	);
