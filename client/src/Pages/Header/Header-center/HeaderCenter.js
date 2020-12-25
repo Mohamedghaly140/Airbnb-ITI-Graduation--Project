@@ -3,20 +3,29 @@ import SearchIcon from "@material-ui/icons/Search";
 import { Link, withRouter } from "react-router-dom";
 import { useHistory } from "react-router-dom";
 
-const HeaderCenter = (props) => {
+const HeaderCenter = props => {
   const [showSearch, setShowSearch] = useState(false);
   const [location, setLocation] = useState("");
   const [guests, setGuests] = useState("");
+  const [date, setDate] = useState({ startValue: "", endValue: "" });
   const clickHandler = () => {
     setShowSearch(!showSearch);
     props.show(!showSearch);
     console.log(showSearch);
   };
-  const locationHandler = (e) => {
+  const locationHandler = e => {
     setLocation(e.target.value);
   };
-  const guestsHandler = (e) => {
+  const guestsHandler = e => {
     setGuests(e.target.value);
+  };
+  const dateHandler = e => {
+    const name = e.target.name;
+    setDate({
+      ...date,
+      [name]: e.target.value,
+    });
+    console.log(date);
   };
   const history = useHistory();
 
@@ -24,16 +33,14 @@ const HeaderCenter = (props) => {
     //1-take the search results inputs
     //2-send the inpust Obj api
     //send the location to search results screen to get all the resutls
-    props.onSearch(location , guests )
+    props.onSearch(location, guests);
 
-    
     props.history.push("/search_results");
- 
   };
-  
+
   return (
     <>
-      <div className="header2__center col-xl-6 col-lg-6 col-md-12 col-sm-12 col-12 align-items-center">
+      <div className="header2__center align-items-center">
         <p>Places to stay</p>
         <hr />
 
@@ -51,6 +58,7 @@ const HeaderCenter = (props) => {
             name="check in"
             onClick={clickHandler}
             value={props.startValue}
+            onChange={dateHandler}
           />
           <input
             type="text"
@@ -58,6 +66,7 @@ const HeaderCenter = (props) => {
             name="check out"
             onClick={clickHandler}
             value={props.endValue}
+            onChange={dateHandler}
           />
           <input
             type="text"
@@ -67,7 +76,10 @@ const HeaderCenter = (props) => {
             onChange={guestsHandler}
           />
           {/* <Link to="/search_results"> */}
-            <SearchIcon className="header2__center__search__searchIcon" onClick ={openSearchResults}/>
+          <SearchIcon
+            className="header2__center__search__searchIcon"
+            onClick={openSearchResults}
+          />
           {/* </Link> */}
         </div>
       </div>

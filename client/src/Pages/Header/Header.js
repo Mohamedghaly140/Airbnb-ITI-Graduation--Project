@@ -4,7 +4,7 @@ import HeaderCenter from "../../Pages/Header/Header-center/HeaderCenter";
 import HeaderRight from "../../Pages/Header/Header-right/HeaderRight";
 import DatePicker from "../../Pages/Header/Header-center/DatePicker";
 
-const Header = (props) => {
+const Header = props => {
   const [showSearch, setShowSearch] = useState(false);
   const [start, setStart] = useState("");
   const [end, setEnd] = useState("");
@@ -19,18 +19,18 @@ const Header = (props) => {
   //   });
   // }, [isTop]);
 
-  const showdate = (search) => {
+  const showdate = search => {
     setShowSearch(search);
   };
-  const startDate = (start) => {
+  const startDate = start => {
     setStart(start);
   };
-  const endDate = (end) => {
+  const endDate = end => {
     setEnd(end);
   };
-  const onSearch = (location , guests ) =>{
-   props.onSearch(location , guests , start , end)
-  }
+  const onSearch = (location, guests) => {
+    props.onSearch(location, guests, start, end);
+  };
 
   return (
     <div className="container-fluid">
