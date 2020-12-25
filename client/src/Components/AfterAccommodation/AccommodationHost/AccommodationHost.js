@@ -42,6 +42,7 @@ const AccommodationHost = ({id}) => {
 
   return ( 
     //and here we use acc state 
+    <>
     <div className="accHost container-fluid">
       <div className=" mainHost row">
         <div className="mainHost__AllDetails col-md-7 col-sm-12">
@@ -147,6 +148,7 @@ const AccommodationHost = ({id}) => {
 
       <GoogleMap2 />
     </div>
+    </>
   );
 };
 

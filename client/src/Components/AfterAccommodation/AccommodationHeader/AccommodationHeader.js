@@ -1,8 +1,12 @@
-import React from "react";
+import React,{useState} from "react";
 import "./AccommodationHeader.css";
 import homeImage from "../../../assets/home.jpg";
+import HostHeader from "../../BecomHost/HostHeader/HostHeader"
 function AccommodationHeader() {
+  const [navbar, setNavbar] = useState(false);
   return (
+    <>
+     <HostHeader navbar={navbar} setNavbar={setNavbar}/>
     <div className="accHeader container mt-3">
       <h3>Place</h3>
       <a href="/" className="accHeader__location">
@@ -13,6 +17,7 @@ function AccommodationHeader() {
         src={homeImage}
       />
     </div>
+    </>
   );
 }
 

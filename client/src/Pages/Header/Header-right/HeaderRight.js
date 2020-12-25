@@ -60,9 +60,12 @@ function HeaderRight() {
 								show={modalShow}
 								onHide={() => setModalShow(false)}
 							/>
-							<Link className="py-1" to="/edit_profile/edit">
-								<li>Sitings</li>
-							</Link>
+
+							{token && (
+								<Link className="py-1" to="/edit_profile/edit">
+									<li>Sitings</li>
+								</Link>
+							)}
 							{token && (
 								<li className="py-1" onClick={logout} role="button">
 									{' '}
