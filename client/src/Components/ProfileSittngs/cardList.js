@@ -2,7 +2,7 @@ import React, { useContext } from 'react';
 import { useHistory } from 'react-router-dom'; /* useHistory to regirect to a route*/
 import { Link, useRouteMatch } from 'react-router-dom';
 import Places from './Places/Places';
-
+import './cardlist.css'
 import { AuthContext } from '../../Context/AuthContext';
 
 import Card from './card';
@@ -108,10 +108,13 @@ let CardList = props => {
 					</div>
 				</div>
 			</div>
+			<div className="user__places container">
+				<h3> Your Places</h3>
 			<div className="container mt-5">
 				<div className="pb-5 pt-2">
 					{!props.isLoading && <Places userId={userId} />}
 				</div>
+			</div>
 			</div>
 		</section>
 	);

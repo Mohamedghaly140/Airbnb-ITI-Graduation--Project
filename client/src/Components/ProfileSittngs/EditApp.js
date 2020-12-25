@@ -12,7 +12,7 @@ import Login from './edit/Login';
 import Payments from './edit/Payments ';
 import Password from './edit/Password';
 import ConfirmPayment from '../confirmPayment/ConfirmPayment';
-
+import HostHeader from "../BecomHost/HostHeader/HostHeader"
 import { AuthContext } from '../../Context/AuthContext';
 
 let date = new Moment('1993-08-03', 'YYYY-MM-DD').props;
@@ -20,7 +20,7 @@ let date = new Moment('1993-08-03', 'YYYY-MM-DD').props;
 function EditApp() {
 	const authContext = useContext(AuthContext);
 	const { userId, token } = authContext;
-
+  const [navbar, setNavbar] = useState(false);
 	const [firstNameState, firstnameSet] = useState('Ahmed');
 	const [lastNameState, lastnameSet] = useState('Salah');
 	const [emailStat, setEmail] = useState('salaheltantawy@gmail.com');
@@ -54,6 +54,7 @@ function EditApp() {
 	let { path } = useRouteMatch();
 	return (
 		<>
+		<HostHeader navbar={navbar} setNavbar={setNavbar}/>
 			<Router>
 				<Route
 					path={`${path}/edit`}

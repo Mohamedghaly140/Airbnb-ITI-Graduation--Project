@@ -3,12 +3,7 @@ import './App.css';
 import Home from './Pages/Home';
 import AfterSearch from './Components/AfterSearch/AfterSearch';
 import Accommodation from './Components/AfterAccommodation/Accommodation';
-import {
-	BrowserRouter as Router,
-	Route,
-	Link,
-	useParams,
-} from 'react-router-dom';
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import HostPage from './Components/BecomHost/HostPage/HostPage';
 import SignUp from './Components/signup/SignUp';
 import SignUpModale from './Components/signup/SignUpModale';
@@ -21,6 +16,7 @@ import AddonThree from './Components/addons/AddonThree';
 import AddonFour from './Components/addons/AddonFour';
 import AddonFive from './Components/addons/AddonFive';
 import { AuthContext } from './Context/AuthContext';
+import NotFound from './Components/NotFound/NotFound';
 
 const Sitings = lazy(() => import('./Components/ProfileSittngs/EditApp'));
 
@@ -97,33 +93,40 @@ function App() {
 			}}
 		>
 			<Router>
-				<Suspense fallback={<SuspenseFallback />}>
-					<Route
-						component={() => <Home onSearch={onSearch} />}
-						path="/"
-						exact
-					/>
-					<Route
-						component={() => <AfterSearch search={search} />}
-						path="/search_results"
-						exact
-					/>
-					<Route
-						render={props => <Accommodation {...props} />}
-						path={`/accommodation/:id`}
-						exact
-					/>
-					<Route component={() => <HostPage />} path="/become_host" exact />
-					<Route component={() => <SignUpModale />} path="/signup" exact />
-					<Route component={() => <Accom_host />} path="/collect_data" exact />
-					<Route component={() => <ListSpace />} path="/host_form" />
-					<Route path="/AddonOne" component={AddonOne} />
-					<Route path="/AddonTwo" component={AddonTwo} />
-					<Route path="/AddonThree" component={AddonThree} />
-					<Route path="/AddonFour" component={AddonFour} />
-					<Route path="/AddonFive" component={AddonFive} />
-					<Route component={() => <Sitings />} path="/edit_profile" />
-				</Suspense>
+				<Switch>
+					<Suspense fallback={<SuspenseFallback />}>
+						<Route
+							component={() => <Home onSearch={onSearch} />}
+							path="/"
+							exact
+						/>
+						<Route
+							component={() => <AfterSearch search={search} />}
+							path="/search_results"
+							exact
+						/>
+						<Route
+							render={props => <Accommodation {...props} />}
+							path={`/accommodation/:id`}
+							exact
+						/>
+						<Route component={() => <HostPage />} path="/become_host" exact />
+						<Route component={() => <SignUpModale />} path="/signup" exact />
+						<Route
+							component={() => <Accom_host />}
+							path="/collect_data"
+							exact
+						/>
+						<Route component={() => <ListSpace />} path="/host_form" />
+						<Route path="/AddonOne" component={AddonOne} />
+						<Route path="/AddonTwo" component={AddonTwo} />
+						<Route path="/AddonThree" component={AddonThree} />
+						<Route path="/AddonFour" component={AddonFour} />
+						<Route path="/AddonFive" component={AddonFive} />
+						{token && <Route component={Sitings} path="/edit_profile" />}
+						<Route component={NotFound} />
+					</Suspense>
+				</Switch>
 			</Router>
 		</AuthContext.Provider>
 	);
