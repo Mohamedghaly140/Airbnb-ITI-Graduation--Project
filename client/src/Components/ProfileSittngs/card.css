@@ -13,9 +13,13 @@
   /* max-width: 30% !important; */
   cursor: pointer;
 }
-.card-img-top{padding:  0.25rem 14px 0rem 1rem;}
-.card-body{padding:1.25rem 0.5rem 1.5rem 1.25rem}
-.btn{
+.card-img-top {
+  padding: 0.25rem 14px 0rem 1rem;
+}
+.card-body {
+  padding: 1.25rem 0.5rem 1.5rem 1.25rem;
+}
+ {
   background-color: #008489;
   font-weight: bold;
   color: #ffffff;
