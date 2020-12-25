@@ -14,7 +14,6 @@ function Get_started() {
               to make your place shine. Start now and finish any time.
             </span>
             <br />
-            <button className="getstarted-btn">Get started</button>
           </div>
         </div>
       </section>

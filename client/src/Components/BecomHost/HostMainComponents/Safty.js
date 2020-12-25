@@ -31,7 +31,7 @@ function Safty() {
 
   return (
     <>
-      <div className="safty-container ">
+      <div className="safty-container">
         <div className="safty-header">
           <h1>Safety is our priority</h1>
         </div>
