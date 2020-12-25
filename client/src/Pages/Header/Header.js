@@ -3,6 +3,7 @@ import "../../Pages/Header/Header.css";
 import HeaderCenter from "../../Pages/Header/Header-center/HeaderCenter";
 import HeaderRight from "../../Pages/Header/Header-right/HeaderRight";
 import DatePicker from "../../Pages/Header/Header-center/DatePicker";
+import { Link } from "react-router-dom";
 
 const Header = props => {
   const [showSearch, setShowSearch] = useState(false);
@@ -36,12 +37,14 @@ const Header = props => {
     <div className="container-fluid">
       <div className="row">
         <div className="header2">
-          <div className="header2__icon col-xl-3 col-lg-3 col-md-3 col-sm-12 col-12">
-            <img
-              src="https://i.pinimg.com/originals/3c/bf/be/3cbfbe148597341fa56f2f87ade90956.png"
-              alt=""
-            />
-          </div>
+          <Link to="/">
+            <div className="header2__icon ">
+              <img
+                src="https://i.pinimg.com/originals/3c/bf/be/3cbfbe148597341fa56f2f87ade90956.png"
+                alt=""
+              />
+            </div>
+          </Link>
           <HeaderCenter
             show={showdate}
             startValue={start}

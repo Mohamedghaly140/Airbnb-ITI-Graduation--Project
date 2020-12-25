@@ -1,5 +1,8 @@
-@media screen and (max-width:669px) {
-    .map {
-        display: none
-    }
+@media screen and (max-width: 669px) {
+  .map {
+    width: 100% !important;
+  }
+}
+.map {
+  width: 100%;
 }
