@@ -24,7 +24,7 @@ const PlaceItem = props => {
 				<div className="col-4 d-flex justify-content-center align-items-center">
 					<img
 						className="img-thumbnail"
-						src={`http://localhost:5000/${imageUrl}`}
+						src={`${process.env.REACT_APP_BACKEND_URL}/${imageUrl}`}
 						alt={title}
 					/>
 				</div>

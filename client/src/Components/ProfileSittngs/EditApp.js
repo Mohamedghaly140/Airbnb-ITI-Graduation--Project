@@ -12,15 +12,15 @@ import Login from './edit/Login';
 import Payments from './edit/Payments ';
 import Password from './edit/Password';
 import ConfirmPayment from '../confirmPayment/ConfirmPayment';
-import HostHeader from "../BecomHost/HostHeader/HostHeader"
+import HostHeader from '../BecomHost/HostHeader/HostHeader';
 import { AuthContext } from '../../Context/AuthContext';
 
 let date = new Moment('1993-08-03', 'YYYY-MM-DD').props;
 
 function EditApp() {
 	const authContext = useContext(AuthContext);
-	const { userId, token } = authContext;
-  const [navbar, setNavbar] = useState(false);
+	const { userId } = authContext;
+	const [navbar, setNavbar] = useState(false);
 	const [firstNameState, firstnameSet] = useState('Ahmed');
 	const [lastNameState, lastnameSet] = useState('Salah');
 	const [emailStat, setEmail] = useState('salaheltantawy@gmail.com');
@@ -34,7 +34,7 @@ function EditApp() {
 	useEffect(() => {
 		setIsloading(true);
 		axios
-			.get(`http://localhost:5000/api/users/${userId}`)
+			.get(`${process.env.REACT_APP_BACKEND_URL}/api/users/${userId}`)
 			.then(res => {
 				console.log(res.data.user);
 				const user = res.data.user;
@@ -54,7 +54,7 @@ function EditApp() {
 	let { path } = useRouteMatch();
 	return (
 		<>
-		<HostHeader navbar={navbar} setNavbar={setNavbar}/>
+			<HostHeader navbar={navbar} setNavbar={setNavbar} />
 			<Router>
 				<Route
 					path={`${path}/edit`}

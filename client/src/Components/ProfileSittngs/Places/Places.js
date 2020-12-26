@@ -1,4 +1,5 @@
 import React, { Fragment, useEffect, useState, useContext } from 'react';
+import { Link } from 'react-router-dom';
 import { Spinner } from 'react-bootstrap';
 import axios from 'axios';
 import PlaceItem from './PlaceItem/PlaceItem';
@@ -16,7 +17,7 @@ const Places = ({ userId }) => {
 	useEffect(() => {
 		setLoading(true);
 		axios
-			.get(`http://localhost:5000/api/places/user/${userId}`, {
+			.get(`${process.env.REACT_APP_BACKEND_URL}/api/places/user/${userId}`, {
 				headers: {
 					'Content-Type': 'application/json',
 					Authorization: `Bearer ${token}`,
@@ -38,7 +39,7 @@ const Places = ({ userId }) => {
 	const deletePlaceHandler = placeId => {
 		setLoading(true);
 		axios
-			.delete(`http://localhost:5000/api/places/${placeId}`, {
+			.delete(`${process.env.REACT_APP_BACKEND_URL}/api/places/${placeId}`, {
 				headers: {
 					'Content-Type': 'application/json',
 					Authorization: `Bearer ${token}`,
@@ -66,7 +67,10 @@ const Places = ({ userId }) => {
 	if (places.length === 0 || error) {
 		return (
 			<div className="text-center">
-				<h5>You don't have places yet, maybe start adding</h5>
+				<h5>
+					You don't have places yet, maybe start{' '}
+					<Link to="/host_form">adding</Link>
+				</h5>
 			</div>
 		);
 	}

@@ -36,7 +36,11 @@ const Login = props => {
 		setLoading(true);
 
 		axios
-			.post('http://localhost:5000/api/users/login', user, config)
+			.post(
+				`${process.env.REACT_APP_BACKEND_URL}/api/users/login`,
+				user,
+				config
+			)
 			.then(res => {
 				console.log(res);
 				const user = res.data;

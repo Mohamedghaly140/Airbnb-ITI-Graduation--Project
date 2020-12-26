@@ -35,7 +35,11 @@ function SignUpModale(props) {
 		setLoading(true);
 
 		axios
-			.post('http://localhost:5000/api/users/signup', dataForm, config)
+			.post(
+				`${process.env.REACT_APP_BACKEND_URL}/api/users/signup`,
+				dataForm,
+				config
+			)
 			.then(res => {
 				// if (res.status !== 201) {
 				// 	 console.log(res.data.message);
