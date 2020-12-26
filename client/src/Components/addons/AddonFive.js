@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import Footer from "../../Pages/Footer/Footer";
 import HostHeader from "../BecomHost/HostHeader/HostHeader";
-
+import "./styleFivePages.css";
 const AddonFive = () => {
   //Navigate to the top
   useEffect(() => {
@@ -34,47 +34,43 @@ const AddonFive = () => {
             </a>
           </div>
           {/* header */}
-          <div className="m-5 pt-5 pl-1">
+          <div className=" pt-2 pl-5">
             <section className="m-2 w-75">
-              <h1 className="font-wight-bold text-break m-1">
+              <h3 className="font-wight-bold text-break mb-1">
                 Battling discrimination on Airbnb
-              </h1>
-              <h3 className="subHead font-weight-normal">
-                Since 2016, we've removed 1.3M people from Airbnb for declining
-                to treat others without judgement or bias. But discrimination
-                still happens, so we're introducing some new ways to fight it.
               </h3>
+              <p className="font-weight-normal pt-3">
+                Since 2016, we've removed 1.3M people from Airbnb for declining
+                to treat others without judgement<br></br> or bias. But discrimination
+                still happens, so we're introducing some new ways to fight it.
+              </p>
             </section>
           </div>
         </div>
         {/* first block */}
-        <div className="container m-5">
+        <div className="container ">
           <section className="pt-5 pr-5 w-60">
-            <h2 className="text-dark font-weight-bold text-break firstBlock">
+            <h3 className="text-dark font-weight-bold text-break firstBlock mb-3">
               Project Lighthouse: finding &amp; fighting discrimination on
               Airbnb
-            </h2>
-            <h3 className="h3 pt-3 mr-5 pFirstBlock text-dark w-75">
+            </h3>
+            <span>
               Project Lighthouse is a groundbreaking initiative we're launching
               in the United States to uncover, measure, and overcome
               discrimination when booking or hosting on Airbnb.
-            </h3>
+            </span>
           </section>
-          <div className="mt-5 row">
-            <div className=" col-6 ">
+          <div className="mt-5 row justify-content-around">
+            <div className=" col-md-6 col-12 ">
               <img
-                className="_9ofhsl"
-                style={{ objectFit: "contain", verticalAlign: "bottom" }}
-                aria-hidden="true"
-                alt
+                className="internet_logo"
                 src="https://a0.muscache.com/pictures/Antidiscrimination/AgainstDiscrimination/original/e8d4bfc4-7a2f-445b-a839-ccc04e9accbb.png"
-                data-original-uri="https://a0.muscache.com/pictures/Antidiscrimination/AgainstDiscrimination/original/e8d4bfc4-7a2f-445b-a839-ccc04e9accbb.png"
               />
               <section className="mt-3">
                 <h3 className="paragrafHeader">
                   Built to uncover discrimination
                 </h3>
-                <p className="paragraf">
+                <p>
                   This project will address discrimination that's based on
                   perception—and on Airbnb, people perceive race from things
                   like first names and profile photos. Together, with civil
@@ -82,21 +78,12 @@ const AddonFive = () => {
                   beginning with research to understand when and where racial
                   discrimination happens on our platform and the effectiveness
                   of policies that fight it.
-                  <span className="bodyLinks">
-                    Learn more
-                  </span>
+                  <span className="bodyLinks">Learn more</span>
                 </p>
               </section>
             </div>
-            <div className="col-6">
-              <img
-                className="_9ofhsl"
-                style={{ objectFit: "contain", verticalAlign: "bottom" }}
-                aria-hidden="true"
-                alt
-                src="https://a0.muscache.com/pictures/Antidiscrimination/AgainstDiscrimination/original/e802cc02-edcf-48ec-a3b0-4a7b1993e36c.png"
-                data-original-uri="https://a0.muscache.com/pictures/Antidiscrimination/AgainstDiscrimination/original/e802cc02-edcf-48ec-a3b0-4a7b1993e36c.png"
-              />
+            <div className=" col-md-6 col-12">
+              <img className="internet_logo" src="https://a0.muscache.com/pictures/Antidiscrimination/AgainstDiscrimination/original/e802cc02-edcf-48ec-a3b0-4a7b1993e36c.png" />
               <section className="mt-3">
                 <h3 className="paragrafHeader">
                   Designed with privacy in mind
@@ -107,9 +94,7 @@ const AddonFive = () => {
                   for privacy protection so we can make sure your information
                   stays safe. We analyze trends in bulk, and Airbnb won't
                   associate perceived race information with specific accounts.
-                  <span className="bodyLinks">
-                    Learn more
-                  </span>
+                  <span className="bodyLinks">Learn more</span>
                 </p>
               </section>
             </div>
@@ -117,57 +102,36 @@ const AddonFive = () => {
         </div>
         <hr className="my-5" width="90%" />
         {/* second block */}
-        <div className="container m-5">
+        <div className="container ">
           <section className="pt-5 pr-5 w-60">
             <h2 className="text-dark font-weight-bold text-break firstBlock">
               What we’ve done so far
             </h2>
-            <h3 className="h3 pt-3 mr-5 pFirstBlock text-dark">
+            <span>
               We know that addressing discrimination requires ongoing attention
               and care to make sure we get things right. Here are some of the
               other actions we’ve taken—and what you can expect more of in the
               future.
-            </h3>
+            </span>
           </section>
-          <div className="mt-5 row">
-            <div className="col-6">
-              <img
-                className="_9ofhsl"
-                style={{ objectFit: "contain", verticalAlign: "bottom" }}
-                aria-hidden="true"
-                alt
-                src="https://a0.muscache.com/pictures/Antidiscrimination/AgainstDiscrimination/original/c80bdbd5-0da7-45c5-9560-d11d2debebed.png"
-                data-original-uri="https://a0.muscache.com/pictures/Antidiscrimination/AgainstDiscrimination/original/c80bdbd5-0da7-45c5-9560-d11d2debebed.png"
-              />
+          <div className="mt-5 row justify-content-around">
+            <div className="col-md-5 col-12">
+              <img className="internet_logo" src="https://a0.muscache.com/pictures/Antidiscrimination/AgainstDiscrimination/original/c80bdbd5-0da7-45c5-9560-d11d2debebed.png" />
               <section className="mt-4">
                 <h3 className="paragrafHeader">Non-discrimination Policy</h3>
                 <p className="paragraf">
                   Everyone who uses Airbnb must agree to our
-                  <span className="bodyLinks">
-                    Community Commitment
-                  </span>{" "}
-                  and
-                  <span className="bodyLinks">
-                    Non-discrimination Policy
-                  </span>
-                  . If you’ve experienced discrimination, we’ll investigate the
+                  <span className="bodyLinks">Community Commitment</span> and
+                  <span className="bodyLinks">Non-discrimination Policy</span>.
+                  If you’ve experienced discrimination, we’ll investigate the
                   issue, take action, and if needed,
-                  <span className="bodyLinks">
-                    help you
-                  </span>{" "}
-                  find another place to stay.
+                  <span className="bodyLinks">help you</span> find another place
+                  to stay.
                 </p>
               </section>
             </div>
-            <div className="col-6">
-              <img
-                className="_9ofhsl"
-                style={{ objectFit: "contain", verticalAlign: "bottom" }}
-                aria-hidden="true"
-                alt
-                src="https://a0.muscache.com/pictures/Antidiscrimination/AgainstDiscrimination/original/0f7b485b-fed4-4c36-90cd-b70a6706331f.png"
-                data-original-uri="https://a0.muscache.com/pictures/Antidiscrimination/AgainstDiscrimination/original/0f7b485b-fed4-4c36-90cd-b70a6706331f.png"
-              />
+            <div className="col-md-5 col-12">
+              <img className="internet_logo" src="https://a0.muscache.com/pictures/Antidiscrimination/AgainstDiscrimination/original/0f7b485b-fed4-4c36-90cd-b70a6706331f.png" />
               <section className="mt-4">
                 <h3 className="paragrafHeader">Profile photo protections</h3>
                 <p className="paragraf">
@@ -179,15 +143,10 @@ const AddonFive = () => {
                 </p>
               </section>
             </div>
-            <div className="col-6">
-              <img
-                className="_9ofhsl"
-                style={{ objectFit: "contain", verticalAlign: "bottom" }}
-                aria-hidden="true"
-                alt
-                src="https://a0.muscache.com/pictures/Antidiscrimination/AgainstDiscrimination/original/72ddb682-5676-425b-84c6-dda98f7c3e0a.png"
-                data-original-uri="https://a0.muscache.com/pictures/Antidiscrimination/AgainstDiscrimination/original/72ddb682-5676-425b-84c6-dda98f7c3e0a.png"
-              />
+            </div>
+                <div className="row justify-content-around">     
+            <div className="col-md-5 col-12">
+              <img  src="https://a0.muscache.com/pictures/Antidiscrimination/AgainstDiscrimination/original/72ddb682-5676-425b-84c6-dda98f7c3e0a.png" />
               <section className="mt-4">
                 <h3 className="paragrafHeader">Objective bookings</h3>
                 <p className="paragraf">
@@ -198,15 +157,9 @@ const AddonFive = () => {
                 </p>
               </section>
             </div>
-            <div className="col-6">
-              <img
-                className="_9ofhsl"
-                style={{ objectFit: "contain", verticalAlign: "bottom" }}
-                aria-hidden="true"
-                alt
-                src="https://a0.muscache.com/pictures/Antidiscrimination/AgainstDiscrimination/original/36fe906e-ad96-469b-88d1-a7a1fb128cfd.png"
-                data-original-uri="https://a0.muscache.com/pictures/Antidiscrimination/AgainstDiscrimination/original/36fe906e-ad96-469b-88d1-a7a1fb128cfd.png"
-              />
+            <div className="col-md-5 col-12">
+               
+              <img className="internet_logo" src="https://a0.muscache.com/pictures/Antidiscrimination/AgainstDiscrimination/original/36fe906e-ad96-469b-88d1-a7a1fb128cfd.png" />
               <section className="mt-4">
                 <h3 className="paragrafHeader">
                   Dedicated anti-discrimination team
@@ -222,65 +175,49 @@ const AddonFive = () => {
           </div>
         </div>
         {/* third block */}
-        <div className="container m-5">
+        <div className="container pb-5">
           <section className="pt-5 pr-5 w-60">
             <h2 className="text-dark font-weight-bold text-break firstBlock">
               We’re not alone in this
             </h2>
-            <h3 className="h3 pt-3 mr-5 pFirstBlock text-dark">
+            <span className="pt-3 mr-5">
               We’ve consulted and partnered with civil rights and privacy
               organizations to make sure we’re battling discrimination
               thoughtfully and with the support of others engaged in this work.
-            </h3>
+            </span>
           </section>
-          <div className="mt-5">
-            <img
-              className="_792k0r1"
-              style={{ verticalAlign: "bottom" }}
-              aria-hidden="true"
-              alt="Logos of partners Airbnb has worked with to fight discrimination. Partners include: Asian Americans Advancing Justice, Center for Democracy & Technology, Color Of Change, The Leadership Conference, League of United Latin American Citizens, NAACP,  National Action Network, and Upturn."
-              src="https://a0.muscache.com/pictures/Antidiscrimination/AgainstDiscrimination/original/689b438f-e798-42b6-a423-15c85d1a8ae5.png"
-              data-original-uri="https://a0.muscache.com/pictures/Antidiscrimination/AgainstDiscrimination/original/689b438f-e798-42b6-a423-15c85d1a8ae5.png"
-            />
-          </div>
         </div>
         {/* fourth block */}
         <div className="bg-dark text-light container-fluid p-3 pb">
-          <h1 className="hh  text-break m-5 w-50">
+          <h3 className="hh  text-break m-5 w-50">
             Ways to get involved beyond our community
-          </h1>
-          <div className=" m-5 row">
-            <div className="mt-3 col-6">
+          </h3>
+          <div className=" m-5 row justify-content-around">
+            <div className="mt-3 col-md-6 col-12">
               <h4 className="footerHeader">Donate to the movement</h4>
               <p className="paragrafFooter">
                 If you can, consider financially supporting the
-                <span className="footerLinks">
-                  NAACP
-                </span>{" "}
-                and the
+                <span className="footerLinks">NAACP</span> and the
                 <span className="footerLinks">
                   Black Lives Matter Global Network Foundation
                 </span>
                 .
               </p>
             </div>
-            <div className="mt-3 col-6">
+            <div className="mt-3 col-md-6 col-12">
               <h4 className="footerHeader">Support Color Of Change</h4>
               <p className="paragrafFooter">
-                Visit{" "}
-                <span className="footerLinks">
-                  ColorOfChange.org
-                </span>{" "}
-                to join and donate to the movement.
+                Visit <span className="footerLinks">ColorOfChange.org</span> to
+                join and donate to the movement.
               </p>
             </div>
-            <div className="mt-3 col-6">
+            <div className="mt-3 col-md-6 col-12">
               <h4 className="footerHeader">Participate in Blackout Day</h4>
               <p className="paragrafFooter">
                 On July 7th, only spend money at Black-owned businesses.
               </p>
             </div>
-            <div className="mt-3 col-6">
+            <div className="mt-3 col-md-6 col-12">
               <h4 className="footerHeader">And more...</h4>
               <p className="paragrafFooter">
                 <span className="footerLinks">
