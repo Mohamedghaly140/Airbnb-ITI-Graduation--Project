@@ -12,7 +12,7 @@ function NumOfBedrooms({ register, counter }) {
         }}
         style={{ width: "100%", padding: "1rem" }}
       >
-        <option value="none" selected disabled hidden>
+        <option disabled hidden>
           Number Of Bedrooms
         </option>
         <option aria-label="None" value="" />

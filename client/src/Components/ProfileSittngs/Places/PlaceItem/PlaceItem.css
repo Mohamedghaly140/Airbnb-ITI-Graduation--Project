@@ -1,23 +1,26 @@
 .hostsCard {
-	padding: 1rem;
+  padding: 1rem;
 }
-.desc{
-	margin-left: 0 !important;
-	padding: 0 !important;
+.desc {
+  margin-left: 0 !important;
+  padding: 0 !important;
 }
-.desc .desc__header p{
-	font-size: 1.1rem;
-	margin-bottom: 0;
-	color: gray;
+.desc .desc__header p {
+  font-size: 1.1rem;
+  margin-bottom: 0;
+  color: gray;
 }
-.desc .desc__header h5{
-	margin-bottom: 0;
+.desc .desc__header h5 {
+  margin-bottom: 0;
 }
-.desc__info p{
-	color: gray;
-	font-size: 1.1rem;
-	margin-right: 5px;
-	font-weight: 400 !important;
+.desc__info p {
+  color: gray;
+  font-size: 1.1rem;
+  margin-right: 5px;
+  font-weight: 400 !important;
 }
-
-
+.update-btn {
+  padding: 1rem 0.5rem;
+  background: #00dfc8;
+  color: white;
+}

@@ -9,10 +9,11 @@ function HostPlace({ register }) {
         inputProps={{
           name: "placeType",
           ref: register({ required: true }),
+          defaultValue: "Place Type",
         }}
         style={{ width: "100%", padding: "1rem" }}
       >
-        <option value="none" selected disabled hidden>
+        <option disabled hidden>
           Place Type
         </option>
         <option value="Entire place">Entire place</option>

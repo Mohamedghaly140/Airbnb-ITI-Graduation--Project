@@ -9,10 +9,11 @@ function HostGuest({ register, counter }) {
         inputProps={{
           name: "numberOfGuests",
           ref: register({ required: true }),
+          defaultValue: "Number Of Guests",
         }}
         style={{ width: "100%", padding: "1rem" }}
       >
-        <option value="none" selected disabled hidden>
+        <option disabled hidden>
           Number Of Guests
         </option>
         <option aria-label="None" value="" />

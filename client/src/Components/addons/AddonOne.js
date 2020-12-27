@@ -17,11 +17,7 @@ var AddonOne = () => {
             <h1 className="kb-title">Airbnb Terms of Use</h1>
             <div className="pane-wrapper">
               <div className="left-pane">
-                <section
-                  dir="LTR"
-                  className="kb-article kb-article-variant gradient"
-                  data-countries=",PS,PW,PY,QA,AE,AF,AG,AI,AL,AM,AN,AO,AQ,AR,AS,RE,AW,AZ,BA,BB,RS,BD,RU,BF,RW,BH,BI,BJ,BL,BM,BN,BO,SA,BQ,SB,SC,BS,SD,BT,BV,SH,BW,SJ,BY,BZ,SL,SN,SO,CA,SR,CC,SS,ST,CD,SV,CF,CG,SX,SY,CI,SZ,CK,CL,CM,CN,CO,TC,CR,TD,CU,TF,TG,CV,CW,TH,CX,TJ,TK,TL,TM,TN,TO,TR,TT,TV,TW,TZ,DJ,DM,DO,UA,UG,DZ,EC,EG,EH,UY,UZ,VC,ER,VE,ET,VG,VN,VU,FJ,FK,FM,FO,WF,GA,WS,GD,GE,GF,GH,GL,GM,GN,GP,GQ,GS,GT,GU,GW,GY,HK,HM,HN,HT,YE,ID,YT,IL,IO,ZA,IQ,IR,ZM,ZW,JM,JO,KE,KG,KH,KI,KM,KN,KP,KW,KY,KZ,LA,LB,LC,LK,LR,LS,LY,MA,MD,ME,MF,MG,MH,MK,ML,MM,MN,MO,MP,MQ,MR,MS,MU,MV,MW,MY,MZ,NA,NC,NE,NF,NG,NI,NP,NR,NU,OM,PA,PE,PF,PG,PH,PK,PM,PN,"
-                >
+                <section>
                   <div className="page-block">
                     <div className="c-wrapper">
                       <div>
