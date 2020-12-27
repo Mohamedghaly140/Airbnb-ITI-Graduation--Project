@@ -2,8 +2,19 @@ const { validationResult } = require('express-validator');
 const bcrypt = require('bcryptjs');
 const jwt = require('jsonwebtoken');
 
+const nodemailer = require('nodemailer');
+const sendGridTransport = require('nodemailer-sendgrid-transport');
+
 const HttpError = require('../models/HttpError');
 const User = require('../models/User');
+
+const transporter = nodemailer.createTransport(
+	sendGridTransport({
+		auth: {
+			api_key: process.env.NODEMAILER_KEY,
+		},
+	})
+);
 
 exports.getUsers = async (req, res, next) => {
 	let users;
@@ -97,8 +108,56 @@ exports.signup = async (req, res, next) => {
 	try {
 		await createdUser.save();
 	} catch (err) {
+		console.log(err);
 		return next(
 			new HttpError('Signing up failed, please try again later', 500)
+		);
+	}
+
+	try {
+		const sendmail = await transporter.sendMail({
+			to: createdUser.email,
+			from: 'airbnb.team.iti@gmail.com',
+			subject: 'Signed Up Successfuly',
+			html: `
+			<div
+				style="
+					box-shadow: 0px 3px 4px #444;
+					border-radius: 10px;
+					text-align: center;
+					padding: 25px;
+					border: 3px solid #ff5a5f;
+					width: 80%;
+					margin: 10px auto;
+				"
+			>
+				<h2
+					style="
+						color: #ff5a5f;
+						border-bottom: 2px solid #ff5a5f;
+						display: inline-block;
+					"
+				>
+					Airbnb Team
+				</h2>
+				<h4>Orgization: ITI-<a href="https://www.iti.gov.eg">Information technology institue</a></h4>
+				<p>Hello, ${createdUser.email}</p>
+				<p>
+					Congratulations！<span style="text-transform: capitalize;">${createdUser.firstName} ${createdUser.lastName}</span>
+					Registration Succeeded! Your Email address has been registered with an
+					<strong>Airbnb</strong> account. Please log in by Email!
+				</p>
+			</div>
+			`,
+		});
+		console.log(sendmail);
+	} catch (err) {
+		console.log(err);
+		return next(
+			new HttpError(
+				'Signing up failed, Send email failed, please try again later',
+				500
+			)
 		);
 	}
 
