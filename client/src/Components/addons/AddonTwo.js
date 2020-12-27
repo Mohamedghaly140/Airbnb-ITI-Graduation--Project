@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import Footer from "../../Pages/Footer/Footer";
 import HostHeader from "../BecomHost/HostHeader/HostHeader";
-// import "./styleFivePages.css";
+import "./styleFivePages.css";
 const AddonTwo = () => {
   //Navigate to the top
   useEffect(() => {

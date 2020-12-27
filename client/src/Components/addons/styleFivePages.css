@@ -1,0 +1,12 @@
+.airbnb_card {
+  padding: 5rem;
+}
+.internet_logo {
+  width: 3rem;
+  height: 3rem;
+}
+@media only screen and (max-width: 768px) {
+  .airbnb_card {
+    padding: 1rem;
+  }
+}
