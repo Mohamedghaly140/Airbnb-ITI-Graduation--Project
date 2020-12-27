@@ -54,6 +54,17 @@
   justify-content: center;
   align-items: center;
 }
+.update-btn {
+  padding: 1rem 2.5rem;
+  background: #00dfc8;
+  color: white;
+  border-radius: 20px;
+  border: none;
+  font-size: 18px;
+}
+.update-btn:hover {
+  background: #00b4a2;
+}
 /*********** MediaQuary **********/
 @media only screen and (max-width: 991px) {
   .flower-img {
