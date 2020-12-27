@@ -106,17 +106,8 @@ exports.signup = async (req, res, next) => {
 	});
 
 	try {
-		await createdUser.save();
-	} catch (err) {
-		console.log(err);
-		return next(
-			new HttpError('Signing up failed, please try again later', 500)
-		);
-	}
-
-	try {
-		const sendmail = await transporter.sendMail({
-			to: createdUser.email,
+		await transporter.sendMail({
+			to: email,
 			from: 'airbnb.team.iti@gmail.com',
 			subject: 'Signed Up Successfuly',
 			html: `
@@ -140,24 +131,21 @@ exports.signup = async (req, res, next) => {
 				>
 					Airbnb Team
 				</h2>
-				<h4>Orgization: ITI-<a href="https://www.iti.gov.eg">Information technology institue</a></h4>
-				<p>Hello, ${createdUser.email}</p>
+				<h4>Organization: ITI <br /> <a href="https://www.iti.gov.eg" target="_blank">Information technology institue</a></h4>
+				<p>Hello, ${email}</p>
 				<p>
-					Congratulations！<span style="text-transform: capitalize;">${createdUser.firstName} ${createdUser.lastName}</span>
+					Congratulations! <span style="text-transform: capitalize; font-weight: 600;">${firstName} ${lastName}</span>
 					Registration Succeeded! Your Email address has been registered with an
 					<strong>Airbnb</strong> account. Please log in by Email!
 				</p>
 			</div>
 			`,
 		});
-		console.log(sendmail);
+		await createdUser.save();
 	} catch (err) {
 		console.log(err);
 		return next(
-			new HttpError(
-				'Signing up failed, Send email failed, please try again later',
-				500
-			)
+			new HttpError('Signing up failed, please try again later', 500)
 		);
 	}
 
