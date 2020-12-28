@@ -79,15 +79,15 @@ function ListSpace() {
 							<br />
 							<h3>What kind of place do you have?</h3>
 						</div>
-						<form onSubmit={handleSubmit(onSubmitHandler)}>
+						<form className="pb-3" onSubmit={handleSubmit(onSubmitHandler)}>
 							{/* place-guest */}
-							<div className="place-guest">
-								<div className="host-place">
+							<div className="place-guest row">
+								<div className="host-place col-sm-6 col-12">
 									<HostPlace register={register} />
 								</div>
 
 								{/* host-guest */}
-								<div className="host-guest">
+								<div className="host-guest col-sm-6 col-12">
 									<HostGuest counter={counter} register={register} />
 								</div>
 							</div>
@@ -150,26 +150,29 @@ function ListSpace() {
 								</div>
 							</div>
 
-							<div className="place-guest">
-								<input
-									type="text"
-									name="description"
-									placeholder="Describtion"
-									id="Describe"
-									ref={register({ required: true })}
-								/>
-								{/* <button className="btn btn-primary ml-1">
-									Upload You Place Image
-								</button> */}
-								<Upload image={image} />
+							<div className="place-guest row">
+								<div className="col-sm-6 col-12">
+									<input
+										type="text"
+										name="description"
+										placeholder="Describtion"
+										id="Describe"
+										ref={register({ required: true })}
+									/>
+								</div>
+								<div className="col-sm-6 col-12">
+									<Upload image={image} />
+								</div>
 							</div>
 
 							{/* Continue btn  */}
+							<div className="col-12">
 							<input
 								type="submit"
 								value="Continue"
-								className="btn btn-primary"
+								className="btn btn-primary container-fluid"
 							/>
+							</div>
 						</form>
 					</div>
 				</div>
