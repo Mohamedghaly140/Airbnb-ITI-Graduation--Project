@@ -9,6 +9,7 @@ function NumOfBedrooms({ register, counter }) {
         inputProps={{
           name: "numberOfRooms",
           ref: register({ required: true }),
+          defaultValue: "Number Of Bedrooms",
         }}
         style={{ width: "100%", padding: "1rem" }}
       >
