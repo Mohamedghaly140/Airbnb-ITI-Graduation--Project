@@ -18,6 +18,7 @@ import { AuthContext } from "./Context/AuthContext";
 import NotFound from "./Components/NotFound/NotFound";
 import { Spinner } from "react-bootstrap";
 import UpdateProfile from "./Components/accom_after_host/UpdateProfile";
+import NavbarDown from "./Components/Home/Navbar/NavbarDown";
 
 const Sitings = lazy(() => import("./Components/ProfileSittngs/EditApp"));
 

@@ -1,0 +1,55 @@
+.nav-down {
+  background: white;
+  position: fixed;
+  padding: 1rem;
+  bottom: 0;
+  right: 0;
+  height: 6rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-top: 1px solid lightgray;
+}
+.nav-down-container {
+  height: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+.nav-down-item {
+  color: rgb(176, 176, 176);
+  height: 100%;
+  width: 25%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.nav-down-icon {
+  color: rgb(176, 176, 176);
+  font-size: 2rem !important;
+}
+
+.nav-hosting:hover .nav-down-icon,
+.nav-settings:hover .nav-down-icon,
+.nav-signup:hover .nav-down-icon,
+.nav-logout:hover .nav-down-icon,
+.nav-login:hover .nav-down-icon {
+  color: #ff5a5f;
+}
+.nav-hosting:hover span,
+.nav-settings:hover span,
+.nav-signup:hover span,
+.nav-logout:hover span,
+.nav-login:hover span {
+  color: black;
+  text-decoration: underline;
+}
+
+.nav-hosting:hover,
+.nav-settings:hover,
+.nav-signup:hover,
+.nav-logout:hover,
+.nav-login:hover {
+  cursor: pointer;
+}

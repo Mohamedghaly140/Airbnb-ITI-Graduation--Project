@@ -1,4 +1,5 @@
 import React, { Fragment } from 'react';
+import NavbarDown from '../Navbar/NavbarDown';
 import classes from './Banner.module.css';
 
 const Banner = () => {
