@@ -34,7 +34,6 @@ const HeaderCenter = props => {
     //2-send the inpust Obj api
     //send the location to search results screen to get all the resutls
     props.onSearch(location, guests);
-
     props.history.push("/search_results");
   };
 
