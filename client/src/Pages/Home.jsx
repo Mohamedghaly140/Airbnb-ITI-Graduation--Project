@@ -9,6 +9,8 @@ import Footer  from "../Pages/Footer/Footer";
 import Experiences from '../Components/Home/Experiences/Experiences';
 import Gift from '../Components/Home/Gift/Gift';
 import JionUs from '../Components/Home/JionUs/JionUs';
+import { Link } from 'react-router-dom';
+import NavbarDown from '../Components/Home/Navbar/NavbarDown';
 
 const Home = (props) => {
 
@@ -26,6 +28,7 @@ const Home = (props) => {
 			<Gift />
 			<JionUs />
 			<Footer />
+			<NavbarDown/>
 		</Fragment>
 	);
 };

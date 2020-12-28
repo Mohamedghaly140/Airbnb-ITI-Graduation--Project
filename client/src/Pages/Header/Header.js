@@ -36,7 +36,7 @@ const Header = props => {
   return (
     <div className="container-fluid">
       <div className="row">
-        <div className="header2">
+        <div className="header2 d-flex justify-content-center ">
           <Link to="/">
             <div className="header2__icon ">
               <img
