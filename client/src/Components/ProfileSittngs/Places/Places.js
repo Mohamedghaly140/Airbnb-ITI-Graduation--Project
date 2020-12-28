@@ -1,7 +1,7 @@
 import React, { Fragment, useEffect, useState, useContext } from "react";
+import axios from "axios";
 import { Link } from "react-router-dom";
 import { Spinner } from "react-bootstrap";
-import axios from "axios";
 import PlaceItem from "./PlaceItem/PlaceItem";
 
 import { AuthContext } from "../../../Context/AuthContext";
