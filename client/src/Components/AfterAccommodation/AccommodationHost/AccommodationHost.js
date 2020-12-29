@@ -86,7 +86,7 @@ const AccommodationHost = ({ id }) => {
               <span className="ml-2 ">{`hosted by ${creator.firstName} ${creator.lastName} .`}</span>
               <br />
               <span className=" ml-4 pl-2 ">
-                {`${city} ${address}, ${country} .`}
+                {`${city}, ${address}, ${country} .`}
               </span>
               <br />
               <span className="ml-4 pl-2">{`${numberOfGuests} guests · ${numberOfbeds} bed · 1 bath .`}</span>
