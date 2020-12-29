@@ -45,7 +45,7 @@ exports.getPlaceById = async (req, res, next) => {
 	let place;
 
 	try {
-		place = await Place.findById(placeId);
+		place = await Place.findById(placeId).populate('creator');
 
 		if (!place) {
 			return next(

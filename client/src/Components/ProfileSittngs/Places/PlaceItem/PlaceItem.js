@@ -18,7 +18,6 @@ const PlaceItem = props => {
     address,
     loading,
     onDeletePlace,
-    onUpdatePlace,
   } = props;
 
   return (

@@ -1,31 +1,57 @@
-import React, { useState, useEffect } from "react";
-import Header2 from "../../Pages/Header/Header";
-import GoogleMap2 from "./GoogleMap2/GoogleMap2";
-import SearchResults from "./SearchResults/SearchResults";
-import Footer from "./CustomFooter/CustomFooter";
+import React, { useState, useEffect } from 'react';
+import { Spinner } from 'react-bootstrap';
+import axios from 'axios';
+import Header2 from '../../Pages/Header/Header';
+import GoogleMap2 from './GoogleMap2/GoogleMap2';
+import SearchResults from './SearchResults/SearchResults';
+import Footer from './CustomFooter/CustomFooter';
 
 const AfterSearch = ({ search }) => {
-  const [searchResultsList, setSearchResultsList] = useState([]);
-  const lat = 31.0532818;
-  const lng = 31.4113196;
-  //for testing lng and lat
-  useEffect(() => {
-    //keda ma3ana el search beta3 el header
-    //setSearchResultsList(data) // elly rag3a mn el api post
-  }, []);
-  return (
-    <>
-      <Header2 />
-      <div className="row">
-        {/* map inputs will be changed to be equal searchResultsList.coord */}
-        <SearchResults searchResultsList={searchResultsList} />
-        <div className="col-md-6 col-12">
-        <GoogleMap2 mapInputs={{ lat, lng }} />
-        </div>
-      </div>
-      <Footer />
-    </>
-  );
+	console.log('AfterSearch', search);
+
+	const { location, guests, start, end } = search;
+
+	const [searchResultsList, setSearchResultsList] = useState(null);
+	const [loading, setLoading] = useState(false);
+	const lat = 31.0532818;
+	const lng = 31.4113196;
+	//for testing lng and lat
+
+	useEffect(() => {
+		axios
+			.get(`${process.env.REACT_APP_BACKEND_URL}/api/places/?city=${location}`)
+			.then(res => {
+				console.log(res.data);
+				setSearchResultsList(res.data.places);
+			})
+			.catch(err => {
+				console.log(err);
+			});
+	}, [location]);
+
+	if (!searchResultsList) {
+		return (
+			<React.Fragment>
+				<div className="d-flex justify-content-center align-items-center">
+					<Spinner animation="border" variant="primary" />
+				</div>
+			</React.Fragment>
+		);
+	}
+
+	return (
+		<>
+			<Header2 />
+			<div className="row">
+				{/* map inputs will be changed to be equal searchResultsList.coord */}
+				<SearchResults searchResultsList={searchResultsList} />
+				<div className="col-md-6 col-12">
+					<GoogleMap2 mapInputs={{ lat, lng }} />
+				</div>
+			</div>
+			<Footer />
+		</>
+	);
 };
 
 export default AfterSearch;

@@ -48,7 +48,7 @@ const PlaceSchema = new Schema({
 		type: Number,
 		required: true,
 	},
-	countery: {
+	country: {
 		type: String,
 		default: 'Egypt',
 	},
