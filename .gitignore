@@ -1,2 +1,11 @@
 # dependencies
 /node_modules
+
+# Logs
+npm-debug.log*
+
+# Optional eslint cache
+.eslintcache
+
+# dotenv environment variables file
+.env
