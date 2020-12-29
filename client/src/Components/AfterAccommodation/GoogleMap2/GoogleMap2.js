@@ -60,7 +60,7 @@ export class MapContainer2 extends PureComponent {
     };
     return (
       <Map
-        className="map"
+        // className="map"
         google={this.props.google}
         onClick={this.onMapClicked}
         containerStyle={containerStyle}

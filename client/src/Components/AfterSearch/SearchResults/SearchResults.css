@@ -1,8 +1,13 @@
-
+.search__results {
+  width: 97%;
+  margin: auto;
+  box-shadow: 0px 6px 16px rgba(0, 0, 0, 0.12) !important;
+}
 .adv-search {
   padding: 0 !important;
-margin-left: 10px !important
-;}
+  margin-left: 10px !important
+;
+}
 .adv-search p {
   font-size: 0.9rem;
   margin-bottom: 0;
@@ -12,7 +17,7 @@ margin-left: 10px !important
   font-weight: 900;
 }
 .adv-search__btns {
-    margin-left: 10px !important;
+  margin-left: 10px !important;
 }
 .adv-search__btns button {
   background-color: white;
@@ -32,36 +37,34 @@ margin-left: 10px !important
 }
 
 .carousel-indicators li {
-    border-radius: 50%;
-    width: 12px;
-    height: 12px;
-    background-color: white;
+  border-radius: 50%;
+  width: 12px;
+  height: 12px;
+  background-color: white;
 }
-.desc{
-    margin-left: 0 !important;
-    padding: 0 !important;
+.desc {
+  margin-left: 0 !important;
+  padding: 0 !important;
 }
-.desc .desc__header p{
-    font-size: 1.1rem;
-    margin-bottom: 0;
-    color: gray;
+.desc .desc__header p {
+  font-size: 1.1rem;
+  margin-bottom: 0;
+  color: gray;
 }
-.desc .desc__header h5{
-    margin-bottom: 0;
+.desc .desc__header h5 {
+  margin-bottom: 0;
 }
-.desc__info p{
-    color: gray;
-    font-size: 1.1rem;
-    margin-right: 5px;
-    font-weight: 400 !important;
+.desc__info p {
+  color: gray;
+  font-size: 1.1rem;
+  margin-right: 5px;
+  font-weight: 400 !important;
 }
-.rate p{
-    font-size: 1.5rem;
-    margin-left: 8px;
-    font-weight: 800;
+.rate p {
+  font-size: 1.5rem;
+  margin-left: 8px;
+  font-weight: 800;
 }
-.rate i{
-       margin-top: 7px;
-
+.rate i {
+  margin-top: 7px;
 }
-
