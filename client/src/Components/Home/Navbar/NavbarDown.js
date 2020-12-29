@@ -4,7 +4,7 @@ import SwapVerticalCircleIcon from "@material-ui/icons/SwapVerticalCircle";
 import SettingsIcon from "@material-ui/icons/Settings";
 import DirectionsRunIcon from "@material-ui/icons/DirectionsRun";
 import HomeWorkIcon from "@material-ui/icons/HomeWork";
-import TimeToLeaveIcon from '@material-ui/icons/TimeToLeave';
+import ExitToAppIcon from "@material-ui/icons/ExitToApp";
 import { Link } from "react-router-dom";
 import SignUpModale from "../../signup/SignUpModale";
 import { AuthContext } from "../../../Context/AuthContext";
@@ -20,7 +20,7 @@ function NavbarDown() {
         <div className="nav-down-container" style={{ width: "80%" }}>
           <Link to="/become_host" className="nav-down-item nav-hosting">
             <div>
-              <SwapVerticalCircleIcon className="nav-down-icon" />
+              <HomeWorkIcon className="nav-down-icon" />
             </div>
             <span className="text-center">Hosting</span>
           </Link>
@@ -46,26 +46,27 @@ function NavbarDown() {
               <span className="text-center">signup</span>
             </div>
           )}
-           {token && (
-            <Link to="/edit_profile/edit" className="nav-down-item nav-settings">
-            <div>
-              <SettingsIcon className="nav-down-icon" />
-            </div>
-            <span className="text-center">settings</span>
-          </Link>
-           )}
-          
           {token && (
-          <div  className="nav-down-item nav-logout" onClick={logout}>
-          <div>
-            <TimeToLeaveIcon className="nav-down-icon" />
-          </div>
-          <span className="text-center">Log out</span>
-        </div>
+            <Link
+              to="/edit_profile/edit"
+              className="nav-down-item nav-settings"
+            >
+              <div>
+                <SettingsIcon className="nav-down-icon" />
+              </div>
+              <span className="text-center">settings</span>
+            </Link>
           )}
 
+          {token && (
+            <div className="nav-down-item nav-logout" onClick={logout}>
+              <div>
+                <ExitToAppIcon className="nav-down-icon" />
+              </div>
+              <span className="text-center">Log out</span>
+            </div>
+          )}
         </div>
-        
       </div>
       <SignUpModale
         role="button"

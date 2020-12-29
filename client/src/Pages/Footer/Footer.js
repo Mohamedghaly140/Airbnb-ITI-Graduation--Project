@@ -1,5 +1,5 @@
 import React from "react";
-import {Link} from "react-router-dom";
+import { Link } from "react-router-dom";
 import LanguageIcon from "@material-ui/icons/Language";
 
 import "./Footer.css";
@@ -8,8 +8,11 @@ const Footer = () => {
     <footer className="Homefooter">
       <div className="footer__links">
         <div className="footer__links__about">
-          <h4>ABOUT</h4>
           <ul>
+            <li>
+              {" "}
+              <h4>ABOUT</h4>
+            </li>
             <Link to="/about">
               <li>How Airbnb works</li>
             </Link>
@@ -37,8 +40,10 @@ const Footer = () => {
           </ul>
         </div>
         <div className="footer__links__community">
-          <h4>COMMUNITY</h4>
           <ul>
+            <li>
+              <h4>COMMUNITY</h4>
+            </li>
             <Link to="/fighting_racism">
               <li>Diversity&Belonging</li>
             </Link>
@@ -63,8 +68,10 @@ const Footer = () => {
           </ul>
         </div>
         <div className="footer__links__host">
-          <h4>HOST</h4>
           <ul>
+            <li>
+              <h4>HOST</h4>
+            </li>
             <Link to="/become_host">
               <li>Host your home</li>
             </Link>
@@ -89,8 +96,10 @@ const Footer = () => {
           </ul>
         </div>
         <div className="footer__links__support">
-          <h4>SUPPORT</h4>
           <ul>
+            <li>
+              <h4>SUPPORT</h4>
+            </li>
             <Link to="/safty">
               <li>Our COVID-19 Response</li>
             </Link>
