@@ -3,27 +3,20 @@ import { useHistory } from "react-router-dom";
 import { useForm } from "react-hook-form";
 import Card from "../card";
 import "./Personal.css";
+import Name from "./personalForm/Name";
+import Gender from "./personalForm/ginder";
+import DOB from "./personalForm/DOB";
+import Email from "./personalForm/Email";
+import Phone from "./personalForm/phone";
+
 
 
 
 let PersonalTow = (props) => {
 
-  const { register, handleSubmit, watch, errors } = useForm({
-    defaultValues:{
-      first : props.firstNameState,
-      last :props.lastNameState,
-      email:props.email
-    }
-  });
-  const onSubmit = data => console.log(data);
-
   const history = useHistory();
 
-  const [nameEditState, nameSet] = useState(false);
-  const [ginderEditState, ginderSet] = useState(false);
-  const [DOBEditState, DOBSet] = useState(false);
-  const [emailEditState, emailSet] = useState(false);
-  const [phoneEditState, phoneSet] = useState(false);
+
   return (
     <div id="personal" className=" mt-5">
     <div className="container">
@@ -44,200 +37,29 @@ let PersonalTow = (props) => {
         <div className="row mt-5">
           <div className="left-personal col-md-7">
             <div >
-              <div className="name">
-                <span className="font-weight-bold">Legal name</span>
-                <span
-                  role="button"
-                  className="float-right edit"
-                  onClick={(e) => {
-                    nameSet(!nameEditState);
-                  }}
-                >
-                  Edit
-                </span>
-                {nameEditState ? (
-                  <div className="name-edit">
-                    <p>
-                      This is the name on your travel document, which could be a
-                      license or a passport.
-                    </p>
-                    <form className="row g-3" onSubmit={handleSubmit(onSubmit)}>
-                      <div className="col-md-5">
-                        <label  className="form-label">
-                          First name
-                        </label>
-                        <input
-                          type="text"
-                          className="form-control"
-                          id="First"
-                          // value={props.firstNameState}
-                          name="first"
-                          ref={register}
-                        />
-                      </div>
-                      <div className="col-md-5">
-                        <label  className="form-label">
-                          Last name
-                        </label>
-                        <input
-                          type="text"
-                          // value={props.lastNameState}
-                          className="form-control"
-                          id="Last"
-                          name="last"
-                          ref={register}
-                        />
-                      </div>
-                      <input
-                        type="submit"
-                        value="Save"
-                        className="btn col-md-4 mt-4"
-                      />
-                    </form>
-                  </div>
-                ) : (
-                  <>
-                    <p className="text-muted mt-3">
-                      {props.firstNameState} {props.lastNameState}
-                    </p>
-                  </>
-                )}
-              </div>
+             {/*name*/}
+              <Name first = {props.firstNameState} last={props.lastNameState}/>
+             {/*name*/}
 
               <span className="line mb-4 d-block w-100"></span>
-
-              <div className="Gender">
-                <span className="font-weight-bold">Gender</span>
-                <span
-                  role="button"
-                  className="float-right edit"
-                  onClick={(e) => {
-                    ginderSet(!ginderEditState);
-                  }}
-                >
-                  Edit
-                </span>
-                {ginderEditState ? (
-                  <div className="Gender-edit">
-                    <select className="form-control mb-3">
-                      <option value="0" disabled selected>
-                        Select
-                      </option>
-                      <option value="1">Male</option>
-                      <option value="2">Fimal</option>
-                      <option value="3">other</option>
-                    </select>
-                  </div>
-                ) : (
-                  <>
-                    <p className="text-muted mt-3">Not Selected</p>
-                  </>
-                )}
-              </div>
+              {/*Gender*/}
+              <Gender/>
+              {/*Gender*/}
 
               <span className="line mb-4 d-block w-100"></span>
-
-              <div className="DOB">
-                <span className="font-weight-bold">Date of birth</span>
-                <span
-                  role="button"
-                  className="float-right edit"
-                  onClick={(e) => {
-                    DOBSet(!DOBEditState);
-                  }}
-                >
-                  Edit
-                </span>
-                {DOBEditState ? (
-                  <div className="DOB-edit">
-                    <input
-                      value={props.date}
-                      type="date"
-                      name="BOD"
-                      className="form-control w-50"
-                      id=""
-                      ref={register}
-                    />
-                    <input type="button" value="Save" className="btn" />
-                  </div>
-                ) : (
-                  <>
-                    <p>{props.date}</p>
-                  </>
-                )}
-              </div>
-
+              {/*dob*/}
+              <DOB DOB={props.date}/>
+              {/*dob*/}
               <span className="line mb-4 d-block w-100"></span>
+              {/*email*/}
 
-              <div className="email">
-                <span className="font-weight-bold">Email address</span>
-                <span
-                  role="button"
-                  className="float-right edit"
-                  onClick={(e) => {
-                    emailSet(!emailEditState);
-                  }}
-                >
-                  Edit
-                </span>
-                {emailEditState ? (
-                  <div className="email-edit">
-                    <form className="row g-3" onSubmit={handleSubmit(onSubmit)}>
-                      <div className="col-md-12">
-                        <p>Use an address you’ll always have access to.</p>
-                        <input
-                          type="email"
-                          className="form-control"
-                          id="email"
-                          name="email"
-                          ref={register}
-                        />
-                      </div>
-                      <input
-                        type="submit"
-                        value="Save"
-                        className="btn col-md-2 mt-4"
-                      />
-                    </form>
-                  </div>
-                ) : (
-                  <>
-                    <p className="text-muted mt-3">{props.email}</p>
-                  </>
-                )}
-              </div>
-
+                <Email email={props.email}/>
+              {/*email*/}
+                  
               <span className="line mb-4 d-block w-100"></span>
-
-              <div className="Phone number">
-                <span className="font-weight-bold">Phone number</span>
-                <span
-                  role="button"
-                  className="float-right edit"
-                  onClick={(e) => {
-                    phoneSet(!phoneEditState);
-                  }}
-                >
-                  Edit
-                </span>
-                {phoneEditState ? (
-                  <div className="phone-edit">
-                    <input
-                      value={props.phoneState}
-                      type="text"
-                      name="phone"
-                      className="form-control w-50"
-                      id=""
-                      ref={register}
-                    />
-                    <input type="button" value="Save" className="btn" />
-                  </div>
-                ) : (
-                  <>
-                    <p>{props.phoneState}</p>
-                  </>
-                )}
-              </div>
+              {/*Phone*/}
+              <Phone phone={props.phoneState}/>
+              {/*Phone*/}
 
               <span className="line mb-4 d-block w-100"></span>
 
