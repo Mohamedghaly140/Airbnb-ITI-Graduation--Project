@@ -25,14 +25,14 @@ const PlaceItem = props => {
       <div className="row">
         <div className="col-md-4 col-12 d-flex justify-content-center align-items-center">
           <img
-            className="img-fluid"
+            className="img-fluid yourplace-img"
             src={`${process.env.REACT_APP_BACKEND_URL}/${imageUrl}`}
             alt={title}
           />
         </div>
         <div className=" col-md-7 col-12">
           <div className="desc__header">
-            <p>{`${placeType} in ${city}`}</p>
+            <p className="pt-2">{`${placeType} in ${city}`}</p>
             <h5>{title}</h5>
           </div>
           <hr style={{ width: "8%", marginLeft: 0 }} />

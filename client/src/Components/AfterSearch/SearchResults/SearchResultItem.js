@@ -23,7 +23,7 @@ const SearchResultItem = props => {
       style={{ textDecoration: "none", color: "black" }}
     >
       <div className="mCard row">
-        <div className="mslider col-lg-4 col-md-12 col-12 d-flex align-items-center justify-content-center">
+        <div className="mslider col-xl-4 col-12 d-flex align-items-center justify-content-center">
           <div
             id="carouselExampleControls"
             className="carousel slide m-auto"
@@ -41,7 +41,7 @@ const SearchResultItem = props => {
             <div className="carousel-inner rounded">
               <div className="carousel-item active">
                 <img
-                  className="d-block w-100"
+                  className="d-block w-100 acco-img"
                   src={`${process.env.REACT_APP_BACKEND_URL}/${imageUrl}`}
                   alt={title}
                 />
@@ -68,14 +68,14 @@ const SearchResultItem = props => {
             </a>
           </div>
         </div>
-        <div className=" col-lg-7 col-md-12 col-12">
+        <div className=" col-xl-7  col-12">
           <div className="desc__header">
             <p>
               {placeType} in {city}
             </p>
             <h5>{title}</h5>
           </div>
-          <hr style={{ width: "8%", marginLeft: 0 }} />
+          <hr style={{ width: "80%", marginLeft: 0 }} />
           <div className="desc__info">
             <div className="row ml-1">
               <p>{numOfGuests} guests.</p>

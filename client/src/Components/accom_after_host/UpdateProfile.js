@@ -62,7 +62,7 @@ function UpdateProfile(props) {
   const onSubmitHandler = e => {
     e.preventDefault();
     updatePlaceHandler(allData.place.id);
-    history.push("/edit_profile/edit");
+    history.push("/");
   };
   useEffect(() => {
     axios

@@ -72,6 +72,9 @@
   border-bottom: 2px solid lightgray;
   padding: 1rem;
 }
+.acco-img {
+  height: 10rem !important;
+}
 @media screen and (max-width: 1090px) {
   .filters-btn {
     width: 50% !important;

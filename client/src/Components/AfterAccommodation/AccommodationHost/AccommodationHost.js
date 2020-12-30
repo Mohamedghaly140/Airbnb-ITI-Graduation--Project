@@ -81,20 +81,20 @@ const AccommodationHost = ({ id }) => {
         <div className="row details-header justify-content-around">
           <div className="col-md-5 d-flex flex-column pl-5 justify-content-center col-12">
             <div>
-              <h3>{title}</h3>
-              <AccountCircleIcon />
-              <span className="ml-2 ">{`hosted by ${creator.firstName} ${creator.lastName} .`}</span>
-              <br />
-              <span className=" ml-4 pl-2 ">
-                {`${city}, ${address}, ${country} .`}
-              </span>
-              <br />
+              <h3 className="accHeader__title">{title}</h3>
+              <div className="ml-2 ">
+                <AccountCircleIcon />
+                <span>{`hosted by ${creator.firstName} ${creator.lastName} .`}</span>
+              </div>
+              <div className=" ml-4 pl-2 ">
+                <span>{`${city}, ${address}, ${country} .`}</span>
+              </div>
               <span className="ml-4 pl-2">{`${numberOfGuests} guests · ${numberOfbeds} bed · 1 bath .`}</span>
             </div>
           </div>
           <div className="col-md-6 col-12 ">
             <img
-              className="accHeader__image img-fluid .max-width: 100% rounded-lg"
+              className="accHeader__image img-fluid  rounded-lg"
               src={`${process.env.REACT_APP_BACKEND_URL}/${image}`}
               alt={title}
             />
@@ -188,7 +188,7 @@ const AccommodationHost = ({ id }) => {
             </Link>
           </p>
         </div>
-        <hr className="hr-lg" />
+        {/* <hr className="hr-lg" /> */}
         <div className="location">
           <h4>Location</h4>
           <p className="accHost__location">

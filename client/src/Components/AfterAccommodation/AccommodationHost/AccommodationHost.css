@@ -33,7 +33,9 @@
   text-decoration: none;
   color: black;
 }
-
+.accHeader__image {
+  width: 100%;
+}
 .reviews a:hover {
   text-decoration: underline;
   color: black;
@@ -45,5 +47,8 @@
   .reviews,
   .location {
     margin-left: 2rem;
+  }
+  .accHeader__title {
+    font-size: 22px;
   }
 }
