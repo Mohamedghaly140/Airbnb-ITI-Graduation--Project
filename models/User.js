@@ -28,7 +28,7 @@ const UserSchema = new Schema({
 	},
 	gender: {
 		type: String,
-		default: 'Un Set',
+		default: 'Not Selected',
 	},
 	phone: {
 		type: Number,
