@@ -1,6 +1,6 @@
 import React, { Fragment, useContext, useState } from "react";
 import "./NavbarStyle.css";
-import SwapVerticalCircleIcon from "@material-ui/icons/SwapVerticalCircle";
+import PersonAddIcon from "@material-ui/icons/PersonAdd";
 import SettingsIcon from "@material-ui/icons/Settings";
 import DirectionsRunIcon from "@material-ui/icons/DirectionsRun";
 import HomeWorkIcon from "@material-ui/icons/HomeWork";
@@ -41,7 +41,7 @@ function NavbarDown() {
               onClick={() => setModalShow(true)}
             >
               <div>
-                <HomeWorkIcon className="nav-down-icon" />
+                <PersonAddIcon className="nav-down-icon" />
               </div>
               <span className="text-center">signup</span>
             </div>

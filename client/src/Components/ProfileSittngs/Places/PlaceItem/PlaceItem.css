@@ -24,3 +24,8 @@
   background: #00dfc8;
   color: white;
 }
+@media screen and (max-width: "768px") {
+  .desc {
+    padding: 1rem;
+  }
+}
