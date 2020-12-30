@@ -36,12 +36,15 @@ let Name = props => {
 			)
 			.then(res => {
 				console.log(res.data);
+				props.setFirst(res.data.userName.firstName)
+				props.setLast(res.data.userName.lastName)
 				setLoading(false);
 			})
 			.catch(err => {
 				console.log(err);
 				setLoading(false);
 			});
+			nameSet(!nameEditState)
 	};
 
 	const history = useHistory();
@@ -66,46 +69,47 @@ let Name = props => {
 						This is the name on your travel document, which could be a license
 						or a passport.
 					</p>
-					<form className="row g-3" onSubmit={handleSubmit(onSubmit_1)}>
-						<div className="col-md-5">
-							<label className="form-label">First name</label>
-							<input
-								type="text"
-								className="form-control"
-								id="First"
-								// value={props.firstNameState}
-								name="firstName"
-								ref={register({ required: true })}
-							/>
-							{errors.first && errors.first.type === 'required' && (
-								<span className="d-block text-danger">First Name Required</span>
-							)}
-							{errors.first && errors.first.type === 'pattern' && (
-								<span className="d-block text-danger">Invalid name</span>
-							)}
+					<form onSubmit={handleSubmit(onSubmit_1)}>
+						<div className="row mb-3">
+							<div className="col-md-6">
+								<label className="form-label">First name</label>
+								<input
+									type="text"
+									className="form-control"
+									id="First"
+									// value={props.firstNameState}
+									name="firstName"
+									ref={register({ required: true })}
+								/>
+								{errors.first && errors.first.type === 'required' && (
+									<span className="d-block text-danger">First Name Required</span>
+								)}
+								{errors.first && errors.first.type === 'pattern' && (
+									<span className="d-block text-danger">Invalid name</span>
+								)}
+							</div>
+							<div className="col-md-6">
+								<label className="form-label">Last name</label>
+								<input
+									type="text"
+									// value={props.lastNameState}
+									className="form-control"
+									id="Last"
+									name="lastName"
+									ref={register({ required: true })}
+								/>
+								{errors.last && errors.last.type === 'required' && (
+									<span className="d-block text-danger">Last Name Required</span>
+								)}
+								{errors.last && errors.last.type === 'pattern' && (
+									<span className="d-block text-danger">Invalid name</span>
+								)}
+							</div>
 						</div>
-						<div className="col-md-5">
-							<label className="form-label">Last name</label>
-							<input
-								type="text"
-								// value={props.lastNameState}
-								className="form-control"
-								id="Last"
-								name="lastName"
-								ref={register({ required: true })}
-							/>
-							{errors.last && errors.last.type === 'required' && (
-								<span className="d-block text-danger">Last Name Required</span>
-							)}
-							{errors.last && errors.last.type === 'pattern' && (
-								<span className="d-block text-danger">Invalid name</span>
-							)}
-						</div>
-
 						{loading ? (
 							<Spinner animation="border" variant="primary" />
 						) : (
-							<input type="submit" value="Save" className="btn mt-4 btn-info" />
+							<input type="submit" value="Save" className="btn btn-info" />
 						)}
 					</form>
 				</div>
