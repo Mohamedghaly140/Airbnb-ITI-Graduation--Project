@@ -30,12 +30,14 @@ let Gender = props => {
 			)
 			.then(res => {
 				console.log(res.data);
+				props.setGender(res.data.gender);
 				setLoading(false);
 			})
 			.catch(err => {
 				console.log(err);
 				setLoading(false);
 			});
+		ginderSet(!ginderEditState);
 	};
 
 	const history = useHistory();
@@ -52,7 +54,7 @@ let Gender = props => {
 					ginderSet(!ginderEditState);
 				}}
 			>
-				Edit
+				{loading ? <Spinner animation="border" variant="primary" /> : 'Edit'}
 			</span>
 			{ginderEditState ? (
 				<div className="Gender-edit">
@@ -73,11 +75,7 @@ let Gender = props => {
 						{errors.gender && errors.gender.type === 'required' && (
 							<span className="d-block text-danger">Required</span>
 						)}
-						{loading ? (
-							<Spinner animation="border" variant="primary" />
-						) : (
-							<input type="submit" value="Save" className="btn btn-info" />
-						)}
+						<input type="submit" value="Save" className="btn btn-info" />
 					</form>
 				</div>
 			) : (

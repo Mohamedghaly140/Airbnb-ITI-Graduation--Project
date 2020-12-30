@@ -22,8 +22,8 @@ const SearchResultItem = props => {
       to={`/accommodation/${id}`}
       style={{ textDecoration: "none", color: "black" }}
     >
-      <div className="mCard row">
-        <div className="mslider col-xl-4 col-12 d-flex align-items-center justify-content-center">
+      <div className="mCard row mb-3 mt-4 p-3 border-top border-bottom">
+        <div className="mslider col-4 ml-1">
           <div
             id="carouselExampleControls"
             className="carousel slide m-auto"
@@ -75,7 +75,6 @@ const SearchResultItem = props => {
             </p>
             <h5>{title}</h5>
           </div>
-          <hr style={{ width: "80%", marginLeft: 0 }} />
           <div className="desc__info">
             <div className="row ml-1">
               <p>{numOfGuests} guests.</p>

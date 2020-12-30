@@ -13,7 +13,7 @@ let PersonalTow = props => {
 	const history = useHistory();
 
 	return (
-		<div id="personal" className=" mt-5">
+		<div id="personal" className=" mt-5 mb-5">
 			<div className="container">
 				<ul className="nav">
 					<li className="nav-item">
@@ -33,61 +33,28 @@ let PersonalTow = props => {
 					<div className="left-personal col-md-7">
 						<div>
 							{/*name*/}
-							<Name first={props.firstNameState} last={props.lastNameState} />
+							<Name first={props.firstNameState} last={props.lastNameState} setFirst={props.setFirst} setLast={props.setLast} />
 							{/*name*/}
 
 							<span className="line mb-4 d-block w-100"></span>
 							{/*Gender*/}
-							<Gender gender={props.gender} />
+							<Gender gender={props.gender} setGender={props.setGender} />
 							{/*Gender*/}
 
 							<span className="line mb-4 d-block w-100"></span>
 							{/*dob*/}
-							<DOB DOB={props.date} />
+							<DOB DOB={props.date} BDset={props.BDset} />
 							{/*dob*/}
 							<span className="line mb-4 d-block w-100"></span>
 							{/*email*/}
 
-							<Email email={props.email} />
+							<Email email={props.email} setEmail={props.setEmail} />
 							{/*email*/}
 
 							<span className="line mb-4 d-block w-100"></span>
 							{/*Phone*/}
-							<Phone phone={props.phoneState} />
+							<Phone phone={props.phoneState} phoneSet={props.phoneSet} />
 							{/*Phone*/}
-
-							<span className="line mb-4 d-block w-100"></span>
-
-							<div className="Phon">
-								<span className="font-weight-bold">Government ID</span>
-								<span role="button" className="float-right edit">
-									Edit
-								</span>
-								<p className="text-muted">Not provided</p>
-							</div>
-
-							<span className="line mb-4 d-block w-100"></span>
-
-							<div className="Phon">
-								<span className="font-weight-bold">Emergency contact</span>
-								<span role="button" className="float-right edit">
-									Add
-								</span>
-								<p className="text-muted">Not provided</p>
-							</div>
-
-							<span className="line mb-4 d-block w-100"></span>
-
-							<div className="Phon">
-								<span className="font-weight-bold">
-									Passport info for China travel
-								</span>
-								<span role="button" className="float-right edit">
-									Add
-								</span>
-								<p className="text-muted">Not provided</p>
-							</div>
-							<span className="line mb-4 d-block w-100"></span>
 						</div>
 					</div>
 					<div className="right-personal col-md-4 col-12 ml-auto">

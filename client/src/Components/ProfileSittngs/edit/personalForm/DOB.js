@@ -35,12 +35,14 @@ let DOB = props => {
 			)
 			.then(res => {
 				console.log(res.data);
+				props.BDset(res.data.birthDay);
 				setLoading(false);
 			})
 			.catch(err => {
 				console.log(err);
 				setLoading(false);
 			});
+		DOBSet(!DOBEditState);
 	};
 
 	const history = useHistory();
@@ -57,31 +59,27 @@ let DOB = props => {
 					DOBSet(!DOBEditState);
 				}}
 			>
-				Edit
+				{loading ? <Spinner animation="border" variant="primary" /> : 'Edit'}
 			</span>
 			{DOBEditState ? (
-				<div className="DOB-edit">
+				<div className="DOB-edit mt-2">
 					<form action="/#" onSubmit={handleSubmit(onSubmit_3)}>
 						<input
 							type="date"
 							name="birthDay"
-							className="form-control w-50"
+							className="form-control w-50 mb-3"
 							id=""
 							ref={register({ required: true })}
 						/>
 						{errors.birthDay && errors.birthDay.type === 'required' && (
 							<span className="d-block text-danger">Required</span>
 						)}
-						{loading ? (
-							<Spinner animation="border" variant="primary" />
-						) : (
-							<input type="submit" value="Save" className="btn btn-info" />
-						)}
+						<input type="submit" value="Save" className="btn btn-info" />
 					</form>
 				</div>
 			) : (
 				<>
-					<p>{props.DOB}</p>
+					<p className="mt-2">{props.DOB}</p>
 				</>
 			)}
 		</div>
