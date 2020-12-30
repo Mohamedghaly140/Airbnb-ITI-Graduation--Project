@@ -1,4 +1,5 @@
 import React, { useState, useContext } from 'react';
+import { Spinner } from 'react-bootstrap';
 import axios from 'axios';
 import ListCountries from './ListCountries';
 import './ListSpace.css';
@@ -18,6 +19,8 @@ function ListSpace() {
 	const authContext = useContext(AuthContext);
 	const { userId, token } = authContext;
 
+	const [loading, setLoading] = useState(false);
+
 	// *****validation**********//
 	const { register, handleSubmit } = useForm();
 	const history = useHistory();
@@ -28,6 +31,8 @@ function ListSpace() {
 	const counter = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15];
 
 	const postData = async dataForm => {
+		setLoading(true);
+
 		// console.log(dataForm);
 		const formData = new FormData();
 		formData.append('title', dataForm.title);
@@ -57,8 +62,10 @@ function ListSpace() {
 			);
 
 			console.log(res);
+			setLoading(false);
 			history.push('/');
 		} catch (err) {
+			setLoading(false);
 			console.log(err.message);
 		}
 	};
@@ -167,11 +174,19 @@ function ListSpace() {
 
 							{/* Continue btn  */}
 							<div className="col-12">
-							<input
-								type="submit"
-								value="Continue"
-								className="btn btn-primary container-fluid"
-							/>
+								{loading ? (
+									<React.Fragment>
+										<div className="text-center">
+											<Spinner animation="border" variant="primary" />
+										</div>
+									</React.Fragment>
+								) : (
+									<input
+										type="submit"
+										value="Continue"
+										className="btn btn-primary container-fluid"
+									/>
+								)}
 							</div>
 						</form>
 					</div>

@@ -1,10 +1,9 @@
 .nav-down {
   background: white;
   position: fixed;
-  padding: 1rem;
   bottom: 0;
   right: 0;
-  height: 6rem;
+  height: 4rem;
   display: flex;
   align-items: center;
   justify-content: center;
