@@ -104,6 +104,9 @@ function SignUpModale(props) {
                   name="date"
                 />
               </div>
+              {errors.date && (
+                <span className="error">Birthday is required</span>
+              )}
               <span>
                 To sign up, you need to be at least 18. Your birthday won’t be
                 shared with other people who use Airbnb.
