@@ -294,3 +294,41 @@ exports.deletePlaceById = async (req, res, next) => {
 		place,
 	});
 };
+
+exports.bookPlaceById = async (req, res, next) => {
+	const placeId = req.params.id;
+
+	let place;
+
+	try {
+		place = await Place.findById(placeId);
+
+		if (!place) {
+			return next(
+				new HttpError(
+					`Could not find a place for the provided id ${placeId}..`,
+					404
+				)
+			);
+		}
+	} catch (err) {
+		return next(
+			new HttpError('Someting went wrong, could not delete place', 500)
+		);
+	}
+
+	place.isBooked = req.body.isBooked;
+
+	try {
+		await Place.save();
+	} catch (err) {
+		return next(
+			new HttpError('Someting went wrong, could not delete place', 500)
+		);
+	}
+
+	res.status(200).json({
+		message: 'place booked successfuly',
+		place,
+	});
+};
