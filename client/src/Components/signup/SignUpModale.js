@@ -36,7 +36,7 @@ function SignUpModale(props) {
 
 		axios
 			.post(
-				`${process.env.REACT_APP_BACKEND_URL}/api/users/signup`,
+				`${process.env.REACT_APP_BACKEND_URL}/api/auth/signup`,
 				dataForm,
 				config
 			)

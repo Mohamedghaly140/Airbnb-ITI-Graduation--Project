@@ -1,16 +1,15 @@
+// Load env vars
+require('dotenv').config({ path: './.env' });
+
 const fs = require('fs');
 const path = require('path');
 
 const express = require('express');
 const morgan = require('morgan');
-const dotenv = require('dotenv');
 const colors = require('colors');
 const connectDB = require('./db/db');
 const HttpError = require('./models/HttpError');
 const cors = require('cors');
-
-// Load env vars
-dotenv.config({ path: './config/config.env' });
 
 // Connect to database
 connectDB();
@@ -33,6 +32,7 @@ app.use(cors());
 // import routes files
 const placesRoutes = require('./routes/placesRoutes');
 const usersRoutes = require('./routes/usersRoutes');
+const authRoutes = require('./routes/authRoutes');
 const bookingRoutes = require('./routes/BookingRoutes');
 
 app.use((req, res, next) => {
@@ -48,6 +48,7 @@ app.use((req, res, next) => {
 // excute routes
 app.use('/api/places', placesRoutes);
 app.use('/api/users', usersRoutes);
+app.use('/api/auth', authRoutes);
 app.use('/api/booked_places', bookingRoutes);
 
 app.use((req, res, next) => {

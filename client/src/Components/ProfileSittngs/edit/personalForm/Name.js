@@ -36,15 +36,15 @@ let Name = props => {
 			)
 			.then(res => {
 				console.log(res.data);
-				props.setFirst(res.data.userName.firstName)
-				props.setLast(res.data.userName.lastName)
+				props.setFirst(res.data.userName.firstName);
+				props.setLast(res.data.userName.lastName);
 				setLoading(false);
 			})
 			.catch(err => {
 				console.log(err);
 				setLoading(false);
 			});
-			nameSet(!nameEditState)
+		nameSet(!nameEditState);
 	};
 
 	const history = useHistory();
@@ -61,7 +61,7 @@ let Name = props => {
 					nameSet(!nameEditState);
 				}}
 			>
-				Edit
+				{loading ? <Spinner animation="border" variant="primary" /> : 'Edit'}
 			</span>
 			{nameEditState ? (
 				<div className="name-edit">
@@ -82,7 +82,9 @@ let Name = props => {
 									ref={register({ required: true })}
 								/>
 								{errors.first && errors.first.type === 'required' && (
-									<span className="d-block text-danger">First Name Required</span>
+									<span className="d-block text-danger">
+										First Name Required
+									</span>
 								)}
 								{errors.first && errors.first.type === 'pattern' && (
 									<span className="d-block text-danger">Invalid name</span>
@@ -99,18 +101,16 @@ let Name = props => {
 									ref={register({ required: true })}
 								/>
 								{errors.last && errors.last.type === 'required' && (
-									<span className="d-block text-danger">Last Name Required</span>
+									<span className="d-block text-danger">
+										Last Name Required
+									</span>
 								)}
 								{errors.last && errors.last.type === 'pattern' && (
 									<span className="d-block text-danger">Invalid name</span>
 								)}
 							</div>
 						</div>
-						{loading ? (
-							<Spinner animation="border" variant="primary" />
-						) : (
-							<input type="submit" value="Save" className="btn btn-info" />
-						)}
+						<input type="submit" value="Save" className="btn btn-info" />
 					</form>
 				</div>
 			) : (

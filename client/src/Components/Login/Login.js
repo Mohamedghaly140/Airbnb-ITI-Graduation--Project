@@ -1,12 +1,12 @@
 import React, { useState, useContext } from 'react';
 import { Spinner } from 'react-bootstrap';
 import axios from 'axios';
-import { useHistory,Link } from 'react-router-dom';
+import { useHistory, Link } from 'react-router-dom';
 import { Modal } from 'react-bootstrap';
 import '../Login/login.css';
-import {FaFacebookSquare} from "react-icons/fa" 
-import {FcGoogle,FcInvite}from "react-icons/fc"
-import SignUpModale from "../signup/SignUpModale"
+import { FaFacebookSquare } from 'react-icons/fa';
+import { FcGoogle, FcInvite } from 'react-icons/fc';
+import SignUpModale from '../signup/SignUpModale';
 
 import { AuthContext } from '../../Context/AuthContext';
 
@@ -42,11 +42,7 @@ const Login = props => {
 		setLoading(true);
 
 		axios
-			.post(
-				`${process.env.REACT_APP_BACKEND_URL}/api/users/login`,
-				user,
-				config
-			)
+			.post(`${process.env.REACT_APP_BACKEND_URL}/api/auth/login`, user, config)
 			.then(res => {
 				console.log(res);
 				const user = res.data;
@@ -150,7 +146,13 @@ const Login = props => {
 						>
 							<div>
 								<div className="row p-1 justify-content-center">
-									<div className="col-10"><FcInvite className="col-1 mt-1" style={{fontSize:"3rem"}}/> Continue with email</div>
+									<div className="col-10">
+										<FcInvite
+											className="col-1 mt-1"
+											style={{ fontSize: '3rem' }}
+										/>{' '}
+										Continue with email
+									</div>
 								</div>
 							</div>
 						</button>
@@ -161,7 +163,14 @@ const Login = props => {
 						>
 							<div>
 								<div className="row p-1 justify-content-center">
-									<div className="col-10"> <FaFacebookSquare className="col-1 mt-1" style={{fontSize:"1.5rem",color:"#1873eb"}}/>Continue with Facebook</div>
+									<div className="col-10">
+										{' '}
+										<FaFacebookSquare
+											className="col-1 mt-1"
+											style={{ fontSize: '1.5rem', color: '#1873eb' }}
+										/>
+										Continue with Facebook
+									</div>
 								</div>
 							</div>
 						</button>
@@ -172,7 +181,13 @@ const Login = props => {
 						>
 							<div>
 								<div className="row p-1 justify-content-center">
-									<div className="col-10"><FcGoogle className="col-1 mt-1" style={{fontSize:"1.5rem"}}/> Continue with Google</div>
+									<div className="col-10">
+										<FcGoogle
+											className="col-1 mt-1"
+											style={{ fontSize: '1.5rem' }}
+										/>{' '}
+										Continue with Google
+									</div>
 								</div>
 							</div>
 						</button>
@@ -192,11 +207,21 @@ const Login = props => {
 					<div className="new-account">
 						<div className="row mt-2">
 							<p className="ml-3">Don't have an account</p>
-							<Link to="" className="ml-1 font-weight-bold" variant="primary"  onClick={props.onHide} onClick={() => {setModalShow(true)}}>
+							<Link
+								to=""
+								className="ml-1 font-weight-bold"
+								variant="primary"
+								onClick={props.onHide}
+								onClick={() => {
+									setModalShow(true);
+								}}
+							>
 								Sign up
 							</Link>
-							<SignUpModale show={modalShow}
-							onHide={() => setModalShow(false)}/>
+							<SignUpModale
+								show={modalShow}
+								onHide={() => setModalShow(false)}
+							/>
 						</div>
 					</div>
 				</Modal.Body>
