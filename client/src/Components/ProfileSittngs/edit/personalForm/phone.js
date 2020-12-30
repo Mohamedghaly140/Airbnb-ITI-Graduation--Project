@@ -13,8 +13,7 @@ let Phone = (props) => {
     phone:props.phone
       }}
   );
-  const onSubmit_4 = data => console.log(errors);
-  console.log(errors);
+  const onSubmit_4 = data => console.log(data);
 
 
   const history = useHistory();
