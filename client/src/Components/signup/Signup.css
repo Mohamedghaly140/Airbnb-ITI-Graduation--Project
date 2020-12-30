@@ -1,11 +1,11 @@
 /*********** SignUp Page  *************/
 .signup-container {
   width: 100%;
-  border: 2px solid black;
   margin: auto;
-  border-radius: 15px;
 }
-
+.modal-content {
+  border-radius: 2rem;
+}
 .signup-container form {
   width: 100%;
   padding: 2rem;

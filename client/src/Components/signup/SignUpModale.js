@@ -73,9 +73,10 @@ function SignUpModale(props) {
 				size="lg"
 				aria-labelledby="contained-modal-title-vcenter"
 				centered
+				style={{ borderRadius: '2rem' }}
 			>
 				{' '}
-				<Modal.Body>
+				<Modal.Body style={{ borderRadius: '2rem' }}>
 					<div className="signup-container">
 						<div className="finish-signup">
 							<h5 className="text-center">Finish signing up</h5>
@@ -103,6 +104,9 @@ function SignUpModale(props) {
 									name="date"
 								/>
 							</div>
+							{errors.date && (
+								<span className="error">Birthday is required</span>
+							)}
 							<span>
 								To sign up, you need to be at least 18. Your birthday won’t be
 								shared with other people who use Airbnb.
