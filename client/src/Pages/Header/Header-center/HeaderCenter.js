@@ -3,6 +3,7 @@ import SearchIcon from "@material-ui/icons/Search";
 import { withRouter, useRouteMatch } from "react-router-dom";
 
 const HeaderCenter = props => {
+
   const [showSearch, setShowSearch] = useState(false);
   const [location, setLocation] = useState("");
   const [guests, setGuests] = useState("");
@@ -32,6 +33,7 @@ const HeaderCenter = props => {
   // const history = useHistory();
 
   const openSearchResults = () => {
+    console.log(props);
     if (route.path === "/search_results") {
       props.onSearch(location, guests);
     } else {

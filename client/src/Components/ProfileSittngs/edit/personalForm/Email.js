@@ -34,12 +34,14 @@ let Email = props => {
 			)
 			.then(res => {
 				console.log(res.data);
+				props.setEmail(res.data.email)
 				setLoading(false);
 			})
 			.catch(err => {
 				console.log(err);
 				setLoading(false);
 			});
+			emailSet(!emailEditState)
 	};
 
 	const history = useHistory();
@@ -60,12 +62,12 @@ let Email = props => {
 			</span>
 			{emailEditState ? (
 				<div className="email-edit">
-					<form className="row g-3" onSubmit={handleSubmit(onSubmit_4)}>
-						<div className="col-md-12">
+					<form onSubmit={handleSubmit(onSubmit_4)}>
+						<div className="edit-email">
 							<p>Use an address you’ll always have access to.</p>
 							<input
 								type="email"
-								className="form-control"
+								className="form-control mb-3"
 								id="email"
 								name="email"
 								ref={register({

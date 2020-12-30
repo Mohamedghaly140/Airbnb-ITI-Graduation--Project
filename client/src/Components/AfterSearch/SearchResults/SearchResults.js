@@ -10,7 +10,7 @@ const SearchResults = ({ searchResultsList }) => {
   return (
     //map on searchResultsList
     //we naly onClick beypass el id beta3 el acc
-    <div className="col-md-6 col-12">
+    <div className="col-md-7 col-12">
       <div className="container adv-search mt-5">
         <div>
           <h3>Stays in selected map area</h3>

@@ -30,12 +30,14 @@ let Gender = props => {
 			)
 			.then(res => {
 				console.log(res.data);
+				props.setGender(res.data.gender)
 				setLoading(false);
 			})
 			.catch(err => {
 				console.log(err);
 				setLoading(false);
 			});
+			ginderSet(!ginderEditState)
 	};
 
 	const history = useHistory();

@@ -46,7 +46,7 @@ const AfterSearch = ({ search }) => {
       <Header2 />
       <div className="row search__results">
         <SearchResults searchResultsList={searchResultsList} />
-        <div className="col-md-6 col-12">
+        <div className="col-md-5 col-12">
           <GoogleMap2 mapInputs={{ lat, lng }} />
         </div>
       </div>
