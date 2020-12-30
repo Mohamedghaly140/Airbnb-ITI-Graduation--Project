@@ -23,10 +23,10 @@ const SearchResultItem = props => {
       style={{ textDecoration: "none", color: "black" }}
     >
       <div className="mCard row">
-        <div className="mslider col-4 ml-1">
+        <div className="mslider col-lg-4 col-md-12 col-12 d-flex align-items-center justify-content-center">
           <div
             id="carouselExampleControls"
-            className="carousel slide"
+            className="carousel slide m-auto"
             data-ride="carousel"
           >
             <ol className="carousel-indicators">
@@ -68,7 +68,7 @@ const SearchResultItem = props => {
             </a>
           </div>
         </div>
-        <div className="desc col-7">
+        <div className=" col-lg-7 col-md-12 col-12">
           <div className="desc__header">
             <p>
               {placeType} in {city}

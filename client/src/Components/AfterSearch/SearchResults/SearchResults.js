@@ -18,10 +18,12 @@ const SearchResults = ({ searchResultsList }) => {
       </div>
       <div className="container adv-search__btns mt-4">
         <div className="row">
-          <button className="rounded-pill  ">Cancellation flexibilty</button>
-          <button className="rounded-pill ">Type of place</button>
-          <button className="rounded-pill ">Price</button>
-          <button className="rounded-pill ">More filters</button>
+          <button className="rounded-pill  filters-btn">
+            Cancellation flexibilty
+          </button>
+          <button className="rounded-pill filters-btn">Type of place</button>
+          <button className="rounded-pill filters-btn">Price</button>
+          <button className="rounded-pill filters-btn">More filters</button>
         </div>
       </div>
       <hr />
