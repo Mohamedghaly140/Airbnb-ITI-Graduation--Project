@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import TextField from "@material-ui/core/TextField";
 import Select from "@material-ui/core/Select";
+import Footer from "../../../Pages/Footer"
 
 function HostForm() {
   const [state, setState] = useState({
@@ -99,6 +100,7 @@ function HostForm() {
           </div>
         </div>
       </div>
+      <Footer/>
     </section>
   );
 }

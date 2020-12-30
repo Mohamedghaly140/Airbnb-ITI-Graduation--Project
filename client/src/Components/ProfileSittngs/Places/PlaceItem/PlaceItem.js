@@ -54,7 +54,7 @@ const PlaceItem = props => {
             <Spinner animation="border" variant="primary" />
           ) : (
             <button
-              className="btn btn-danger"
+              className="btn btn-danger mr-2"
               onClick={() => onDeletePlace(id)}
             >
               Delete Place
@@ -63,7 +63,7 @@ const PlaceItem = props => {
           {loading ? (
             <Spinner animation="border" variant="success" />
           ) : (
-            <Link to={`/update/${id}`} id={id} className="btn btn-primary">
+            <Link to={`/update/${id}`} id={id} className="btn btn-primary ml-2">
               Update Place
             </Link>
           )}

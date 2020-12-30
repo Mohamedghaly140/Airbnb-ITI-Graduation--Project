@@ -1,92 +1,91 @@
-import React, { useState } from 'react';
-import SearchIcon from '@material-ui/icons/Search';
-import { withRouter, useRouteMatch } from 'react-router-dom';
+import React, { useState } from "react";
+import SearchIcon from "@material-ui/icons/Search";
+import { withRouter, useRouteMatch } from "react-router-dom";
 
 const HeaderCenter = props => {
-	const [showSearch, setShowSearch] = useState(false);
-	const [location, setLocation] = useState('');
-	const [guests, setGuests] = useState('');
-	const [date, setDate] = useState({ startValue: '', endValue: '' });
 
-	const route = useRouteMatch();
+  const [showSearch, setShowSearch] = useState(false);
+  const [location, setLocation] = useState("");
+  const [guests, setGuests] = useState("");
+  const [date, setDate] = useState({ startValue: "", endValue: "" });
 
-	const clickHandler = () => {
-		setShowSearch(!showSearch);
-		props.show(!showSearch);
-		console.log(showSearch);
-	};
-	const locationHandler = e => {
-		setLocation(e.target.value);
-	};
-	const guestsHandler = e => {
-		setGuests(e.target.value);
-	};
-	const dateHandler = e => {
-		const name = e.target.name;
-		setDate({
-			...date,
-			[name]: e.target.value,
-		});
-		console.log(date);
-	};
-	// const history = useHistory();
+  const route = useRouteMatch();
 
-	const openSearchResults = () => {
-		if (route.path === '/search_results') {
-			props.onSearch(location, guests);
-		} else {
-			props.onSearch(location, guests);
-			props.history.push('/search_results');
-		}
-	};
+  const clickHandler = () => {
+    setShowSearch(!showSearch);
+    props.show(!showSearch);
+    console.log(showSearch);
+  };
+  const locationHandler = e => {
+    setLocation(e.target.value);
+  };
+  const guestsHandler = e => {
+    setGuests(e.target.value);
+  };
+  const dateHandler = e => {
+    const name = e.target.name;
+    setDate({
+      ...date,
+      [name]: e.target.value,
+    });
+    console.log(date);
+  };
+  // const history = useHistory();
 
-	return (
-		<>
-			<div className="header2__center align-items-center">
-				<p>Places to stay</p>
-				<hr />
+  const openSearchResults = () => {
+    console.log(props);
+    if (route.path === "/search_results") {
+      props.onSearch(location, guests);
+    } else {
+      props.onSearch(location, guests);
+      props.history.push("/search_results");
+    }
+  };
 
-				<div className="header2__center__search">
-					<input
-						type="text"
-						placeholder="Where are you going?"
-						name="location"
-						value={location}
-						onChange={locationHandler}
-					/>
-					<input
-						type="text"
-						placeholder="Add dates"
-						name="check in"
-						onClick={clickHandler}
-						value={props.startValue}
-						onChange={dateHandler}
-					/>
-					<input
-						type="text"
-						placeholder="Add dates"
-						name="check out"
-						onClick={clickHandler}
-						value={props.endValue}
-						onChange={dateHandler}
-					/>
-					<input
-						type="text"
-						placeholder="Add guests"
-						name="guests"
-						value={guests}
-						onChange={guestsHandler}
-					/>
-					{/* <Link to="/search_results"> */}
-					<SearchIcon
-						className="header2__center__search__searchIcon"
-						onClick={openSearchResults}
-					/>
-					{/* </Link> */}
-				</div>
-			</div>
-		</>
-	);
+  return (
+    <>
+      <div className="header2__center ">
+        <div className="header2__center__search">
+          <input
+            type="text"
+            placeholder="Where are you going?"
+            name="location"
+            value={location}
+            onChange={locationHandler}
+          />
+          <input
+            type="text"
+            placeholder="Add dates"
+            name="check in"
+            onClick={clickHandler}
+            value={props.startValue}
+            onChange={dateHandler}
+          />
+          <input
+            type="text"
+            placeholder="Add dates"
+            name="check out"
+            onClick={clickHandler}
+            value={props.endValue}
+            onChange={dateHandler}
+          />
+          <input
+            type="text"
+            placeholder="Add guests"
+            name="guests"
+            value={guests}
+            onChange={guestsHandler}
+          />
+          {/* <Link to="/search_results"> */}
+          <SearchIcon
+            className="header2__center__search__searchIcon p-1"
+            onClick={openSearchResults}
+          />
+          {/* </Link> */}
+        </div>
+      </div>
+    </>
+  );
 };
 
 export default withRouter(HeaderCenter);
