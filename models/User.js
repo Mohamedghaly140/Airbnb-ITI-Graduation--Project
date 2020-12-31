@@ -38,6 +38,7 @@ const UserSchema = new Schema(
 		},
 		birthDay: {
 			type: String,
+			default: 'Un Seet',
 		},
 		isHost: {
 			type: Boolean,

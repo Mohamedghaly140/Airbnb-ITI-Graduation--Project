@@ -7,6 +7,7 @@ import '../Login/login.css';
 import { FaFacebookSquare } from 'react-icons/fa';
 import { FcGoogle, FcInvite } from 'react-icons/fc';
 import SignUpModale from '../signup/SignUpModale';
+import GoogleLogin from 'react-google-login';
 
 import { AuthContext } from '../../Context/AuthContext';
 
@@ -61,6 +62,28 @@ const Login = props => {
 	};
 
 	const onSubmitHandler = dataForm => {};
+
+	const responseGoogleHandler = response => {
+		// console.log(response);
+		setLoading(true);
+		axios
+			.post(`${process.env.REACT_APP_BACKEND_URL}/api/auth/google`, {
+				tokenId: response.tokenId,
+			})
+			.then(res => {
+				console.log(res.data);
+				const user = res.data;
+				const { token, userId, isHost, isAdmin } = user;
+
+				login(userId, token);
+				setLoading(false);
+			})
+			.catch(err => {
+				console.log(err);
+				setLoading(false);
+			});
+	};
+	const errorGoogleHandler = error => {};
 
 	return (
 		<div className="Login-card ">
@@ -174,6 +197,7 @@ const Login = props => {
 								</div>
 							</div>
 						</button>
+						{/* 
 						<button
 							data-testid="social-auth-button-email"
 							type="button"
@@ -189,8 +213,17 @@ const Login = props => {
 										Continue with Google
 									</div>
 								</div>
-							</div>
+							</div> 
 						</button>
+							*/}
+						<GoogleLogin
+							clientId="536259651071-lk17flcc7dm0oohv9tqdrm4kidp5tcrc.apps.googleusercontent.com"
+							buttonText="Continue With Google"
+							onSuccess={responseGoogleHandler}
+							onFailure={errorGoogleHandler}
+							cookiePolicy={'single_host_origin'}
+							style={{ width: '100% !important', marginTop: '8px !important' }}
+						/>
 						<button
 							data-testid="social-auth-button-email"
 							type="button"

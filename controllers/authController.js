@@ -2,6 +2,11 @@ const { validationResult } = require('express-validator');
 const bcrypt = require('bcryptjs');
 const jwt = require('jsonwebtoken');
 
+const { OAuth2Client } = require('google-auth-library');
+const client = new OAuth2Client(
+	'536259651071-lk17flcc7dm0oohv9tqdrm4kidp5tcrc.apps.googleusercontent.com'
+);
+
 const nodemailer = require('nodemailer');
 const sendGridTransport = require('nodemailer-sendgrid-transport');
 
@@ -194,4 +199,107 @@ exports.login = async (req, res, next) => {
 		isAdmin: exsitingUser.isAdmin,
 		token: token,
 	});
+};
+
+exports.googleLogin = async (req, res, next) => {
+	const { tokenId } = req.body;
+
+	let response;
+	try {
+		response = await client.verifyIdToken({
+			idToken: tokenId,
+			audience:
+				'536259651071-lk17flcc7dm0oohv9tqdrm4kidp5tcrc.apps.googleusercontent.com',
+		});
+	} catch (err) {
+		return next(
+			new HttpError('Logging in failed, please try again later', 500)
+		);
+	}
+
+	const {
+		email_verified,
+		name,
+		email,
+		picture,
+		given_name,
+		family_name,
+	} = response.getPayload();
+
+	console.log(response.getPayload());
+
+	let exsitingUser;
+	try {
+		exsitingUser = await User.findOne({ email });
+	} catch (err) {
+		return next(
+			new HttpError('Signing up failed, please try again later', 500)
+		);
+	}
+
+	if (exsitingUser) {
+		let token;
+		try {
+			token = jwt.sign(
+				{ userId: exsitingUser.id, email: exsitingUser.email },
+				process.env.JWT_SECRET_KEY,
+				{ expiresIn: '1h' }
+			);
+		} catch (err) {
+			return next(
+				new HttpError('Logging in failed, please try again later', 500)
+			);
+		}
+
+		return res.status(200).json({
+			message: 'Loggedin successfuly',
+			userId: exsitingUser.id,
+			email: exsitingUser.email,
+			isHost: exsitingUser.isHost,
+			isAdmin: exsitingUser.isAdmin,
+			token: token,
+		});
+	}
+
+	if (!exsitingUser) {
+		const createdUser = new User({
+			firstName: given_name,
+			lastName: family_name,
+			email: email,
+			image: picture,
+			password: `${email + process.env.JWT_SECRET_KEY}`,
+			places: [],
+		});
+
+		try {
+			await createdUser.save();
+		} catch (err) {
+			console.log(err);
+			return next(
+				new HttpError('Signing up failed, please try again later', 500)
+			);
+		}
+
+		let token;
+		try {
+			token = jwt.sign(
+				{ userId: createdUser.id, email: createdUser.email },
+				process.env.JWT_SECRET_KEY,
+				{ expiresIn: '1h' }
+			);
+		} catch (err) {
+			return next(
+				new HttpError('Signing up failed, please try again later', 500)
+			);
+		}
+
+		return res.status(201).json({
+			message: 'Signed up successfuly',
+			userId: createdUser.id,
+			email: createdUser.email,
+			isHost: createdUser.isHost,
+			isAdmin: createdUser.isAdmin,
+			token: token,
+		});
+	}
 };

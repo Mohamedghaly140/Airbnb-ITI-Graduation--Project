@@ -4,7 +4,7 @@ const { body } = require('express-validator');
 const router = express.Router();
 
 // import controllers
-const { signup, login } = require('../controllers/authController'); // Users Controllers
+const { signup, login, googleLogin } = require('../controllers/authController'); // Users Controllers
 const fileUpload = require('../middleware/file-upload');
 
 router.post(
@@ -30,5 +30,7 @@ router.post(
 	],
 	login
 );
+
+router.post('/google', googleLogin);
 
 module.exports = router;
