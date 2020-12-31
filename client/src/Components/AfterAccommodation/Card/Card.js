@@ -1,7 +1,11 @@
 import React, { useState } from 'react';
 import './Card.css';
+import CheckAvilability from "./CardModal/CheckAvilability"
 const Card = props => {
 	const [showSearch, setShowSearch] = useState(false);
+	//bootstrap modal
+	const [modalShow, setModalShow] = React.useState(false);
+
 	const clickHandler = () => {
 		setShowSearch(!showSearch);
 		props.show(!showSearch);
@@ -28,7 +32,7 @@ const Card = props => {
 							</div>
 							<div className="mainForm__check__checkOut">
 								<div className="check__checkOut__title">Check-Out</div>
-								<div className="check__checkOut_date" onClick={clickHandler}>
+								<div className="check__checkOut_date">
 									{' '}
 									{props.endValue}
 								</div>
@@ -52,11 +56,14 @@ const Card = props => {
 						<button
 							type="submit"
 							className="mainForm__button"
-							onClick={clickHandler}
+							variant="primary" onClick={() => setModalShow(true)}
 						>
 							<span className="availability__main"></span>
-							<span className="availability__text">Check availability</span>
+							<span className="availability__text" >Check availability</span>
 						</button>
+						<CheckAvilability
+							show={modalShow}
+							onHide={() => setModalShow(false)}/>
 					</div>
 				</div>
 			</div>
