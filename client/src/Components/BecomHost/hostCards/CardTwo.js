@@ -20,7 +20,7 @@ function CardTwo() {
           <h4 className="pt-2 font-weight-bold">{hostObj.title}</h4>
           <span>{hostObj.details}</span>
         </div>
-        <a className="host-link" href="#">
+        <a className="host-link" href="/">
           {hostObj.checkout}
         </a>
       </div>

@@ -35,6 +35,7 @@
 .nav-logout:hover .nav-down-icon,
 .nav-login:hover .nav-down-icon {
   color: #ff5a5f;
+  text-decoration: none;
 }
 .nav-hosting:hover span,
 .nav-settings:hover span,
@@ -42,7 +43,7 @@
 .nav-logout:hover span,
 .nav-login:hover span {
   color: black;
-  text-decoration: underline;
+  text-decoration: none;
 }
 
 .nav-hosting:hover,

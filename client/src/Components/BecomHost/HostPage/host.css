@@ -1,9 +1,11 @@
 /* logo  */
+.black-logo{
+   box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 15px;
+  background: rgb(255, 255, 255);
+}
 .black-logo-svg:hover {
-  background: rgb(231, 233, 235);
   cursor: pointer;
   width: 5rem;
-  border-radius: 50%;
 }
 .bloring {
   box-shadow: rgba(0, 0, 0, 0.1) 0px 6px 20px;
@@ -237,7 +239,7 @@
 /* media Quaries  */
 @media only screen and (max-width: 768px) {
   .ready-host {
-    padding-bottom: 22rem;
+    padding-bottom: 2rem;
   }
   .host-img {
     width: 100%;
