@@ -8,8 +8,8 @@ const express = require('express');
 const morgan = require('morgan');
 const colors = require('colors');
 const connectDB = require('./db/db');
-const HttpError = require('./models/HttpError');
 const cors = require('cors');
+const HttpError = require('./models/HttpError');
 
 // Connect to database
 connectDB();
