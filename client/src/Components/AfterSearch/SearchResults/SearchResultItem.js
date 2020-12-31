@@ -26,7 +26,7 @@ const SearchResultItem = props => {
         <div className="mslider col-4 ml-1">
           <div
             id="carouselExampleControls"
-            className="carousel slide"
+            className="carousel slide m-auto"
             data-ride="carousel"
           >
             <ol className="carousel-indicators">
@@ -41,7 +41,7 @@ const SearchResultItem = props => {
             <div className="carousel-inner rounded">
               <div className="carousel-item active">
                 <img
-                  className="d-block w-100"
+                  className="d-block w-100 acco-img"
                   src={`${process.env.REACT_APP_BACKEND_URL}/${imageUrl}`}
                   alt={title}
                 />
@@ -68,7 +68,7 @@ const SearchResultItem = props => {
             </a>
           </div>
         </div>
-        <div className="desc col-7">
+        <div className=" col-xl-7  col-12">
           <div className="desc__header">
             <p>
               {placeType} in {city}

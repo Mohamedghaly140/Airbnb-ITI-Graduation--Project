@@ -24,3 +24,11 @@
   background: #00dfc8;
   color: white;
 }
+.yourplace-img {
+  height: 10rem !important;
+}
+@media screen and (max-width: "768px") {
+  .desc {
+    padding: 1rem;
+  }
+}

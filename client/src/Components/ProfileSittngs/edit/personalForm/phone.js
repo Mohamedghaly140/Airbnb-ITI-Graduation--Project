@@ -7,7 +7,6 @@ import '../Personal.css';
 import { AuthContext } from '../../../../Context/AuthContext';
 
 let Phone = props => {
-
 	const authContext = useContext(AuthContext);
 	const { userId, token } = authContext;
 
@@ -34,14 +33,14 @@ let Phone = props => {
 			)
 			.then(res => {
 				console.log(res.data);
-				props.phoneSet(res.data.phone)
+				props.phoneSet(res.data.phone);
 				setLoading(false);
 			})
 			.catch(err => {
 				console.log(err);
 				setLoading(false);
 			});
-			phoneSet(!phoneEditState);
+		phoneSet(!phoneEditState);
 	};
 
 	const history = useHistory();
@@ -58,7 +57,7 @@ let Phone = props => {
 					phoneSet(!phoneEditState);
 				}}
 			>
-				Edit
+				{loading ? <Spinner animation="border" variant="primary" /> : 'Edit'}
 			</span>
 			{phoneEditState ? (
 				<div className="phone-edit mt-2">
@@ -79,11 +78,7 @@ let Phone = props => {
 						{errors.phone && errors.phone.type === 'pattern' && (
 							<span className="d-block text-danger">Invalid phone number</span>
 						)}
-						{loading ? (
-							<Spinner animation="border" variant="primary" />
-						) : (
-							<input type="submit" value="Save" className="btn btn-info"/>
-						)}
+						<input type="submit" value="Save" className="btn btn-info" />
 					</form>
 				</div>
 			) : (

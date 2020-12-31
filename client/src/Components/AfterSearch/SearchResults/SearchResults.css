@@ -63,8 +63,25 @@
 .rate p {
   font-size: 1.5rem;
   margin-left: 8px;
-  font-weight: 800;
+  font-weight: bold;
 }
 .rate i {
   margin-top: 7px;
+}
+.mCard {
+  border-bottom: 2px solid lightgray;
+  padding: 1rem;
+}
+.acco-img {
+  height: 10rem !important;
+}
+@media screen and (max-width: 1090px) {
+  .filters-btn {
+    width: 50% !important;
+    /* margin: 0 !important; */
+    margin: 5px 0 !important;
+  }
+  .rate p {
+    font-weight: bold;
+  }
 }

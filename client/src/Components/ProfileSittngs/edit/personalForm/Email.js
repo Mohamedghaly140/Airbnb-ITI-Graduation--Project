@@ -34,14 +34,14 @@ let Email = props => {
 			)
 			.then(res => {
 				console.log(res.data);
-				props.setEmail(res.data.email)
+				props.setEmail(res.data.email);
 				setLoading(false);
 			})
 			.catch(err => {
 				console.log(err);
 				setLoading(false);
 			});
-			emailSet(!emailEditState)
+		emailSet(!emailEditState);
 	};
 
 	const history = useHistory();
@@ -58,7 +58,7 @@ let Email = props => {
 					emailSet(!emailEditState);
 				}}
 			>
-				Edit
+				{loading ? <Spinner animation="border" variant="primary" /> : 'Edit'}
 			</span>
 			{emailEditState ? (
 				<div className="email-edit">
@@ -82,11 +82,7 @@ let Email = props => {
 								<span className="d-block text-danger">Invalid email</span>
 							)}
 						</div>
-						{loading ? (
-							<Spinner animation="border" variant="primary" />
-						) : (
-							<input type="submit" value="Save" className="btn btn-info" />
-						)}
+						<input type="submit" value="Save" className="btn btn-info" />
 					</form>
 				</div>
 			) : (
