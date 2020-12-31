@@ -1,9 +1,16 @@
 import React, { useState } from 'react';
 import './Card.css';
+import CheckAvilability from './CardModal/CheckAvilability';
 const Card = props => {
 	const [showSearch, setShowSearch] = useState(false);
-	const clickHandler = () => {};
+	//bootstrap modal
+	const [modalShow, setModalShow] = React.useState(false);
 
+	const clickHandler = () => {
+		setShowSearch(!showSearch);
+		props.show(!showSearch);
+		console.log(props.show);
+	};
 	return (
 		<div className=" mainHost__card " style={{ height: '23rem' }}>
 			<div class="card mainHost__card__all" style={{ width: '23rem' }}>
@@ -57,17 +64,21 @@ const Card = props => {
 									</div>
 								</label>
 							</div>
-
-							<button
-								type="submit"
-								className="mainForm__button"
-								onClick={clickHandler}
-								disabled={props.isBooked}
-							>
-								<span className="availability__main"></span>
-								<span className="availability__text">Book</span>
-							</button>
 						</div>
+						<button
+							type="submit"
+							className="mainForm__button"
+							variant="primary"
+							onClick={() => setModalShow(true)}
+							disabled={props.isBooked}
+						>
+							<span className="availability__main"></span>
+							<span className="availability__text">Check availability</span>
+						</button>
+						<CheckAvilability
+							show={modalShow}
+							onHide={() => setModalShow(false)}
+						/>
 					</div>
 				)}
 			</div>
