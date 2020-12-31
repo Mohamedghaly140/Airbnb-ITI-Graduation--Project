@@ -3,9 +3,7 @@ const bcrypt = require('bcryptjs');
 const jwt = require('jsonwebtoken');
 
 const { OAuth2Client } = require('google-auth-library');
-const client = new OAuth2Client(
-	'536259651071-lk17flcc7dm0oohv9tqdrm4kidp5tcrc.apps.googleusercontent.com'
-);
+const client = new OAuth2Client(process.env.GOOGLE_CLIENT_ID);
 
 const nodemailer = require('nodemailer');
 const sendGridTransport = require('nodemailer-sendgrid-transport');
@@ -208,8 +206,7 @@ exports.googleLogin = async (req, res, next) => {
 	try {
 		response = await client.verifyIdToken({
 			idToken: tokenId,
-			audience:
-				'536259651071-lk17flcc7dm0oohv9tqdrm4kidp5tcrc.apps.googleusercontent.com',
+			audience: process.env.GOOGLE_CLIENT_ID,
 		});
 	} catch (err) {
 		return next(
@@ -226,7 +223,7 @@ exports.googleLogin = async (req, res, next) => {
 		family_name,
 	} = response.getPayload();
 
-	console.log(response.getPayload());
+	// console.log(response.getPayload());
 
 	let exsitingUser;
 	try {

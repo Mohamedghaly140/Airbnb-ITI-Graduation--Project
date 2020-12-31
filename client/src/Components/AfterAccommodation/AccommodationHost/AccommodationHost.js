@@ -15,7 +15,7 @@ import GoogleMap2 from '../GoogleMap2/GoogleMap2';
 import Card from '../Card/Card';
 import Accomndation from '../Accomndation/Accomndation';
 
-const AccommodationHost = ({ id }) => {
+const AccommodationHost = ({ placeId }) => {
 	const [loading, setLoading] = useState(false);
 	const [place, setPlace] = useState({});
 	const [showSearch, setShowSearch] = useState(false);
@@ -32,12 +32,12 @@ const AccommodationHost = ({ id }) => {
 		setEnd(enddate);
 	};
 
-	console.log(id);
+	console.log(placeId);
 
 	useEffect(() => {
 		setLoading(true);
 		axios
-			.get(`${process.env.REACT_APP_BACKEND_URL}/api/places/${id}`)
+			.get(`${process.env.REACT_APP_BACKEND_URL}/api/places/${placeId}`)
 			.then(res => {
 				console.log(res.data);
 				setPlace(res.data.place);
@@ -60,6 +60,7 @@ const AccommodationHost = ({ id }) => {
 	}
 
 	const {
+		id,
 		title,
 		description,
 		price,
@@ -165,8 +166,9 @@ const AccommodationHost = ({ id }) => {
 						show={showdate}
 						startValue={start}
 						endValue={end}
-            price={price}
-            isBooked={isBooked}
+						price={price}
+						isBooked={isBooked}
+						id={id}
 					/>
 					<div className="datePicker-card">
 						{showSearch && (

@@ -313,17 +313,17 @@ exports.bookPlaceById = async (req, res, next) => {
 		}
 	} catch (err) {
 		return next(
-			new HttpError('Someting went wrong, could not delete place', 500)
+			new HttpError('Someting went wrong, could not booked place', 500)
 		);
 	}
 
-	place.isBooked = req.body.isBooked;
+	place.isBooked = req.body.booked;
 
 	try {
-		await Place.save();
+		await place.save();
 	} catch (err) {
 		return next(
-			new HttpError('Someting went wrong, could not delete place', 500)
+			new HttpError('Someting went wrong, could not booked place', 500)
 		);
 	}
 
