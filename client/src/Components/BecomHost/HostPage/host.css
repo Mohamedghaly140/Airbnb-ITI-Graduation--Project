@@ -23,7 +23,17 @@
   font-size: 1.2rem;
   color: #ff5a5f;
 }
+button.rec-arrow:hover:enabled, button.rec-arrow:focus:enabled{
+  outline: none !important;
+    background-color: #FF5A5F !important;
+}
 
+button.rec-dot:hover, button.rec-dot_active,
+button.rec-dot:focus {
+   background-color: #FF5A5F;
+  box-shadow: 0 0 1px 3px rgba(235,16,16,0.5);
+  
+}
 /* hostin seciton  */
 .host-container {
   padding-top: 8rem;

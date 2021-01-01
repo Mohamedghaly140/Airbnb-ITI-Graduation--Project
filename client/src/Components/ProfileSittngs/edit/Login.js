@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import { useHistory } from "react-router-dom";
-
 import Card from "../card";
 import Password from "./Password";
 
@@ -28,7 +27,9 @@ console.log("hi")
         <h1 className="font-weight-bold">Login & security</h1>
         <ul className="nav nav-tabs mb-5 mt-5">
           <li className="nav-item">
-            <a className="nav-link" role="button">Login</a>
+            <a className="nav-link" role="button">
+              Login
+            </a>
           </li>
         </ul>
         <div className="login">
@@ -36,7 +37,7 @@ console.log("hi")
           <div className="row">
             <div className="col-7">
               <div className="row">
-                <div className="col-10 mt-3">
+                <div className="col-10 ">
                   <b>Password</b>
                   {!passEditState ? (
                     <p>Last updated 4 days ago</p>
@@ -44,9 +45,9 @@ console.log("hi")
                     <Password />
                   )}
                 </div>
-                <div className="col-2">
+                <div className="col-2 p-0">
                   <a
-                    className="nav-link"
+                    className=""
                     role="button"
                     onClick={() => passChangeSet(!passEditState)}
                   >
@@ -58,25 +59,28 @@ console.log("hi")
 
               <span className="line mb-4 d-block"></span>
 
-              <div className="Social">
-                <b>Facebook</b>
-                <span className="float-right" role="button">
-                  Connect
-                </span>
-                <p className="text-muted">Not connected</p>
-
-                <span className="line mb-4 d-block"></span>
-
-                <b>Google</b>
-                <span className="float-right" role="button">
-                  Connect
-                </span>
-                <p className="text-muted">Not connected</p>
+              <div className="row">
+                <div className="col-10 ">
+                  <b>Google</b>
+                  <p>Not connected</p>
+                </div>
+                <div className="col-2 p-0">
+                  <a className="" role="button">
+                    Connect
+                  </a>
+                </div>
               </div>
               <span className="line mb-4 d-block"></span>
-              <div className="Device">
-                    <h3>Device history</h3>
-
+              <div className="row">
+                <div className="col-10 ">
+                  <b>Facebook</b>
+                  <p>Not connected</p>
+                </div>
+                <div className="col-2 p-0">
+                  <a className="" role="button">
+                    Connect
+                  </a>
+                </div>
               </div>
             </div>
             <div className="col-md-4 col-12 ml-auto">

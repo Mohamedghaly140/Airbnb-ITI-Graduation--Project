@@ -50,48 +50,51 @@ export class MapContainer2 extends PureComponent {
   render() {
     const containerStyle = {
       width: "90%",
-      height: "100%",
+      height: "75%",
     };
     const style = {
       display: "inlineBlock",
       position: "absolute",
-      marginLeft: "3em",
-      marginBottom: "2em",
+      marginLeft: "4rem",
+      marginRight: "0.8rem",
+      marginBottom: "0.5rem",
     };
     return (
-      <Map
-        // className="map"
-        google={this.props.google}
-        onClick={this.onMapClicked}
-        containerStyle={containerStyle}
-        initialCenter={{
-          lat: this.state.mapCenter.lat,
-          lng: this.state.mapCenter.lng,
-        }}
-        style={style}
-        center={{
-          lat: this.state.mapCenter.lat,
-          lng: this.state.mapCenter.lng,
-        }}
-      >
-        <Marker
-          onClick={this.onMarkerClick}
-          name={"Current location"}
-          position={{
+      <div className="mapBox">
+        <Map
+          // className="map"
+          google={this.props.google}
+          onClick={this.onMapClicked}
+          containerStyle={containerStyle}
+          initialCenter={{
             lat: this.state.mapCenter.lat,
             lng: this.state.mapCenter.lng,
           }}
-        />
-
-        <InfoWindow
-          marker={this.state.activeMarker}
-          visible={this.state.showingInfoWindow}
+          style={style}
+          center={{
+            lat: this.state.mapCenter.lat,
+            lng: this.state.mapCenter.lng,
+          }}
         >
-          <div>
-            <h1>{this.state.selectedPlace.name}</h1>
-          </div>
-        </InfoWindow>
-      </Map>
+          <Marker
+            onClick={this.onMarkerClick}
+            name={"Current location"}
+            position={{
+              lat: this.state.mapCenter.lat,
+              lng: this.state.mapCenter.lng,
+            }}
+          />
+
+          <InfoWindow
+            marker={this.state.activeMarker}
+            visible={this.state.showingInfoWindow}
+          >
+            <div>
+              <h1>{this.state.selectedPlace.name}</h1>
+            </div>
+          </InfoWindow>
+        </Map>
+      </div>
     );
   }
 }

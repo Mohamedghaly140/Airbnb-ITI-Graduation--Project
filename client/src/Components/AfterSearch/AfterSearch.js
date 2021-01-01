@@ -23,9 +23,9 @@ const AfterSearch = ({ search }) => {
     axios
       .get(`${process.env.REACT_APP_BACKEND_URL}/api/places/?city=${location}`)
       .then(res => {
-        console.log(res.data);
-        setSearchResultsList(res.data.places);
-      })
+           setSearchResultsList(res.data.places);
+       })
+        
       .catch(err => {
         console.log(err);
       });

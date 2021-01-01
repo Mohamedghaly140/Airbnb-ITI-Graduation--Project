@@ -26,7 +26,6 @@ const SearchResults = ({ searchResultsList }) => {
           <button className="rounded-pill filters-btn">More filters</button>
         </div>
       </div>
-      <hr />
       {!searchResultsList ? (
         <React.Fragment>
           <div className="d-flex justify-content-center align-items-center">
@@ -53,7 +52,6 @@ const SearchResults = ({ searchResultsList }) => {
           ))}
         </React.Fragment>
       )}
-      <hr />
     </div>
   );
 };

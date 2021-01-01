@@ -29,13 +29,14 @@
   font-size: 2rem !important;
 }
 
+
 .nav-hosting:hover .nav-down-icon,
 .nav-settings:hover .nav-down-icon,
 .nav-signup:hover .nav-down-icon,
 .nav-logout:hover .nav-down-icon,
 .nav-login:hover .nav-down-icon {
   color: #ff5a5f;
-  text-decoration: none;
+  text-decoration: none !important;
 }
 .nav-hosting:hover span,
 .nav-settings:hover span,
@@ -43,7 +44,7 @@
 .nav-logout:hover span,
 .nav-login:hover span {
   color: black;
-  text-decoration: none;
+  text-decoration: none !important;
 }
 
 .nav-hosting:hover,
@@ -52,4 +53,5 @@
 .nav-logout:hover,
 .nav-login:hover {
   cursor: pointer;
+   text-decoration: none !important;
 }
