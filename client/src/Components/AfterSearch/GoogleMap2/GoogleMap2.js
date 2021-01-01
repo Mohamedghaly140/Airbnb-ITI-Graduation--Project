@@ -17,23 +17,6 @@ export class MapContainer2 extends PureComponent {
     },
   };
 }
-  // componentDidMount() {
-  //   if ("geolocation" in navigator) {
-  //     console.log("Available");
-  //   } else {
-  //     console.log("Not Available");
-  //   }
-  //   navigator.geolocation.getCurrentPosition(position => {
-  //     console.log("Latitude is :", position.coords.latitude);
-  //     console.log("Longitude is :", position.coords.longitude);
-  //     this.setState({
-  //       mapCenter: {
-  //         lat: position.coords.latitude,
-  //         lng: position.coords.longitude,
-  //       },
-  //     });
-  //   });
-  // }
   componentDidUpdate(prevProp, prevState) {}
 
   onMarkerClick = (props, marker, e) =>
@@ -61,8 +44,6 @@ export class MapContainer2 extends PureComponent {
     const style = {
       display: "inlineBlock",
       position: "absolute",
-      // marginLeft: "3em",
-      // marginBottom: "2em",
     };
     return (
       <Map
