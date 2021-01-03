@@ -1,4 +1,3 @@
-
 .Login-card {
   border-radius: 12px;
   background-color: white;
@@ -49,9 +48,10 @@ hr {
   color: inherit !important;
   background-color: transparent !important;
 }
-.username-input{
-border-bottom: 2px solid lightgray;}
-.continue-btn{
+.username-input {
+  border-bottom: 2px solid lightgray;
+}
+.continue-btn {
   width: 100%;
 }
 .Login-card p {
@@ -90,7 +90,7 @@ border-bottom: 2px solid lightgray;}
   text-decoration: none !important;
   font-size: 16px !important;
   color: rgb(72, 72, 72) !important;
-  padding: 10px 12px !important;
+  padding: 20px 12px !important;
   font-weight: 800 !important;
   border: 2px solid rgb(176, 176, 176);
   border-radius: 8px !important;
@@ -99,11 +99,54 @@ border-bottom: 2px solid lightgray;}
   min-width: 71.1935px !important;
   width: 100% !important;
 }
-
-.social-login button:hover {
+.social-login__btn:hover {
   border: 2px solid black;
 }
+
+/* .social-login button:hover {
+  border: 2px solid black;
+} */
 .new-account a {
   text-decoration: underline;
   color: rgb(34, 34, 34);
+}
+.google-container,
+.facebook-container,
+.apple-container,
+.email-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+  margin: auto;
+}
+.facebook-text-container,
+.apple-text-container,
+.google-text-container,
+.email-text-container {
+  text-align: left;
+  padding-left: 1rem;
+  width: 50%;
+}
+.facebook-icon-container,
+.apple-icon-container,
+.google-icon-container,
+.email-icon-container {
+  text-align: right;
+  width: 20%;
+}
+@media only screen and (max-width: 511px) {
+  .facebook-icon-container,
+  .apple-icon-container,
+  .google-icon-container,
+  .email-icon-container {
+    width: 20%;
+  }
+  .facebook-text-container,
+  .apple-text-container,
+  .google-text-container,
+  .email-text-container {
+    width: 80%;
+  }
 }
