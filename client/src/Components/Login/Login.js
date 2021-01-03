@@ -226,9 +226,7 @@ const Login = props => {
                     }}
                   />
                 </div>
-                <div className="apple-text-container">
-                  Continue With Facebook
-                </div>
+                <div className="apple-text-container">Continue With Apple</div>
               </div>
             </div>
           </div>
