@@ -216,4 +216,37 @@ exports.updateUserEmailById = async (req, res, next) => {
 	});
 };
 
-exports.becomeHost = (req, res, next) => {};
+exports.updateUserHostById = async (req, res, next) => {
+	const errors = validationResult(req);
+	if (!errors.isEmpty()) {
+		next(new HttpError('Invalid inputs passed, please check your data', 422));
+		// return res.status(400).json({ errors: errors.array() });
+	}
+
+	userId = req.params.id;
+
+	let user;
+
+	try {
+		user = await User.findById(userId);
+	} catch (err) {
+		return next(
+			new HttpError('Fetching user failed, please try again later', 500)
+		);
+	}
+
+	user.isHost = req.body.isHost;
+
+	try {
+		await user.save();
+	} catch (err) {
+		return next(
+			new HttpError('Update host failed, please try again later', 500)
+		);
+	}
+
+	res.status(200).json({
+		message: `User host updated successfuly`,
+		host: user.isHost,
+	});
+};

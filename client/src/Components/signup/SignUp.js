@@ -65,7 +65,6 @@ function SignUp() {
           <AgreeAndContinue />
         </form>
       </div>
-      <Footer/>
     </>
   );
 }

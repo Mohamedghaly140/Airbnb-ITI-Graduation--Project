@@ -62,9 +62,9 @@ app.use((error, req, res, next) => {
 			console.log(err);
 		});
 	}
-	if (res.headerSent) {
-		return next(error);
-	}
+	// if (res.headerSent) {
+	// 	return next(error);
+	// }
 	res.status(error.code || 500).json({
 		message: error.message || 'An unknown error occured! Server Error',
 	});

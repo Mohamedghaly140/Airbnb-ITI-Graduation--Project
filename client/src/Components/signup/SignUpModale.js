@@ -1,10 +1,8 @@
 import React, { useState, useContext } from 'react';
-import { Spinner } from 'react-bootstrap';
+import { Spinner, Alert } from 'react-bootstrap';
 import axios from 'axios';
 import { useForm } from 'react-hook-form';
 import { useHistory, useRouteMatch } from 'react-router-dom';
-
-import Footer from '../../Pages/Footer/Footer';
 import AgreeAndContinue from './AgreeAndContinue';
 import EmailInput from './EmailInput';
 import FirstName from './FirstName';
@@ -25,7 +23,32 @@ function SignUpModale(props) {
 	const history = useHistory();
 	const route = useRouteMatch();
 
+	const [validDate, setValidDate] = useState(false);
+
+	if (validDate) {
+		setTimeout(() => setValidDate(false), 3000);
+	}
+
 	const onSubmitHandler = dataForm => {
+		let sendData;
+
+		const pickedDate = new Date(dataForm.date).getFullYear();
+		const validDate = new Date('2002-01-01').getFullYear();
+		console.log(pickedDate);
+		console.log(validDate);
+		if (pickedDate > validDate) {
+			return setValidDate(true);
+		}
+
+		if (route.path === '/become_host') {
+			sendData = {
+				...dataForm,
+				isHost: true,
+			};
+		} else {
+			sendData = dataForm;
+		}
+
 		const config = {
 			header: {
 				'Content-Type': 'application/json',
@@ -37,15 +60,10 @@ function SignUpModale(props) {
 		axios
 			.post(
 				`${process.env.REACT_APP_BACKEND_URL}/api/auth/signup`,
-				dataForm,
+				sendData,
 				config
 			)
 			.then(res => {
-				// if (res.status !== 201) {
-				// 	 console.log(res.data.message);
-				// 	setError(res.data.message);
-				// }
-
 				console.log(res);
 				const user = res.data;
 				const { token, userId, isHost, isAdmin } = user;
@@ -59,10 +77,13 @@ function SignUpModale(props) {
 
 				setLoading(false);
 				setError(null);
+
+				return res;
 			})
 			.catch(err => {
-				setError(err.message);
 				setLoading(false);
+				setError(err.response.data.message);
+				console.log(err.response.data.message);
 			});
 	};
 
@@ -107,6 +128,9 @@ function SignUpModale(props) {
 							{errors.date && (
 								<span className="error">Birthday is required</span>
 							)}
+							{validDate && (
+								<span className="error">Age nust be Above 18 years</span>
+							)}
 							<span>
 								To sign up, you need to be at least 18. Your birthday won’t be
 								shared with other people who use Airbnb.
@@ -118,8 +142,16 @@ function SignUpModale(props) {
 								<EmailInput errors={errors} register={register} />
 							</div>
 							<span>We'll email you trip confirmations and receipts.</span>
+							{error && (
+								<Alert
+									variant="danger"
+									onClose={() => setError(null)}
+									dismissible
+								>
+									<Alert.Heading>{error}</Alert.Heading>
+								</Alert>
+							)}
 							<br />
-
 							{/* password */}
 							<div className="input-container">
 								<PasswordInput errors={errors} register={register} />

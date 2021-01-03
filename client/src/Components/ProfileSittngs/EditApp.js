@@ -19,6 +19,7 @@ import ListSpace from '../accom_after_host/ListSpace';
 import UpdateProfile from '../accom_after_host/UpdateProfile';
 import Home from '../../Pages/Home';
 import Footer from '../../Pages/Footer/Footer';
+import ErrorModal from '../ErrorModal/ErrorModal';
 
 let date = new Moment('1993-08-03', 'YYYY-MM-DD').props;
 
@@ -35,6 +36,7 @@ function EditApp() {
 	const [BDState, BDset] = useState(date);
 	const [gender, setGender] = useState('');
 	const [isLoading, setIsloading] = useState(false);
+	const [error, setError] = useState(null);
 	// console.log(date);
 
 	useEffect(() => {
@@ -42,7 +44,7 @@ function EditApp() {
 		axios
 			.get(`${process.env.REACT_APP_BACKEND_URL}/api/users/${userId}`)
 			.then(res => {
-				console.log(res.data.user);
+				// console.log(res.data.user);
 				const user = res.data.user;
 				const { firstName, lastName, email, phone, birthDay, gender } = user;
 				firstnameSet(firstName);
@@ -53,13 +55,21 @@ function EditApp() {
 				BDset(birthDay);
 				setGender(gender);
 				setIsloading(false);
+				setError(null);
 			})
-			.catch(err => console.log(err));
+			.catch(err => setError(err.response.data.message));
 	}, []);
 
 	let { path } = useRouteMatch();
 	return (
 		<>
+			{error && (
+				<ErrorModal
+					show={error && true}
+					message={error}
+					onHide={() => setError(null)}
+				/>
+			)}
 			<div className="black-logo ">
 				<Link to="/">
 					<svg

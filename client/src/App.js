@@ -105,7 +105,9 @@ function App() {
 						component={() => <AfterSearch search={search} />}
 						path="/search_results"
 					/>
-					<Route path={`/accommodation/:id`} component={Accommodation} />
+					{token && (
+						<Route path={`/accommodation/:id`} component={Accommodation} />
+					)}
 					<Route component={HostPage} path="/become_host" />
 					<Route component={SignUpModale} path="/signup" />
 					<Route component={Accom_host} path="/collect_data" />

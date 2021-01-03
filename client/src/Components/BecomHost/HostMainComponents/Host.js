@@ -1,4 +1,6 @@
-import React, { useContext } from 'react';
+import React, { useContext, useState } from 'react';
+import { Spinner } from 'react-bootstrap';
+import axios from 'axios';
 import { useHistory } from 'react-router-dom';
 import Carousel from 'react-elastic-carousel';
 import CardOne from '../hostCards/CardOne';
@@ -12,9 +14,11 @@ import { AuthContext } from '../../../Context/AuthContext';
 
 function Host({ navbar }, props) {
 	const authContext = useContext(AuthContext);
-	const { token } = authContext;
+	const { userId, token } = authContext;
 
 	const history = useHistory();
+
+	const [loading, setLoading] = useState(false);
 
 	//botstrap
 	const [modalShow, setModalShow] = React.useState(false);
@@ -24,9 +28,27 @@ function Host({ navbar }, props) {
 	];
 
 	const getStardedHandler = () => {
-		// console.log(token);
 		if (token) {
-			history.replace('/host_form');
+			axios
+				.put(
+					`${process.env.REACT_APP_BACKEND_URL}/api/users/host/${userId}`,
+					{ isHost: true },
+					{
+						headers: {
+							'Content-Type': 'application/json',
+							Authorization: `Bearer ${token}`,
+						},
+					}
+				)
+				.then(res => {
+					console.log(res.data);
+					setLoading(false);
+					history.replace('/host_form');
+				})
+				.catch(err => {
+					console.log(err);
+					setLoading(false);
+				});
 		} else {
 			setModalShow(true);
 		}
@@ -52,17 +74,21 @@ function Host({ navbar }, props) {
 									navbar ? 'host-btn btn-trans fixed-top ' : 'host-btn '
 								}
 							>
-								<button
-									className={
-										navbar
-											? 'getstarted-btn getstarted-trans '
-											: 'getstarted-btn '
-									}
-									variant="primary"
-									onClick={getStardedHandler}
-								>
-									Get started
-								</button>
+								{loading ? (
+									<Spinner animation="border" variant="danger" />
+								) : (
+									<button
+										className={
+											navbar
+												? 'getstarted-btn getstarted-trans '
+												: 'getstarted-btn '
+										}
+										variant="primary"
+										onClick={getStardedHandler}
+									>
+										Get started
+									</button>
+								)}
 								<SignUpModel
 									show={modalShow}
 									onHide={() => setModalShow(false)}

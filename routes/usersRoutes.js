@@ -12,6 +12,7 @@ const {
 	updateUserGenderById,
 	updateUserBirthDayById,
 	updateUserEmailById,
+	updateUserHostById,
 } = require('../controllers/usersControllers'); // Users Controllers
 const fileUpload = require('../middleware/file-upload');
 const auth = require('../middleware/auth');
@@ -56,6 +57,13 @@ router.put(
 	auth,
 	[body('email', 'Please enter valid email').normalizeEmail().isEmail()],
 	updateUserEmailById
+);
+
+router.put(
+	'/host/:id',
+	auth,
+	[body('isHost', 'isHost is required').not().isEmpty()],
+	updateUserHostById
 );
 
 module.exports = router;

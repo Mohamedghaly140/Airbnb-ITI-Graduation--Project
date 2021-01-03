@@ -1,78 +1,84 @@
 /*********** SignUp Page  *************/
 .signup-container {
-  width: 100%;
-  margin: auto;
+	width: 100%;
+	margin: auto;
 }
 .modal-content {
-  border-radius: 2rem;
+	border-radius: 2rem;
 }
 .signup-container form {
-  width: 100%;
-  padding: 2rem;
-  display: flex;
-  flex-direction: column;
-  overflow-y: scroll;
-  height: 40rem;
+	width: 100%;
+	padding: 2rem;
+	display: flex;
+	flex-direction: column;
+	overflow-y: scroll;
+	height: 40rem;
 }
 .full-name,
 .input-container {
-  width: 100%;
-  border-radius: 10px;
-  border: 2px solid rgb(110, 108, 108);
+	width: 100%;
+	border-radius: 10px;
+	border: 2px solid rgb(110, 108, 108);
 }
 .name-input {
-  padding: 1rem;
-  width: 100%;
+	padding: 1rem;
+	width: 100%;
 }
 .name-input input,
 .input-container input {
-  width: 100%;
-  border: none;
-  outline: none;
+	width: 100%;
+	border: none;
+	outline: none;
 }
 .last-name {
-  border-top: 2px solid rgb(110, 108, 108);
+	border-top: 2px solid rgb(110, 108, 108);
 }
 
 .input-container {
-  padding: 1rem;
+	padding: 1rem;
 }
 .signup-container form span {
-  padding: 0.5rem;
+	padding: 0.5rem;
 }
 .send-reminder label {
-  margin-left: 0.5rem;
+	margin-left: 0.5rem;
 }
 .finish-signup {
-  height: 5rem;
-  padding: 2rem;
-  border-bottom: solid 2px rgb(226, 226, 226);
+	height: 5rem;
+	padding: 2rem;
+	border-bottom: solid 2px rgb(226, 226, 226);
 }
 .agree-btn {
-  padding: 1rem 2rem;
-  border-radius: 10px;
-  background: linear-gradient(rgb(255, 56, 92), rgb(189, 30, 89));
-  color: white;
-  border: none;
-  font-size: 1.2rem;
+	padding: 1rem 2rem;
+	border-radius: 10px;
+	background: linear-gradient(rgb(255, 56, 92), rgb(189, 30, 89));
+	color: white;
+	border: none;
+	font-size: 1.2rem;
 }
 #fName:focus,
 #lName:focus {
-  border: 2px solid lightgray;
+	border: 2px solid lightgray;
 }
 .error {
-  color: red;
+	color: red;
 }
+
+.dismiss {
+	background: linear-gradient(rgb(255, 56, 92), rgb(189, 30, 89));
+	color: white;
+}
+
 @media only screen and (max-width: 411px) {
-  .signup-container {
-    width: 100%;
-    margin: 0;
-    padding: 0;
-  }
+	.signup-container {
+		width: 100%;
+		margin: 0;
+		padding: 0;
+	}
 }
 @media only screen and (min-width: 768px) {
-  .signup-container {
-    width: 100%;
-    margin: auto;
-  }
+	.signup-container {
+		width: 100%;
+		margin: auto;
+	}
 }

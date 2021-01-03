@@ -1,87 +1,85 @@
 .search__results {
-  width: 97%;
-  margin: auto;
-  box-shadow: 0px 6px 16px rgba(0, 0, 0, 0.12) !important;
+	margin: auto;
 }
 .adv-search {
-  padding: 0 !important;
-  margin-left: 10px !important
+	padding: 0 !important;
+	margin-left: 10px !important
 ;
 }
 .adv-search p {
-  font-size: 0.9rem;
-  margin-bottom: 0;
+	font-size: 0.9rem;
+	margin-bottom: 0;
 }
 .adv-search h3 {
-  font-size: 2rem;
-  font-weight: 900;
+	font-size: 2rem;
+	font-weight: 900;
 }
 .adv-search__btns {
-  margin-left: 10px !important;
+	margin-left: 10px !important;
 }
 .adv-search__btns button {
-  background-color: white;
-  color: black;
-  text-align: center;
-  margin-right: 10px;
-  padding: 15px;
-  font-size: 0.9rem;
-  border: solid 1px gray;
+	background-color: white;
+	color: black;
+	text-align: center;
+	margin-right: 10px;
+	padding: 15px;
+	font-size: 0.9rem;
+	border: solid 1px gray;
 }
 .adv-search__btns button:hover {
-  border: solid 1px black;
+	border: solid 1px black;
 }
 .mslider {
-  width: 100%;
-  border-radius: 50%;
+	width: 100%;
+	border-radius: 50%;
 }
 
 .carousel-indicators li {
-  border-radius: 50%;
-  width: 12px;
-  height: 12px;
-  background-color: white;
+	border-radius: 50%;
+	width: 12px;
+	height: 12px;
+	background-color: white;
 }
 .desc {
-  margin-left: 0 !important;
-  padding: 0 !important;
+	margin-left: 0 !important;
+	padding: 0 !important;
 }
 .desc .desc__header p {
-  font-size: 1.1rem;
-  margin-bottom: 0;
-  color: gray;
+	font-size: 1.1rem;
+	margin-bottom: 0;
+	color: gray;
 }
 .desc .desc__header h5 {
-  margin-bottom: 0;
+	margin-bottom: 0;
 }
 .desc__info p {
-  color: gray;
-  font-size: 1.1rem;
-  margin-right: 5px;
-  font-weight: 400 !important;
+	color: gray;
+	font-size: 1.1rem;
+	margin-right: 5px;
+	font-weight: 400 !important;
 }
 .rate p {
-  font-size: 1.5rem;
-  margin-left: 8px;
-  font-weight: bold;
+	font-size: 1.5rem;
+	margin-left: 8px;
+	font-weight: bold;
 }
 .rate i {
-  margin-top: 7px;
+	margin-top: 7px;
 }
 .mCard {
-  border-bottom: 2px solid lightgray;
-  padding: 1rem;
+	border-bottom: 2px solid lightgray;
+	padding: 1rem;
 }
 .acco-img {
-  height: 10rem !important;
+	height: 10rem !important;
 }
 @media screen and (max-width: 1090px) {
-  .filters-btn {
-    width: 50% !important;
-    /* margin: 0 !important; */
-    margin: 5px 0 !important;
-  }
-  .rate p {
-    font-weight: bold;
-  }
+	.filters-btn {
+		width: 50% !important;
+		/* margin: 0 !important; */
+		margin: 5px 0 !important;
+	}
+	.rate p {
+		font-weight: bold;
+	}
 }
