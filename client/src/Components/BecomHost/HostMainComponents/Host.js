@@ -41,12 +41,12 @@ function Host({ navbar }, props) {
 					}
 				)
 				.then(res => {
-					console.log(res.data);
+					// console.log(res.data);
 					setLoading(false);
 					history.replace('/host_form');
 				})
 				.catch(err => {
-					console.log(err);
+					// console.log(err);
 					setLoading(false);
 				});
 		} else {

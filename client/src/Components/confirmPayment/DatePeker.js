@@ -25,8 +25,8 @@ function DatePekerModal(props) {
     const handleSelect = (ranges) => {
         setStartDate(ranges.selection.startDate)
         setEndDate(ranges.selection.endDate)
-        console.log(startDate);
-        console.log(endDate);
+        // console.log(startDate);
+        // console.log(endDate);
         props.setDateFun(ranges)
     }
 

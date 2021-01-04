@@ -7,14 +7,15 @@ import SearchResults from './SearchResults/SearchResults';
 import './SearchResults/SearchResults.css';
 import Footer from '../../Pages/Footer/Footer';
 import '../../Pages/Footer/Footer.css';
+import ErrorModal from '../ErrorModal/ErrorModal';
 
 const AfterSearch = ({ search, onSearch }) => {
-	console.log('AfterSearch', search);
+	// console.log('AfterSearch', search);
 
 	const { location, guests, start, end } = search;
 
 	const [searchResultsList, setSearchResultsList] = useState(null);
-	const [loading, setLoading] = useState(false);
+	const [error, setError] = useState(null);
 	const lat = 31.0532818;
 	const lng = 31.4113196;
 	//for testing lng and lat
@@ -24,10 +25,12 @@ const AfterSearch = ({ search, onSearch }) => {
 			.get(`${process.env.REACT_APP_BACKEND_URL}/api/places/?city=${location}`)
 			.then(res => {
 				setSearchResultsList(res.data.places);
+				setError(null);
 			})
 
 			.catch(err => {
-				console.log(err);
+				// console.log(err);
+				setError(err.response.data.message);
 			});
 	}, [location]);
 
@@ -43,6 +46,13 @@ const AfterSearch = ({ search, onSearch }) => {
 
 	return (
 		<>
+			{error && (
+				<ErrorModal
+					show={error && true}
+					message={error}
+					onHide={() => setError(null)}
+				/>
+			)}
 			<Header onSearch={onSearch} />
 			{searchResultsList.length === 0 ? (
 				<div className="text-center text-danger py-5">

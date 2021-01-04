@@ -5,7 +5,7 @@ import "../SearchResults/SearchResults.css";
 import SearchResultItem from "./SearchResultItem";
 
 const SearchResults = ({ searchResultsList }) => {
-  console.log("Search reasult component", searchResultsList);
+  // console.log("Search reasult component", searchResultsList);
 
   return (
     //map on searchResultsList

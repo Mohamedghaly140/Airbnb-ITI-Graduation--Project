@@ -19,7 +19,7 @@ function HostForm() {
   };
 
   const submitFormHandler = () => {
-    console.log(state);
+    // console.log(state);
   };
 
   return (

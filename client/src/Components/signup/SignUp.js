@@ -13,7 +13,7 @@ function SignUp() {
 
   // *******print the data in the console******** //
   const onSubmitHandler = data => {
-    console.log(data);
+    // console.log(data);
   };
 
   return (

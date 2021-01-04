@@ -37,7 +37,7 @@ let Name = props => {
 				}
 			)
 			.then(res => {
-				console.log(res.data);
+				// console.log(res.data);
 				props.setFirst(res.data.userName.firstName);
 				props.setLast(res.data.userName.lastName);
 				setLoading(false);

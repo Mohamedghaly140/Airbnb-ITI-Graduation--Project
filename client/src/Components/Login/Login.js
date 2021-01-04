@@ -44,7 +44,7 @@ const Login = props => {
 		axios
 			.post(`${process.env.REACT_APP_BACKEND_URL}/api/auth/login`, user, config)
 			.then(res => {
-				console.log(res);
+				// console.log(res);
 				const user = res.data;
 				const { token, userId, isHost } = user;
 				login(userId, token, isHost);
@@ -67,7 +67,7 @@ const Login = props => {
 				tokenId: response.tokenId,
 			})
 			.then(res => {
-				console.log(res.data);
+				// console.log(res.data);
 				const user = res.data;
 				const { token, userId, isHost } = user;
 
@@ -76,7 +76,7 @@ const Login = props => {
 				setError(null);
 			})
 			.catch(err => {
-				console.log(err);
+				// console.log(err);
 				setLoading(false);
 				setError(err.response.data.message);
 			});

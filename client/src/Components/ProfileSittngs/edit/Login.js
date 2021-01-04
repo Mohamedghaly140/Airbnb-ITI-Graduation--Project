@@ -3,11 +3,10 @@ import { useHistory } from "react-router-dom";
 import Card from "../card";
 import Password from "./Password";
 
-const Login = ({match}) => {
+const Login = (props) => {
   const [passEditState, passChangeSet] = useState(false);
   let history = useHistory();
-console.log(match)
-console.log("hi")
+
   return (
     <div id="login">
       <div className="container">

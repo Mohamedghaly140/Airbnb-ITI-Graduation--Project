@@ -16,14 +16,16 @@ import DatePicker2 from '../DatePicker2/DatePicker2';
 import GoogleMap2 from '../GoogleMap2/GoogleMap2';
 import Card from '../Card/Card';
 import Accomndation from '../Accomndation/Accomndation';
+import ErrorModal from '../../ErrorModal/ErrorModal';
 
 const AccommodationHost = ({ placeId }) => {
 	const [loading, setLoading] = useState(false);
+	const [error, setError] = useState(null);
 	const [place, setPlace] = useState({});
 	const [showSearch, setShowSearch] = useState(false);
 	const [start, setStart] = useState('');
 	const [end, setEnd] = useState('');
-	const [acc, setacc] = useState({});
+
 	const showdate = search => {
 		setShowSearch(search);
 	};
@@ -34,20 +36,20 @@ const AccommodationHost = ({ placeId }) => {
 		setEnd(enddate);
 	};
 
-	console.log(placeId);
-
 	useEffect(() => {
 		setLoading(true);
 		axios
 			.get(`${process.env.REACT_APP_BACKEND_URL}/api/places/${placeId}`)
 			.then(res => {
-				console.log(res.data);
+				// console.log(res.data);
 				setPlace(res.data.place);
 				setLoading(false);
+				setError(null);
 			})
 			.catch(err => {
-				console.log(err);
+				// console.log(err);
 				setLoading(false);
+				setError(err.response.data.message);
 			});
 	}, []);
 
@@ -84,6 +86,13 @@ const AccommodationHost = ({ placeId }) => {
 
 	return (
 		<>
+			{error && (
+				<ErrorModal
+					show={error && true}
+					message={error}
+					onHide={() => setError(null)}
+				/>
+			)}
 			<div className=" container-fluid details-sec mt-3">
 				<div className="row details-header justify-content-around">
 					<div className="col-md-5 d-flex flex-column pl-5 mt-5 col-12">

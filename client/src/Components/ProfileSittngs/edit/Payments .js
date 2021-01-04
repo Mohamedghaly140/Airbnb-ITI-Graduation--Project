@@ -9,7 +9,7 @@ import "./payment.css"
 
 const Payments = () => {
   const history = useHistory();
-console.log(history)
+  
   return (
     <div id="payment">
       <div className="container">

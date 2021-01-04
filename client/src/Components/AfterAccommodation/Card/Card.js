@@ -1,4 +1,4 @@
-import React, { useState, useContext } from 'react';
+import React, { useState } from 'react';
 import './Card.css';
 import CheckAvilability from './CardModal/CheckAvilability';
 
@@ -10,7 +10,7 @@ const Card = props => {
 	const clickHandler = () => {
 		setShowSearch(!showSearch);
 		props.show(!showSearch);
-		console.log(props.show);
+		// console.log(props.show);
 	};
 
 	return (

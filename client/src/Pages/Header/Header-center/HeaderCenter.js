@@ -13,7 +13,7 @@ const HeaderCenter = props => {
 	const clickHandler = () => {
 		setShowSearch(!showSearch);
 		props.show(!showSearch);
-		console.log(showSearch);
+		// console.log(showSearch);
 	};
 	const locationHandler = e => {
 		setLocation(e.target.value);
@@ -27,12 +27,12 @@ const HeaderCenter = props => {
 			...date,
 			[name]: e.target.value,
 		});
-		console.log(date);
+		// console.log(date);
 	};
 	// const history = useHistory();
 
 	const openSearchResults = () => {
-		console.log(props);
+		// console.log(props);
 		if (route.path === '/search_results') {
 			props.onSearch(location, guests);
 		} else {

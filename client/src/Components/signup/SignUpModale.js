@@ -34,8 +34,8 @@ function SignUpModale(props) {
 
 		const pickedDate = new Date(dataForm.date).getFullYear();
 		const validDate = new Date('2002-01-01').getFullYear();
-		console.log(pickedDate);
-		console.log(validDate);
+		// console.log(pickedDate);
+		// console.log(validDate);
 		if (pickedDate > validDate) {
 			return setValidDate(true);
 		}
@@ -64,7 +64,7 @@ function SignUpModale(props) {
 				config
 			)
 			.then(res => {
-				console.log(res);
+				// console.log(res);
 				const user = res.data;
 				const { token, userId, isHost } = user;
 
@@ -83,7 +83,7 @@ function SignUpModale(props) {
 			.catch(err => {
 				setLoading(false);
 				setError(err.response.data.message);
-				console.log(err.response.data.message);
+				// console.log(err.response.data.message);
 			});
 	};
 

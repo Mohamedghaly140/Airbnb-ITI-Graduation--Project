@@ -8,7 +8,6 @@ function ShareRoom() {
   const [checked , setChecked] = useState("Create a new listing")
 
   const handleChange =(e)=>{
-    console.log(e.target.value)
     setChecked(e.target.value)
   }
   const Card = () => {

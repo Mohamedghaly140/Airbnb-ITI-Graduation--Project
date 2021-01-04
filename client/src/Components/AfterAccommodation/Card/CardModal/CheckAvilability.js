@@ -12,7 +12,7 @@ const CheckAvilability = props => {
 
 	const { placeId, isBooked, setModalShow } = props;
 
-	console.log(isBooked);
+	// console.log(isBooked);
 
 	const [loading, setLoading] = useState(false);
 
@@ -30,13 +30,13 @@ const CheckAvilability = props => {
 				}
 			)
 			.then(res => {
-				console.log(res.data);
+				// console.log(res.data);
 				setLoading(false);
 				setModalShow(false);
 				setBooking(!booking);
 			})
 			.catch(err => {
-				console.log(err);
+				// console.log(err);
 				setLoading(false);
 			});
 	};

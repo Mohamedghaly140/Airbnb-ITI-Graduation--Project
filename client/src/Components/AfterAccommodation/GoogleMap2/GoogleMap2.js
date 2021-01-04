@@ -14,13 +14,13 @@ export class MapContainer2 extends PureComponent {
 
   componentDidMount() {
     if ("geolocation" in navigator) {
-      console.log("Available");
+      // console.log("Available");
     } else {
-      console.log("Not Available");
+      // console.log("Not Available");
     }
     navigator.geolocation.getCurrentPosition(position => {
-      console.log("Latitude is :", position.coords.latitude);
-      console.log("Longitude is :", position.coords.longitude);
+      // console.log("Latitude is :", position.coords.latitude);
+      // console.log("Longitude is :", position.coords.longitude);
       this.setState({
         mapCenter: {
           lat: position.coords.latitude,

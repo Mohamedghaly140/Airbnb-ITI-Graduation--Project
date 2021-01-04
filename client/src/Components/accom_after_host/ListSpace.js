@@ -1,14 +1,12 @@
 import React, { useState, useContext } from 'react';
 import { Spinner } from 'react-bootstrap';
 import axios from 'axios';
-import ListCountries from './ListCountries';
 import './ListSpace.css';
 import HostPlace from './host_details/HostPlace';
 import HostGuest from './host_details/HostGuest';
 import ChooseProprity from './host_details/ChooseProprity';
 import NumOfBed from './host_details/NumOfBed';
 import NumOfBedrooms from './host_details/NumOfBedrooms';
-import CityState from './host_details/CityState';
 import { useForm } from 'react-hook-form';
 import { useHistory } from 'react-router-dom';
 import Upload from './ImageUploader';
@@ -35,7 +33,6 @@ function ListSpace() {
 	const postData = async dataForm => {
 		setLoading(true);
 
-		// console.log(dataForm);
 		const formData = new FormData();
 		formData.append('title', dataForm.title);
 		formData.append('description', dataForm.description);
@@ -61,7 +58,6 @@ function ListSpace() {
 				}
 			);
 
-			console.log(res);
 			setLoading(false);
 			setError(null);
 			history.push('/');
