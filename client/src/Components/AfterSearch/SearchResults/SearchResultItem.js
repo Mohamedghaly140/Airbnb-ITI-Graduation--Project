@@ -50,64 +50,14 @@ const SearchResultItem = props => {
 				style={{ textDecoration: 'none', color: 'black' }}
 			>
 				<div className="mCard row mb-3 mt-4 p-3 border-top border-bottom">
-					<div className="mslider col-4 ml-1">
-						<div
-							id="carouselExampleControls"
-							className="carousel slide m-auto"
-							data-ride="carousel"
-						>
-							<ol className="carousel-indicators">
-								<li
-									data-target="#carouselExampleIndicators"
-									data-slide-to={0}
-									className="active dot"
-								/>
-								<li
-									data-target="#carouselExampleIndicators"
-									data-slide-to={1}
-								/>
-								<li
-									data-target="#carouselExampleIndicators"
-									data-slide-to={2}
-								/>
-							</ol>
-							<div className="carousel-inner rounded">
-								<div className="carousel-item active">
-									<img
-										className="d-block w-100 acco-img"
-										src={`${process.env.REACT_APP_BACKEND_URL}/${imageUrl}`}
-										alt={title}
-									/>
-								</div>
-							</div>
-							<a
-								className="carousel-control-prev"
-								href="#carouselExampleControls"
-								role="button"
-								data-slide="prev"
-							>
-								<span
-									className="carousel-control-prev-icon"
-									aria-hidden="true"
-								/>
-								<span className="sr-only">Previous</span>
-							</a>
-							<a
-								className="carousel-control-next"
-								href="#carouselExampleControls"
-								i9vc
-								role="button"
-								data-slide="next"
-							>
-								<span
-									className="carousel-control-next-icon"
-									aria-hidden="true"
-								/>
-								<span className="sr-only">Next</span>
-							</a>
-						</div>
+					<div className="mslider col-sm-12 col-md-4 ml-1">
+						<img
+							className="img-fluid acco-img"
+							src={`${process.env.REACT_APP_BACKEND_URL}/${imageUrl}`}
+							alt={title}
+						/>
 					</div>
-					<div className=" col-xl-7  col-12">
+					<div className=" col-xl-7 col-12">
 						<div className="desc__header">
 							<p>
 								{placeType} in {city}

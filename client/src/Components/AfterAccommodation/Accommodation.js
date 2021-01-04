@@ -6,8 +6,6 @@ import AccommodationHost from './AccommodationHost/AccommodationHost';
 import Footer from '../../Pages/Footer/Footer';
 import '../../Pages/Footer/Footer.css';
 const Accommodation = props => {
-	console.log('Accommodation', props);
-
 	return (
 		<div className="acc">
 			<AccommodationHeader />
