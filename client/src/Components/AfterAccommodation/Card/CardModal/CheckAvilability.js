@@ -21,7 +21,7 @@ const CheckAvilability = props => {
 		axios
 			.put(
 				`${process.env.REACT_APP_BACKEND_URL}/api/places/booked/${placeId}`,
-				{ booked: true },
+				{ booked: true, userId },
 				{
 					headers: {
 						'Content-Type': 'application/json',

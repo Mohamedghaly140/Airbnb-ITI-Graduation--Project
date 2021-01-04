@@ -318,6 +318,72 @@ exports.bookPlaceById = async (req, res, next) => {
 	}
 
 	place.isBooked = req.body.booked;
+	place.reservedBy = req.body.userId;
+
+	try {
+		await place.save();
+	} catch (err) {
+		return next(
+			new HttpError('Someting went wrong, could not booked place', 500)
+		);
+	}
+
+	res.status(200).json({
+		message: 'place booked successfuly',
+		place,
+	});
+};
+
+exports.getReservedPlacesByUserId = async (req, res, next) => {
+	const userId = req.params.uid;
+
+	let places;
+
+	try {
+		places = await Place.find({ reservedBy: userId });
+	} catch (err) {
+		return next(new HttpError('Fetching places faild, please try again', 500));
+	}
+
+	if (!places || places.length === 0) {
+		return next(
+			new HttpError(
+				`Could not find a place for the provided user id ${userId}..`,
+				404
+			)
+		);
+	}
+
+	res.status(200).json({
+		message: `find successfuly place with id ${userId}`,
+		places: places.map(p => p.toObject({ getters: true })),
+	});
+};
+
+exports.cancelBookedPlaceById = async (req, res, next) => {
+	const placeId = req.params.id;
+
+	let place;
+
+	try {
+		place = await Place.findById(placeId);
+
+		if (!place) {
+			return next(
+				new HttpError(
+					`Could not find a place for the provided id ${placeId}..`,
+					404
+				)
+			);
+		}
+	} catch (err) {
+		return next(
+			new HttpError('Someting went wrong, could not booked place', 500)
+		);
+	}
+
+	place.isBooked = req.body.booked;
+	place.reservedBy = req.body.userId;
 
 	try {
 		await place.save();

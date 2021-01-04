@@ -12,6 +12,8 @@ const {
 	deletePlaceById,
 	createPlace,
 	bookPlaceById,
+	cancelBookedPlaceById,
+	getReservedPlacesByUserId,
 } = require('../controllers/placesController'); // Places Controllers
 const fileUpload = require('../middleware/file-upload');
 const auth = require('../middleware/auth');
@@ -22,11 +24,20 @@ router.get('/:pid', getPlaceById);
 
 router.get('/user/:uid', auth, getPlacesByUserId);
 
+router.get('/user/reserved/:uid', auth, getReservedPlacesByUserId);
+
 router.put(
 	'/booked/:id',
 	[body('booked', 'booked is required').not().isEmpty()],
 	auth,
 	bookPlaceById
+);
+
+router.put(
+	'/booked/cancel/:id',
+	[body('booked', 'booked is required').not().isEmpty()],
+	auth,
+	cancelBookedPlaceById
 );
 
 router.post(

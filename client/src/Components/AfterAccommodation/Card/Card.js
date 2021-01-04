@@ -1,10 +1,11 @@
-import React, { useState } from 'react';
+import React, { useState, useContext } from 'react';
 import './Card.css';
 import CheckAvilability from './CardModal/CheckAvilability';
+
 const Card = props => {
 	const [showSearch, setShowSearch] = useState(false);
 	//bootstrap modal
-	const [modalShow, setModalShow] = React.useState(false);
+	const [modalShow, setModalShow] = useState(false);
 
 	const clickHandler = () => {
 		setShowSearch(!showSearch);
@@ -15,17 +16,6 @@ const Card = props => {
 	return (
 		<div className=" mainHost__card " style={{ height: '23rem' }}>
 			<div class="card mainHost__card__all" style={{ width: '23rem' }}>
-				{/* <React.Fragment>
-						<p
-							className="text-center mb-0 font-weight-bold"
-							style={{
-								color: 'rgb(230, 30, 77)',
-							}}
-						>
-							This place alraedy Booked
-						</p>
-					</React.Fragment> */}
-
 				<div class="">
 					<h5 class=" mainHost__card__title">
 						<div className="mainHost__card__spans">

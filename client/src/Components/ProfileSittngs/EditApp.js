@@ -1,12 +1,7 @@
 import React, { useState, useEffect, useContext } from 'react';
 import axios from 'axios';
 import Moment from 'react-moment';
-import {
-	BrowserRouter as Router,
-	Route,
-	useRouteMatch,
-	Link,
-} from 'react-router-dom';
+import { Route, useRouteMatch, Link } from 'react-router-dom';
 import CardList from './cardList';
 import Personal from './edit/personal_1';
 import Login from './edit/Login';

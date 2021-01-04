@@ -25,13 +25,15 @@ const Sitings = lazy(() => import('./Components/ProfileSittngs/EditApp'));
 let logoutTimer;
 
 function App() {
+	const [host, setHost] = useState(false);
 	const [token, setToken] = useState(false);
 	const [userId, setUserId] = useState(null);
 	const [tokenExpirationDate, setTokenExpirationDate] = useState(null);
 
-	const login = useCallback((uid, token, expirationDate) => {
+	const login = useCallback((uid, token, isHost, expirationDate) => {
 		setToken(token);
 		setUserId(uid);
+		setHost(isHost);
 		const tokenExpirationDate =
 			expirationDate || new Date(new Date().getTime() + 1000 * 60 * 60);
 		setTokenExpirationDate(tokenExpirationDate);
@@ -90,6 +92,7 @@ function App() {
 				isLoggedIn: !!token,
 				token: token,
 				userId: userId,
+				isHost: host,
 				login: login,
 				logout: logout,
 			}}
@@ -102,7 +105,9 @@ function App() {
 						exact
 					/>
 					<Route
-						component={() => <AfterSearch search={search} onSearch={onSearch} />}
+						component={() => (
+							<AfterSearch search={search} onSearch={onSearch} />
+						)}
 						path="/search_results"
 					/>
 					{token && (

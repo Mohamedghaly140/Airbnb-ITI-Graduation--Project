@@ -66,13 +66,13 @@ function SignUpModale(props) {
 			.then(res => {
 				console.log(res);
 				const user = res.data;
-				const { token, userId, isHost, isAdmin } = user;
+				const { token, userId, isHost } = user;
 
 				if (route.path === '/become_host') {
-					login(userId, token);
+					login(userId, token, isHost);
 					history.push('/host_form');
 				} else {
-					login(userId, token);
+					login(userId, token, isHost);
 				}
 
 				setLoading(false);
