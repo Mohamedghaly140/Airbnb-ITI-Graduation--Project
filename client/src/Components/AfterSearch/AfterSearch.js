@@ -1,14 +1,14 @@
 import React, { useState, useEffect } from 'react';
 import { Spinner } from 'react-bootstrap';
 import axios from 'axios';
-import Header2 from '../../Pages/Header/Header';
+import Header from '../../Pages/Header/Header';
 import GoogleMap2 from './GoogleMap2/GoogleMap2';
 import SearchResults from './SearchResults/SearchResults';
 import './SearchResults/SearchResults.css';
 import Footer from '../../Pages/Footer/Footer';
 import '../../Pages/Footer/Footer.css';
 
-const AfterSearch = ({ search }) => {
+const AfterSearch = ({ search, onSearch }) => {
 	console.log('AfterSearch', search);
 
 	const { location, guests, start, end } = search;
@@ -43,7 +43,7 @@ const AfterSearch = ({ search }) => {
 
 	return (
 		<>
-			<Header2 />
+			<Header onSearch={onSearch} />
 			{searchResultsList.length === 0 ? (
 				<div className="text-center text-danger py-5">
 					<h5 className="text-center py-5">No Places Found</h5>

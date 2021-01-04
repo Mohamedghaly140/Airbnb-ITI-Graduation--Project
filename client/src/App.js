@@ -102,7 +102,7 @@ function App() {
 						exact
 					/>
 					<Route
-						component={() => <AfterSearch search={search} />}
+						component={() => <AfterSearch search={search} onSearch={onSearch} />}
 						path="/search_results"
 					/>
 					{token && (
