@@ -42,6 +42,7 @@ function App() {
 			JSON.stringify({
 				userId: uid,
 				token: token,
+				isHost: isHost,
 				expiration: tokenExpirationDate.toISOString(),
 			})
 		);
@@ -71,8 +72,8 @@ function App() {
 			storedData.token &&
 			new Date(storedData.expiration) > new Date()
 		) {
-			const { userId, token, expiration } = storedData;
-			login(userId, token, new Date(expiration));
+			const { userId, token, isHost, expiration } = storedData;
+			login(userId, token, isHost, new Date(expiration));
 		}
 	}, [login]);
 
