@@ -104,11 +104,11 @@ const AccommodationHost = ({ placeId }) => {
 								/>
 								<h3 className="accHeader__title">{title}</h3>
 							</div>
-							<div className="ml-2 ">
+							<div className="">
 								<AccountCircleIcon />
 								<span>{`hosted by ${creator.firstName} ${creator.lastName} .`}</span>
 							</div>
-							<div className=" row ml-4 pl-2 ">
+							<div className=" row ml-2 pl-2 ">
 								<RoomIcon />
 								<span>{`${city}, ${address}, ${country} .`}</span>
 							</div>
