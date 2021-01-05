@@ -1,8 +1,10 @@
 import React, { useState } from 'react';
+import {  Alert } from "react-bootstrap";
 import SearchIcon from '@material-ui/icons/Search';
 import { withRouter, useRouteMatch } from 'react-router-dom';
 
 const HeaderCenter = props => {
+  const [error, setError] = useState(null);
 	const [showSearch, setShowSearch] = useState(false);
 	const [location, setLocation] = useState('');
 	const [guests, setGuests] = useState('');
@@ -32,7 +34,11 @@ const HeaderCenter = props => {
 	// const history = useHistory();
 
 	const openSearchResults = () => {
-		// console.log(props);
+    // console.log(props);
+    if(!location || !date|| !guests || guests=="0"){
+      setError("Please enter correct values into inputs field ");
+      return
+    }
 		if (route.path === '/search_results') {
 			props.onSearch(location, guests);
 		} else {
@@ -44,6 +50,11 @@ const HeaderCenter = props => {
 	return (
     <>
       <div className="header2__center ">
+        {error && (
+          <Alert variant="danger" onClose={() => setError(null)} dismissible>
+            <Alert.Heading>{error}</Alert.Heading>
+          </Alert>
+        )}
         <div className="header2__center__search">
           <input
             type="text"

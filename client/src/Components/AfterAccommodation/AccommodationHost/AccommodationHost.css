@@ -1,37 +1,34 @@
 
 
-
 .accHeader__location {
-    font-size: 14px;
-    line-height: 20px;
-    color: rgb(113, 113, 113, ) !important;
-    text-decoration: none;
-
+  font-size: 14px;
+  line-height: 20px;
+  color: rgb(113, 113, 113) !important;
+  text-decoration: none;
 }
 
 .accHeader a {
-    text-decoration: none;
-    color: black;
+  text-decoration: none;
+  color: black;
 }
 
 .accHeader a:hover {
-    text-decoration: underline;
-    color: black;
+  text-decoration: underline;
+  color: black;
 }
 
 .accHeader__image {
-    margin-top: 3em;
-    object-fit: cover;
-    vertical-align: bottom;
+  margin-top: 3em;
+  object-fit: cover;
+  vertical-align: bottom;
 }
 
 hr {
-    border: 1px solid lightgray;
+  border: 1px solid lightgray;
 }
 .hr1 {
   width: 80%;
 }
-
 
 .reviews,
 .location {
